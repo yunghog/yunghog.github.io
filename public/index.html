@@ -26,17 +26,25 @@
     -->
     <title>yungh og</title>
     <style>
-    #root{
+    .root{
       min-height: 100vh; /* will cover the 100% of viewport */
 display: block;
 position: relative;
-padding-bottom: 20rem; /* height of your footer */
+padding-bottom: 10rem; /* height of your footer */
+    }
+    @media screen and (max-width:768px) {
+      .root{
+        min-height: 100vh; /* will cover the 100% of viewport */
+  display: block;
+  position: relative;
+        padding-bottom: 20rem;
+      }
     }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root" class="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
