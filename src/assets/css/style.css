@@ -1,0 +1,69 @@
+body{
+  background-color: #222;
+  font-family: 'vidalok';
+}
+@font-face {
+  font-family: 'monumental';
+  src: url('../fonts/monumental.otf');
+  color: #eee;
+}
+@font-face {
+  font-family: 'vidalok';
+  src: url('../fonts/vidalok.ttf');
+}
+.text-xxl{
+  font-size: 4rem;
+  font-family: 'monumental';
+  color: #eee;
+  text-transform: uppercase;
+}
+.text-xl{
+  font-size: 2.5rem;
+  font-family: 'monumental';
+  color: #eee;
+}
+.nav-bar ul{
+  display: inline-flex;
+  font-family: 'monumental';
+  color: #eee;
+  list-style-type: none;
+}
+.nav-bar li{
+  padding: 10px .75rem 10px 10px;
+}
+.red{
+  color: #e22;
+}
+.list-a{
+  font-family: 'monumental';
+  font-size: 20px;
+  list-style-type: none;
+  color: #eee;
+}
+.anim-blink{
+  animation: blink infinite .5s linear;
+  visibility: hidden;
+}
+@keyframes blink {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.nav-bar .navbar__link {
+  color: #eee;
+  background-color: rgba(255, 0, 0, 0);
+  transition: .5s linear;
+  text-decoration: none;
+}
+.nav-bar .navbar__link:hover{
+  color: #e22;
+}
+.navbar__link--active{
+  text-decoration: underline;
+  color: #e22;
+}
