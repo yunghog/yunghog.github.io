@@ -13,10 +13,13 @@ function Header() {
               <nav className="nav-bar">
                     <ul>
                        <li>
-                       <NavLink activeClassName="navbar__link--active"  to="/" className="navbar__link ">Home</NavLink>
+                       <NavLink activeClassName="navbar__link--active"  to="/" className="navbar__link ">home</NavLink>
                        </li>
                        <li>
-                       <NavLink activeClassName="navbar__link--active" to="/about" className="navbar__link " id='about'>About</NavLink>
+                       <NavLink activeClassName="navbar__link--active" to="/about" className="navbar__link " id='about'>about</NavLink>
+                       </li>
+                       <li>
+                       <NavLink activeClassName="navbar__link--active" to="/project" className="navbar__link " id='project'>projects</NavLink>
                        </li>
                     </ul>
               </nav>

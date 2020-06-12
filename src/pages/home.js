@@ -1,14 +1,17 @@
 import React from 'react';
-import { Container,Row,Col } from 'react-bootstrap';
+import { Container,Row,Col, Image } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
+import me from '../assets/images/imgMe.jpg';
 function Body() {
   return (
-    <section>
+    <section className="content-wrap">
       <div>
-        <Container>
+        <Container className="fadeUp-anim">
           <Row>
             <Col>
               <h1 className="text-xxl"> Hello<span className="red">.</span></h1>
@@ -31,7 +34,22 @@ function Body() {
           </Col>
           </Row>
         </Container>
+        <Container>
+        <Row>
+        <Col sm={5}>
+        <p className="para">
+          Im a 20 yo full stack Developer, Graphic Designer and Music Producer based in Sagar.
+          I have experience in making websites, logo and poster designing . I make beats when Im free :)
+          <br/><NavLink to='/about' className="red">More about me.>></NavLink>
+        </p>
+        </Col>
+        <Col sm={4}>
+        <Image className="image-port" src={me}/>
+        </Col>
+        </Row>
+        </Container>
       </div>
+      <br/><br/>
     </section>
   );
 }

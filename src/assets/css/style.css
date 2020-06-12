@@ -1,4 +1,6 @@
 body{
+  height: 100%;
+  position: relative;
   background-color: #222;
   font-family: 'vidalok';
 }
@@ -9,7 +11,7 @@ body{
 }
 @font-face {
   font-family: 'vidalok';
-  src: url('../fonts/vidalok.ttf');
+  src: url('../fonts/vidalok.otf');
 }
 .text-xxl{
   font-size: 4rem;
@@ -66,4 +68,64 @@ body{
 .navbar__link--active{
   text-decoration: underline;
   color: #e22;
+}
+footer{
+  height: 20rem;
+  position: absolute;
+  bottom: 0;
+  padding: 30px 20px 20px 20px;
+  background-color: #e22;
+  width: 100%;
+  font-family: 'monumental';
+
+}
+.social-icons{
+  font-size: 24px;
+  padding: 10px;
+  color: #111 !important;
+  text-decoration: none;
+  transition: 1s ease;
+}
+.social-icons:hover{
+  font-size: 28px;
+}
+.image-port{
+  width: 50%;
+  transform: rotate(10deg);
+  animation: port-rotate 2s linear;
+  transition: 2s ease;
+}
+.image-port:hover{
+  transform: rotate(5deg);
+}
+.fadeUp-anim{
+  animation: fadeUp 2s ease;
+}
+@keyframes fadeUp {
+  0%{
+    visibility: hidden;
+    opacity: 0;
+    padding-top: 50px;
+  }
+  100%{
+    opacity: 1;
+    padding-top: 0px;
+    visibility: visible;
+  }
+}
+@keyframes port-rotate {
+  from{
+    transform: rotate(20deg);
+  }
+  to{
+    transform: rotate(10deg);
+  }
+}
+.para::before{
+  content: "\00a0\00a0\00a0\00a0";
+}
+.para{
+  color: #eee;
+  text-align: justify;
+  font-size: 18px;
 }
