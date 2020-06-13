@@ -161,7 +161,8 @@ class About extends React.Component{
                       <h3>Web development</h3>
                       <p>I can create and host Websites and Web Applications.
                       Using either MERN Stack or Bootstrap+Php+JS. I guaruntee a clean, error free and
-                      fully responsive web pages with beautiful frontend design</p>
+                      fully responsive web pages with beautiful frontend design. You can choose between
+                       various plans. Contact for plan details and any other queries</p>
                     </div>
                     <br/>
                     <div className="service">
