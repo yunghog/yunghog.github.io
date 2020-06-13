@@ -16,7 +16,7 @@ function Footer(){
     <footer>
         <Container fluid>
           <Row>
-            <Col sm={4}>
+            <Col sm={4} className="dark">
             <h3>Samartha</h3>
             <p>Developer & <br/>Graphic Designer</p>
             </Col>
