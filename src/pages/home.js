@@ -36,16 +36,31 @@ function Body() {
         </Container>
         <Container>
         <Row>
-        <Col sm={5}>
+        <Col sm={6}>
         <p className="para">
           Im a 20 yo full stack Developer, Graphic Designer and Music Producer based in Sagar.
-          I have experience in making websites, logo and poster designing . I make beats when Im free :)
+          I have experience in making websites, logo and poster designing .Im very passionate
+           and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
+           I make beats when Im free :)
           <br/><NavLink to='/about' className="red">More about me.>></NavLink>
         </p>
         </Col>
-        <Col sm={4}>
-        <Image className="image-port" src={me}/>
-        </Col>
+        </Row>
+        <Row>
+          <Col sm={6}>
+            <div className="intro-box">
+              <ul>
+                <li><span class="red">Name:</span> Samartha</li>
+                <li><span class="red">Age:</span> 20</li>
+                <li><span class="red">Phone:</span> +91 8904460742</li>
+                <li><span class="red">Github:</span> yunghog</li>
+                <li><span class="red">Email:</span> Samarthahm@gmail.com</li>
+              </ul>
+            </div>
+          </Col>
+          <Col sm={4}>
+            <Image className="image-port" src={me}/>
+          </Col>
         </Row>
         </Container>
       </div>
