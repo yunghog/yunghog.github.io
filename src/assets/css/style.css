@@ -3,6 +3,7 @@ body{
   position: relative;
   background-color: #222;
   font-family: 'vidalok';
+  color: #eee;
 }
 @font-face {
   font-family: 'monumental';
@@ -18,6 +19,11 @@ body{
   font-family: 'monumental';
   color: #eee;
   text-transform: uppercase;
+}
+@media screen and (max-width:768px){
+  .text-xxl{
+      font-size: 3rem;
+  }
 }
 .text-xl{
   font-size: 2.5rem;
@@ -67,7 +73,7 @@ body{
 }
 .navbar__link--active{
   text-decoration: underline;
-  color: #e22;
+  color: #e22 !important;
 }
 footer{
   height: 10rem;
@@ -134,4 +140,35 @@ footer{
   color: #eee;
   text-align: justify;
   font-size: 18px;
+}
+.intro-box{
+  padding: 10px 5px 10px 5px;
+  border-radius: 10px;
+  border: 1px solid #e22;
+}
+.intro-box ul{
+  list-style: none;
+  font-size: 22px;
+  text-align: justify;
+  font-family: 'monumental';
+}
+.dark{
+  color: #222;
+}
+.edu h5{
+  font-size: 24px;
+  font-family: 'monumental';
+}
+.edu{
+  padding: 10px;
+  border-radius: 7px;
+  border-left: 4px solid #e22;
+}
+.edu span{
+  font-size: 18px;
+  color: #e22;
+  font-family: 'vidalok';
+}
+.edu p{
+  font-size: 20px;
 }
