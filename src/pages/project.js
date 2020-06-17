@@ -8,7 +8,7 @@ function Project() {
   return (
     <section>
       <div>
-        <Container>
+        <Container className="fadeUp-anim">
           <Row>
             <Col>
               <h1 className="text-xxl"> projects<span className="red">.</span></h1>
