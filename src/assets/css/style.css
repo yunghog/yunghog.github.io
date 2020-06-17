@@ -39,8 +39,8 @@ body{
 .nav-bar li{
   padding: 10px .75rem 10px 10px;
 }
-.navbar-toggler{
-  color: #eee !important;
+.navbar-light .navbar-toggler{
+  background-color: #e22 !important;
 }
 .red{
   color: #e22;
@@ -84,7 +84,8 @@ footer{
   position: absolute;
   bottom: 0;
   padding: 30px 20px 20px 20px;
-  background-color: #e22;
+  /* background-color: #e22; */
+  background:linear-gradient(90deg, #e22 0%,#e62 100% );
   width: 100%;
   font-family: 'monumental';
 }
