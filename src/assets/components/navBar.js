@@ -2,24 +2,17 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css';
-import { ReactBootstrapStyle,Navbar,FormControl,Form,Button,Nav,NavDropdown } from 'react-bootstrap';
+import { ReactBootstrapStyle,Navbar,Button,Nav,NavDropdown } from 'react-bootstrap';
 const link_style={
     fontFamily: 'monumental',
-    color: '#222'
+    color: '#eee'
 };
 class Navbar1 extends Component {
-  constructor(props) {
-      super(props);
-      this.myHeader = React.createRef();
-      this.navFix=this.navFix.bind(this);
-    }
-
 	render() {
 		return (
       <header id={"myHeader"}  ref={ref => this.id = ref} >
-        <Navbar  expand="lg" style={{ width: '100%', backgroundColor: '#e22' }}>
-          {this.navFix()}
-          <Navbar.Brand href="/" className="red">yg</Navbar.Brand>
+        <Navbar  expand="lg" style={{ width: '100%', backgroundColor: '#e220' }}>
+          <Navbar.Brand href="/" className="red"></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="text-right">
             <Nav className="mr-auto ">
