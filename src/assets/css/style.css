@@ -39,6 +39,10 @@ body{
 .nav-bar li{
   padding: 10px .75rem 10px 10px;
 }
+.navBar{
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+}
 .navbar-light .navbar-toggler{
   background-color: #e22 !important;
 }
@@ -99,6 +103,7 @@ footer{
 .sticky-header{
   position: sticky;
   top: 0px;
+  background-color: #222;
 }
 .social-icons{
   font-size: 24px;
