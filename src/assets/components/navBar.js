@@ -7,28 +7,9 @@ const link_style={
     fontFamily: 'monumental',
     color: '#eee'
 };
-class Navbar1 extends Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-    this.myHeader = React.createRef();
-}
  render() {
 		return (
       <header >
-      <script type="text/javascript">
-      window.onscroll = function() {myFunction()};
-      const header1=this.myHeader.current;
-      const sticky = header1.offsetTop+150;
-      alert(header1.style.display);
-      myFunction=()=>{
-        if (window.pageYOffset > sticky) {
-          header1.classList.add("sticky-header");
-        }else {
-          header1.classList.remove("sticky-header");
-        }
-      }
-      </script>
         <Navbar  expand="lg" className="navBar" ref={this.myHeader}>
           <Navbar.Brand href="/" className="red"></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
