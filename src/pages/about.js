@@ -38,16 +38,15 @@ class About extends React.Component{
                   <Col sm={12}>
                     <h2 className="text-xl">Skills</h2>
                     <div className="skill-con">
-                      <h3>Frameworks</h3>
                         <Row>
                           <Col xs={12} style={{display:'inlineFlex'}}>
                             <div className="skill">
                               <Row>
-                                <Col xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faBootstrap} style={{color:'red'}}></FontAwesomeIcon></div>
+                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faBootstrap} style={{color:'red'}}></FontAwesomeIcon></div>
                                 <div className="skill-name">Bootstrap</div></Col>
-                                <Col xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faReact} style={{color:'red'}}></FontAwesomeIcon>
+                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faReact} style={{color:'red'}}></FontAwesomeIcon>
                                 <div className="skill-name">React.js</div></div></Col>
-                                <Col xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faNodeJs} style={{color:'red'}}></FontAwesomeIcon>
+                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faNodeJs} style={{color:'red'}}></FontAwesomeIcon>
                                 <div className="skill-name">Node.js</div></div></Col>
                                 <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
                                 <FontAwesomeIcon icon={faJava} style={{color:'red'}}>
