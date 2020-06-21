@@ -1,13 +1,26 @@
-import React from 'react';
-import { Container,Row,Col } from 'react-bootstrap';
+import React, {Component} from "react";
+import { Container,Row,Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
-function Project() {
+class Project extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {};
+    this.div1 = React.createRef();
+    this.open=this.open.bind(this);
+}
+ open() {
+   const x=this.div1.current;
+    x.style.display="none";
+    alert('bih');
+  };
+render() {
+
   return (
     <section>
-      <div>
+
         <Container className="fadeUp-anim">
           <Row>
             <Col>
@@ -19,20 +32,13 @@ function Project() {
         <Row>
             <Col>
               <h2 className="text-xl">Web Development</h2>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-            <Modal open={open} onClose={this.onCloseModal} little>
-              <h3>hi gi</h3>
-              <Button bsStyle="success" bsSize="small" onClick ={(ev) => {console.log(ev)} }> Save </Button>
-            </Modal>
+              <Button  onClick={this.open}>pop</Button>
+              <div ref={this.div1}><h1 className="text-xxl"> projects<span className="red">.</span></h1></div>
             </Col>
           </Row>
         </Container>
-      </div>
     </section>
   );
 }
-
+}
 export default Project;
