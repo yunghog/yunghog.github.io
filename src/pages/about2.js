@@ -35,6 +35,26 @@ class About extends React.Component{
                 </Row>
                 <br/>
                 <Row>
+                  <Col sm={8}>
+                    <h2 className="text-xl">Education</h2>
+                    <div className="edu">
+                      <h5>JNNCE<span> 2017-21</span></h5>
+                      <p>B.E in Information Science and Engineering <br/> Affilated to VTU. <span className="red">CGPA: 7.49</span></p>
+                    </div>
+                    <br/>
+                    <div className="edu">
+                      <h5>Govt. PU Colege<span> 2015-17</span></h5>
+                      <p>Pre University. Science (Physics, Chemistry, Maths & Computer Science ) <br/><span className="red">Percentage: 86.75%</span></p>
+                    </div>
+                    <br/>
+                    <div className="edu">
+                      <h5>Pragathi Composite School<span> 1st to 10th Grade</span></h5>
+                      <p>Karnataka state board.<br/>Passed 10th grade with <span className="red">95%</span></p>
+                    </div>
+                  </Col>
+                </Row>
+                <br/>
+                <Row>
                   <Col sm={12}>
                     <h2 className="text-xl">Skills</h2>
                     <div className="skill-con">
@@ -49,6 +69,16 @@ class About extends React.Component{
                                 <div className="skill-name">React.js</div></div></Col>
                                 <Col xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faNodeJs} style={{color:'red'}}></FontAwesomeIcon>
                                 <div className="skill-name">Node.js</div></div></Col>
+                              </Row>
+                            </div>
+                          </Col>
+                        </Row>
+                        <br/>
+                        <h3>Languages</h3>
+                          <Row>
+                            <Col xs={12} style={{display:'inlineFlex'}}>
+                              <div className="skill">
+                                <Row>
                                 <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
                                 <FontAwesomeIcon icon={faJava} style={{color:'red'}}>
                                 </FontAwesomeIcon></div>
@@ -77,7 +107,17 @@ class About extends React.Component{
                                 <FontAwesomeIcon icon={faTerminal} style={{color:'red'}}>
                                 </FontAwesomeIcon></div>
                                 <div className="skill-name">Shell Script</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
+                                </Row>
+                              </div>
+                            </Col>
+                          </Row>
+                          <br/>
+                            <h3>Tools</h3>
+                              <Row>
+                                <Col xs={12} style={{display:'inlineFlex'}}>
+                                  <div className="skill">
+                                  <Row>
+                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
                                   <FontAwesomeIcon icon={faDatabase} style={{color:'red'}}>
                                   </FontAwesomeIcon></div>
                                   <div className="skill-name">mySQL</div></Col>
@@ -105,11 +145,11 @@ class About extends React.Component{
                                   <FontAwesomeIcon icon={faMusic} style={{color:'red'}}>
                                   </FontAwesomeIcon></div>
                                   <div className="skill-name">FL Studio</div></Col>
+                                    </Row>
+                                  </div>
+                                </Col>
                               </Row>
-                            </div>
-                          </Col>
-                        </Row>
-                        <br/>
+                          <br/>
                     </div>
                   </Col>
                 </Row>
