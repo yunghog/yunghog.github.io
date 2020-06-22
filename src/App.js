@@ -9,6 +9,8 @@ import Navbar1 from './assets/components/navBar';
 import Home from './pages/home';
 import About from './pages/about';
 import Project from './pages/project';
+import MS800hub from './pages/ms800hub';
+
 
 
 class App extends Component {
@@ -21,6 +23,7 @@ class App extends Component {
              <Route exact path="/" component={Home}/>
              <Route path="/about" component={About}/>
              <Route path="/project" component={Project}/>
+             <Route path="/ms800hub" component={MS800hub}/>
            </Switch>
              <Footer/>
         </div>
