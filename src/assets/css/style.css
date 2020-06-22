@@ -296,7 +296,7 @@ p{
   width: 100%;
 }
 .proj-desc2{
-  background-color: #222c;
+  background-color: #222e;
   visibility: hidden;
   opacity: 0;
   height: 0;
@@ -305,7 +305,7 @@ p{
   padding: 5px;
   position: absolute;
   bottom: 0;
-  transition: 1s ease;
+  transition: .5s ease;
 }
 .proj2:hover .proj-desc2{
   height:100%;
