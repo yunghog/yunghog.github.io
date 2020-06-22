@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import proj1 from '../assets/images/proj1.jpg';
 import proj2 from '../assets/images/proj2.jpg';
 import proj3 from '../assets/images/proj3.jpg';
@@ -101,7 +102,11 @@ render() {
           <Row  className="no-gutters">
             <Col xl={4} xs={12}><div className="proj2">
               <div className="proj-img2"><Image src={proj3} style={pi2}/></div>
-              <div className="proj-desc2"><h5>Spotify ad-block</h5></div>
+              <div className="proj-desc2"><h5>Spotify ad-block</h5>
+              <p>Block annoying spotify video ads using a shell script/ batch script</p>
+              <p>Built using windows <span className="red">shell script</span></p>
+              <a target="_blank" href="https://github.com/yunghog/spotify-adblock"><button className="btn btn-1"><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon> view</button></a>
+              </div>
             </div></Col>
           </Row>
         </Container>
