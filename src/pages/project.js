@@ -7,23 +7,43 @@ import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import proj1 from '../assets/images/proj1.jpg';
 import proj2 from '../assets/images/proj2.jpg';
+import proj3 from '../assets/images/proj3.jpg';
+
 class Project extends React.Component {
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      value: 0
+    };
+    this.fu=React.createRef();
     this.det2 = React.createRef();
+    this.det3 = React.createRef();
     this.open=this.open.bind(this);
 }
-open(){
-     const x=this.det2.current;
-     if(x.style.height=='0px'){
-       x.style.height="auto";
-       x.classList.add("fadeUp-anim");
-     }
-     else{
-       x.style.height="0px";
-       x.classList.remove("fadeUp-anim");
-     }
+open(d){
+  if(d==1){
+    const x=this.det2.current;
+    if(x.style.height=='0px'){
+      x.style.height="auto";
+      x.classList.add("fadeUp-anim");
+    }
+    else{
+      x.style.height="0px";
+      x.classList.remove("fadeUp-anim");
+    }
+  }
+  if(d==2){
+    const x=this.det3.current;
+    if(x.style.height=='0px'){
+      x.style.height="auto";
+      x.classList.add("fadeUp-anim");
+    }
+    else{
+      x.style.height="0px";
+      x.classList.remove("fadeUp-anim");
+    }
+  }
+
   };
 render() {
   return (
@@ -71,7 +91,7 @@ render() {
                       <li><span className="red">Role : </span>Fullstack Dev., Google Business Mgmt.</li>
                       <li><span className="red">Product : </span>Website</li>
                       <li><span className="red">Tools : </span>Bootstrap, JS, PHP, mySQL</li>
-                      <li className="text-right"><button href className="btn btn-1" onClick={this.open}>more</button>
+                      <li className="text-right"><button className="btn btn-1" onClick={()=>{this.open('1');this.setState({value: 2});}} >more</button>
                       <a href="http://adityaautomobiles.rf.gd" target="_blank"><button className="btn btn-2">visit</button></a></li>
                     </ul>
                   </div></Col>
@@ -82,6 +102,30 @@ render() {
                     The website is responsive and mobile friendly and has a beautiful frontend. I have hosted the website by myself.
                     It contains 2 views, Client side where user can book a service and Admin side where admins can manage the appointments.
                     The whole backend scene is created using PHP and JS.
+                  </p>
+                </div></Col></Row>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="proj">
+                <Row>
+                  <Col xl={6}><div className="proj-desc">
+                    <h3>Ad-Blocker</h3>
+                    <p>Block annoying spotify video ads</p>
+                    <ul>
+                      <li><span className="red">Product : </span>Shell Script/ Batch file (*.bat)</li>
+                      <li><span className="red">Tools : </span>Bootstrap, JS, PHP, mySQL</li>
+                      <li className="text-right"><button className="btn btn-1" onClick={()=>{this.open('2');this.setState({value: 3});}} >more</button>
+                      <a href="https://github.com/yunghog/spotify-adblock" target="_blank"><button className="btn btn-2">visit</button></a></li>
+                    </ul>
+                  </div></Col>
+                <Col xl={6} className="text-center"><Image src={proj3} className="proj-img"/></Col>
+                </Row>
+                <Row><Col><div className="proj-dtl" ref={this.det3} style={{height:'0px',overflow:'hidden',transition:'2s ease'}}>
+                  <p className="para">
+                    hahahahahahahahah
                   </p>
                 </div></Col></Row>
               </div>
