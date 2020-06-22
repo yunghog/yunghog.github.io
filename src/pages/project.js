@@ -17,7 +17,6 @@ class Project extends React.Component {
     };
     this.fu=React.createRef();
     this.det2 = React.createRef();
-    this.det3 = React.createRef();
     this.open=this.open.bind(this);
 }
 open(d){
@@ -32,20 +31,11 @@ open(d){
       x.classList.remove("fadeUp-anim");
     }
   }
-  if(d==2){
-    const x=this.det3.current;
-    if(x.style.height=='0px'){
-      x.style.height="auto";
-      x.classList.add("fadeUp-anim");
-    }
-    else{
-      x.style.height="0px";
-      x.classList.remove("fadeUp-anim");
-    }
-  }
-
   };
 render() {
+  const pi2={
+    width:'100%',
+  }
   return (
     <section>
 
@@ -107,31 +97,15 @@ render() {
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <div className="proj">
-                <Row>
-                  <Col xl={6}><div className="proj-desc">
-                    <h3>Ad-Blocker</h3>
-                    <p>Block annoying spotify video ads</p>
-                    <ul>
-                      <li><span className="red">Product : </span>Shell Script/ Batch file (*.bat)</li>
-                      <li><span className="red">Tools : </span>Bootstrap, JS, PHP, mySQL</li>
-                      <li className="text-right"><button className="btn btn-1" onClick={()=>{this.open('2');this.setState({value: 3});}} >more</button>
-                      <a href="https://github.com/yunghog/spotify-adblock" target="_blank"><button className="btn btn-2">visit</button></a></li>
-                    </ul>
-                  </div></Col>
-                <Col xl={6} className="text-center"><Image src={proj3} className="proj-img"/></Col>
-                </Row>
-                <Row><Col><div className="proj-dtl" ref={this.det3} style={{height:'0px',overflow:'hidden',transition:'2s ease'}}>
-                  <p className="para">
-                    hahahahahahahahah
-                  </p>
-                </div></Col></Row>
-              </div>
-            </Col>
+          <Row><Col><h2 className="text-xl">Hobby Projects</h2></Col></Row>
+          <Row  className="no-gutters">
+            <Col xl={4} xs={12}><div className="proj2">
+              <div className="proj-img2"><Image src={proj3} style={pi2}/></div>
+              <div className="proj-desc2"><h5>Spotify ad-block</h5></div>
+            </div></Col>
           </Row>
         </Container>
+        <br/><br/>
     </section>
   );
 }
