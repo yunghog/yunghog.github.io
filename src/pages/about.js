@@ -9,13 +9,12 @@ import { faReact, faNodeJs, faWordpress, faAndroid, faGitAlt, faAdobe, faBootstr
 import { faTerminal, faDatabase, faMusic  } from "@fortawesome/free-solid-svg-icons";
 
 class About extends React.Component{
-  active=()=>{
-    document.getElementById('about').style.textDecoration('underline');
-    alert('hello');
+  active(){
+  document.getElementById('a').classList.add('active');
   }
   render(){
     return (
-          <section className="content-wrap fadeUp-anim">
+          <section className="content-wrap fadeUp-anim" onMouseOver={this.active}>
 
             <div>
               <Container>

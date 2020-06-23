@@ -79,9 +79,7 @@ body{
   color: #e22 !important;
 }
 .active{
-  text-decoration: underline;
   color: #e22 !important;
-  background-color: #222;
 }
 footer{
   height: 10rem;

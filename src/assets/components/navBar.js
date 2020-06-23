@@ -5,6 +5,7 @@ import '../css/style.css';
 import { ReactBootstrapStyle,Navbar,Button,Nav,NavDropdown } from 'react-bootstrap';
 
 class Navbar1 extends Component{
+
    render() {
   		return (
         <header >
@@ -13,9 +14,9 @@ class Navbar1 extends Component{
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="text-right">
               <Nav className="mr-auto ">
-                <Nav.Link activeclassname="active" className="navLink" href="/">home</Nav.Link>
-                <Nav.Link activeclassname="active" className="navLink" href="/about">about</Nav.Link>
-                <Nav.Link activeclassname="active" className="navLink" href="/project">projects</Nav.Link>
+                <Nav.Link activeclassname="active" id="h" className="navLink" href="/">home</Nav.Link>
+                <Nav.Link activeclassname="active" id="a" className="navLink" href="/about">about</Nav.Link>
+                <Nav.Link activeclassname="active" id="p" className="navLink" href="/project">projects</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

@@ -34,14 +34,17 @@ open(d){
       x.classList.remove("fadeUp-anim");
     }
   }
-  };
+  }
+  active(){
+  document.getElementById('p').classList.add('active');
+  }
 render() {
   const pi2={
     width:'100%',
   }
 
   return (
-    <section>
+    <section onMouseOver={this.active}>
 
         <Container className="fadeUp-anim">
           <Row>
