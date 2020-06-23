@@ -12,7 +12,34 @@ class About extends React.Component{
   active(){
   document.getElementById('a').classList.add('active');
   }
+  constructor(props) {
+      super(props);
+      this.state={
+        name: "",
+        email: "",
+        query: ""
+      };
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+  handleChange(evt) {
+     this.setState({ [evt.target.name]: evt.target.value });
+  }
+ handleSubmit(event) {
+   alert('A name was submitted: ' + this.state.name);
+   alert('A name was submitted: ' + this.state.email);
+   alert('A name was submitted: ' + this.state.query);
+   event.preventDefault();
+ }
+
   render(){
+    const icon={
+      margin: '5px',
+      color: '#e22',
+      fontSize: '35px'
+    };
+
     return (
           <section className="content-wrap fadeUp-anim" onMouseOver={this.active}>
 
@@ -33,85 +60,7 @@ class About extends React.Component{
                   </Col>
                 </Row>
                 <br/>
-                <Row>
-                  <Col sm={12}>
-                    <h2 className="text-xl">Skills</h2>
-                    <div className="skill-con">
-                        <Row>
-                          <Col xs={12} style={{display:'inlineFlex'}}>
-                            <div className="skill">
-                              <Row>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faBootstrap} style={{color:'red'}}></FontAwesomeIcon></div>
-                                <div className="skill-name">Bootstrap</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faReact} style={{color:'red'}}></FontAwesomeIcon>
-                                <div className="skill-name">React.js</div></div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon"><FontAwesomeIcon icon={faNodeJs} style={{color:'red'}}></FontAwesomeIcon>
-                                <div className="skill-name">Node.js</div></div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faJava} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">JAVA</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faPython} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Python</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faPhp} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">PHP</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faJs} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">Javascript</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faCss3} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">CSS</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faHtml5} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">HTML</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                <FontAwesomeIcon icon={faTerminal} style={{color:'red'}}>
-                                </FontAwesomeIcon></div>
-                                <div className="skill-name">Shell Script</div></Col>
-                                <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faDatabase} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">mySQL</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faDatabase} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Oracle</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faAndroid} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Android Studio</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faWordpress} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Wordpress</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faGitAlt} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Git</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faAdobe} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">Photoshop</div></Col>
-                                  <Col sm={2} xs={4} className="text-center"><div className="skill-icon">
-                                  <FontAwesomeIcon icon={faMusic} style={{color:'red'}}>
-                                  </FontAwesomeIcon></div>
-                                  <div className="skill-name">FL Studio</div></Col>
-                              </Row>
-                            </div>
-                          </Col>
-                        </Row>
-                        <br/>
-                    </div>
-                  </Col>
-                </Row>
-                <br/>
+
                 <Row>
                   <Col>
                     <h2 className="text-xl" id="service">Services</h2>
@@ -136,6 +85,30 @@ class About extends React.Component{
                   </Col>
                 </Row>
                 <br/>
+                <Row><Col><h2 className="text-xl">Contact</h2></Col></Row>
+                <Row>
+                  <Col sm={8}>
+                    <Row><Col><h5>Email</h5></Col></Row>
+                    <Row><Col><form className="form-control2" onSubmit={this.handleSubmit}>
+                      {/*<Row><Col><label>Name : </label></Col></Row>*/}
+                      <Row><Col><input type="text" placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
+                      <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
+                      <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
+                      <Row><Col>   <input type="submit" value="send Mail" className="btn btn-1" /></Col></Row>
+                    </form></Col></Row>
+                  </Col>
+                  <Col sm={4}>asdasdasd</Col>
+                </Row>
+                <br/>
+                  <Row><Col sm={2}><h2 className="text-xl">Skills</h2></Col>
+                      <Col sm={6}><FontAwesomeIcon icon={faBootstrap} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faReact} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faNodeJs} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faJava} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faPython} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon></Col>                                </Row>
+                  <br/>
               </Container>
             </div>
           </section>
