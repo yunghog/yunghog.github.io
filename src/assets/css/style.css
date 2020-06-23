@@ -296,6 +296,7 @@ p{
   width: 100%;
 }
 .proj-desc2{
+  overflow-y: scroll;
   background-color: #222e;
   visibility: hidden;
   opacity: 0;
@@ -314,4 +315,7 @@ p{
 }
 .proj-desc2 h5{
   font-family: 'monumental';
+}
+.proj-desc2::-webkit-scrollbar {
+  display: none;
 }
