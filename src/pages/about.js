@@ -6,8 +6,8 @@ import emailjs from 'emailjs-com';
 
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faNodeJs, faWordpress, faAndroid, faGitAlt, faAdobe, faBootstrap, faJava, faHtml5, faCss3, faJs, faPhp, faSql, faPython } from "@fortawesome/free-brands-svg-icons";
-import { faTerminal, faDatabase, faMusic  } from "@fortawesome/free-solid-svg-icons";
+import { faReact, faNodeJs, faBootstrap, faJava, faJs, faPhp, faPython, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope  } from "@fortawesome/free-solid-svg-icons";
 
 class About extends React.Component{
   active(){
@@ -116,7 +116,12 @@ class About extends React.Component{
                       <Row><Col>   <input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>
                     </form></Col></Row>
                   </Col>
-                  <Col sm={4}>asdasdasd</Col>
+                  <Col sm={4}>
+                    <Row><Col><br/></Col></Row>
+                    <Row><Col><a href="https://api.whatsapp.com/send?phone=918904460742" target="_blank"><FontAwesomeIcon icon={faWhatsapp} style={icon}></FontAwesomeIcon> <span style={icon}>/send text</span></a></Col></Row>
+                    <Row><Col><a href="https://instagram.com/samartha__" target="_blank"><FontAwesomeIcon icon={faInstagram} style={icon}></FontAwesomeIcon> <span style={icon}>/samartha__</span></a></Col></Row>
+                    <Row><Col><a href="mailto:samarthahm@gmail.com" target="_blank"><FontAwesomeIcon icon={faEnvelope} style={icon}></FontAwesomeIcon> <span style={icon}>/E-mail</span></a></Col></Row>
+                  </Col>
                 </Row>
                 <br/>
                   <Row><Col sm={2}><h2 className="text-xl">Skills</h2></Col>
@@ -126,7 +131,7 @@ class About extends React.Component{
                       <FontAwesomeIcon icon={faJava} style={icon}></FontAwesomeIcon>
                       <FontAwesomeIcon icon={faPython} style={icon}></FontAwesomeIcon>
                       <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon></Col>                                </Row>
+                      <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon></Col></Row>
                   <br/>
               </Container>
             </div>
