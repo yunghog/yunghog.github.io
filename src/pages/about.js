@@ -2,6 +2,7 @@ import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
+import emailjs from 'emailjs-com';
 
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +18,7 @@ class About extends React.Component{
       this.state={
         name: "",
         email: "",
+        btn: "send mail!",
         query: ""
       };
       this.handleChange = this.handleChange.bind(this);
@@ -25,12 +27,29 @@ class About extends React.Component{
 
   handleChange(evt) {
      this.setState({ [evt.target.name]: evt.target.value });
+
   }
  handleSubmit(event) {
-   alert('A name was submitted: ' + this.state.name);
-   alert('A name was submitted: ' + this.state.email);
-   alert('A name was submitted: ' + this.state.query);
+   alert(this.state);
    event.preventDefault();
+   var params = {
+      "reply_to": "Samartha",
+      "from_name": this.state.name,
+      "to_name": "Samartha",
+      "from_email": this.state.email,
+      "message_html": this.state.query
+   }
+
+   var service_id = "gmail";
+   var template_id = "template_Mr3zPgLv";
+   this.setState({btn: "sending....."});
+  emailjs.send(service_id, template_id, params, 'user_9eCN0jEqX8MFrL7Pa1SiY')
+  	.then(function(){
+       alert("Sent!");
+     }, function(err) {
+       alert("Couldn't send email!\r\n Response:\n " + JSON.stringify(err));
+    });
+     this.setState({btn: "send mail!!",name:'',email:'',query:''});
  }
 
   render(){
@@ -85,7 +104,7 @@ class About extends React.Component{
                   </Col>
                 </Row>
                 <br/>
-                <Row><Col><h2 className="text-xl">Contact</h2></Col></Row>
+                <Row id="contact"><Col><h2 className="text-xl">Contact</h2></Col></Row>
                 <Row>
                   <Col sm={8}>
                     <Row><Col><h5>Email</h5></Col></Row>
@@ -94,7 +113,7 @@ class About extends React.Component{
                       <Row><Col><input type="text" placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
                       <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
                       <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
-                      <Row><Col>   <input type="submit" value="send Mail" className="btn btn-1" /></Col></Row>
+                      <Row><Col>   <input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>
                     </form></Col></Row>
                   </Col>
                   <Col sm={4}>asdasdasd</Col>
