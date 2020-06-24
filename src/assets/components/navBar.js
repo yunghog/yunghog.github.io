@@ -8,12 +8,12 @@ class Navbar1 extends Component{
 
    render() {
   		return (
-        <header >
+        <header>
           <Navbar  expand="lg" className="navBar" ref={this.myHeader}>
             <Navbar.Brand href="/" className="red"></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav" className="text-right">
-              <Nav className="mr-auto ">
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto" >
                 <Nav.Link activeclassname="active" id="h" className="navLink" href="/">home</Nav.Link>
                 <Nav.Link activeclassname="active" id="a" className="navLink" href="/about">about</Nav.Link>
                 <Nav.Link activeclassname="active" id="p" className="navLink" href="/project">projects</Nav.Link>
