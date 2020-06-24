@@ -1,9 +1,18 @@
 body{
   height: 100%;
   position: relative;
-  background-color: #222;
+  background-color: #222e;
   font-family: 'vidalok';
+  background-image: url('https://media.giphy.com/media/l1J9PtAZGbojHfy0w/giphy.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
   color: #eee;
+}
+@media screen and (max-width:768px) {
+  body{
+    background-image: url('https://media.giphy.com/media/3oEdv0JVMEB0wNd8ju/giphy.gif');
+  }
 }
 @font-face {
   font-family: 'monumental';
