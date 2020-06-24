@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './assets/components/header';
 import Footer from './assets/components/footer';
@@ -16,7 +16,7 @@ import MS800hub from './pages/ms800hub';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+       <HashRouter>
         <div>
           <Navbar1 />
             <Switch>
@@ -27,7 +27,7 @@ class App extends Component {
            </Switch>
              <Footer/>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
