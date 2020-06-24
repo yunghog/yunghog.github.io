@@ -133,7 +133,7 @@ render() {
             </div></Col>
           </Row>
           <br/>
-          <Row><Col><h3 className="text-xl">Graphic Design</h3></Col></Row>
+          {/*<Row><Col><h3 className="text-xl">Graphic Design</h3></Col></Row>*/}
           <Row><Col><div>
 
           </div></Col></Row>
