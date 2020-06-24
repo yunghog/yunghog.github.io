@@ -79,6 +79,7 @@ body{
   color: #eeea !important;
   transition: .5s linear;
   text-decoration: none;
+  margin: 5px;
 }
 .navLink:hover{
   color: #eeef !important;

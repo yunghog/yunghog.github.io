@@ -44,8 +44,7 @@ render() {
   }
 
   return (
-    <section onMouseOver={this.active}>
-
+    <section>
         <Container className="fadeUp-anim">
           <Row>
             <Col>

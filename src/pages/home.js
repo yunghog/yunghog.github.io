@@ -14,7 +14,7 @@ class Body extends React.Component {
   }
     render(){
       return (
-        <section className="content-wrap" onMouseOver={this.active}>
+        <section className="content-wrap">
           <div>
             <Container className="fadeUp-anim">
               <Row>

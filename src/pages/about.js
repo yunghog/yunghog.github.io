@@ -60,7 +60,7 @@ class About extends React.Component{
     };
 
     return (
-          <section className="content-wrap fadeUp-anim" onMouseOver={this.active}>
+          <section className="content-wrap fadeUp-anim">
 
             <div>
               <Container>
