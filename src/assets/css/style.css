@@ -151,6 +151,10 @@ footer{
     transform: rotate(10deg);
   }
 }
+a:hover{
+  text-decoration: none;
+}
+
 .para::before{
   content: "\00a0\00a0\00a0\00a0";
 }
