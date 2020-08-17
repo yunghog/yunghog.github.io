@@ -16,7 +16,7 @@ import MS800hub from './pages/ms800hub';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+       <BrowserRouter  basename={window.location.pathname || ''}>
         <div>
           <Navbar1 />
             <Switch>
