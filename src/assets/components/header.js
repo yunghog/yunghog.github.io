@@ -3,6 +3,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css';
+import logo from '../images/logo.png';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -52,6 +53,20 @@ class Header extends React.Component{
                 <li className="nav-item" onClick={closeNav}><Link>Projects</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link>Contact</Link></li>
               </ul>
+            </Col>
+            <Col md={4}></Col>
+            {/*<Col md={4} className="red text-center">
+            <h2>Samartha</h2>
+            <h5>Developer & <br/>Graphic Designer</h5>
+            <img className="logo-nav" src={logo} alt="logo" style={{width:'50%'}}/>
+            </Col>*/}
+          </Row>
+          <br/><br/>
+          <Row>
+            <Col className="text-center red">
+              <h2>Samartha</h2>
+              <h5>Developer & <br/>Graphic Designer</h5>
+              <p className="red">© 2020 All righs reserved</p>
             </Col>
           </Row>
         </Container>
