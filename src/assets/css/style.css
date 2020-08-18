@@ -142,6 +142,8 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'monumental';
   color: #eeea;
   transition: 1s;
+  font-size: 28px;
+  line-height: 2;
 }
 .nav-item:hover{
   color: #eee;
@@ -226,4 +228,11 @@ a{
 }
 .btn-1:hover{
   box-shadow: 0 0 10px #e22;
+}
+.logo-nav{
+  background-color: #eeee;
+  border-radius: 20px;
+}
+.logo-nav img{
+  width: 100%;
 }
