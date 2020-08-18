@@ -1,51 +1,62 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 class Header extends React.Component{
-  showMenu=()=>{
-    var navMenu=document.getElementById('nav-link-con');
-    if(navMenu.style.width!="0px"){
-      navMenu.style.width="0px";
-    }
-    else{
-      navMenu.style.width="500px";
-    }
-    if(navMenu.style.height=="0px"){
-      navMenu.style.height="100px";
-    }
-  }
   render(){
+    function openNav(){
+      var nav = document.getElementById('nav-con');
+      nav.style.visibility="visible";
+      nav.style.opacity="1";
+      nav.style.paddingTop="0px";
+    }
+    function closeNav(){
+      var nav = document.getElementById('nav-con');
+      nav.style.opacity="0";
+      nav.style.visibility="hidden";
+      nav.style.paddingTop="20px";
+    }
     return (
+      <div>
       <header>
-        <div>
-          <Container fluid>
-            <Row>
-              <Col className="text-right">
-                <nav className="nav-bar">
-                      <ul id="nav-link-con" className="nav-link-con">
-                         <li>
-                         <NavLink  to="/" className="navbar__link">home</NavLink>
-                         </li>
-                         <li>
-                         <NavLink activeClassName="navbar__link--active" to="/about" className="navbar__link ">about</NavLink>
-                         </li>
-                         <li>
-                         <NavLink activeClassName="navbar__link--active" to="/project" className="navbar__link " id='project'>projects</NavLink>
-                         </li>
-                      </ul>
-                      <button onClick={this.showMenu}> <FontAwesomeIcon icon={faBars}></FontAwesomeIcon> </button>
-                </nav>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <Container>
+          <Row>
+            <Col xs={2}>
+              {/*ha*/}
+            </Col>
+            <Col xs={8}>
+            </Col>
+            <Col xs={2}>
+              <button className="btn nav-btn" onClick={openNav}><FontAwesomeIcon icon={faBars}/></button>
+            </Col>
+          </Row>
+        </Container>
       </header>
+      <div className="nav-con" id="nav-con">
+        <Container>
+          <Row>
+            <Col xs={10}></Col>
+            <Col xs={2}><button className="btn nav-btn" onClick={closeNav}><FontAwesomeIcon icon={faTimes}/></button></Col>
+          </Row>
+          <Row>
+            <Col md={4}>
+              <ul className="nav-bar">
+                <li className="nav-item active" onClick={closeNav}><Link to="/">Home</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link to="/about">About</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link>Service</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link>Projects</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link>Contact</Link></li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
     );
   }
 }
