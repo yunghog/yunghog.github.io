@@ -10,9 +10,6 @@ import { faReact, faNodeJs, faBootstrap, faJava, faJs, faPhp, faPython, faInstag
 import { faEnvelope  } from "@fortawesome/free-solid-svg-icons";
 
 class About extends React.Component{
-  active(){
-  document.getElementById('a').classList.add('active');
-  }
   constructor(props) {
       super(props);
       this.state={
@@ -60,7 +57,7 @@ class About extends React.Component{
     };
 
     return (
-          <section className="content-wrap fadeUp-anim" onMouseOver={this.active}>
+          <section className="content-wrap fadeUp-anim">
 
             <div>
               <Container>
