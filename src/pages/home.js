@@ -1,70 +1,109 @@
 import React from 'react';
 import { Container,Row,Col, Image } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 import me from '../assets/images/imgMe.jpg';
+import bgShape from '../assets/images/bg-shape.png';
+import fgAvatar from '../assets/images/weeknd-bw.png';
+import imgMe from '../assets/images/weeknd-2.png';
+import branding from '../assets/images/branding.jpg';
+import webdev from '../assets/images/webdev.png';
 
 class Body extends React.Component {
-  active(){
-  document.getElementById('h').classList.add('active');
-  }
     render(){
+      AOS.init({
+        duration: 1000,
+        once: true
+    });
       return (
-        <section className="content-wrap" onMouseOver={this.active}>
+        <section className="content-wrap">
           <div>
-            <Container className="fadeUp-anim">
+            <Container fluid>
               <Row>
-                <Col>
-                  <h1 className="text-xxl"> Hello<span className="red">.</span></h1>
+                <Col md={1}></Col>
+                <Col md={6}>
+                  <div className="main-text" data-aos="fade-right">
+                    <h1 className="text-xxl"> Hello<span className="red">.</span></h1>
+                    <h2 className="text-xl"><span className="red">I am</span> Samartha</h2>
+                      <Row>
+                      <Col xs={2} className="text-right">
+                      <h2 className="red" style={{fontSize:'3rem'}}><FontAwesomeIcon icon={faTerminal}/></h2>
+                    </Col>
+                      <Col xs={8}>
+                      <ul className="list-a">
+                        <li>Fullstack Developer &</li>
+                      <li>Graphic Designer <span className="anim-blink red">|</span></li>
+                      </ul>
+                      </Col>
+                      </Row>
+                  </div>
                 </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <h2 className="text-xl"><span className="red">I am</span> Samartha</h2>
+                <Col md={5}>
+                  <div className="image-con">
+                    <div className="image-bg" data-aos="fade-left" data-aos-delay="200">
+                      <img src={bgShape}/>
+                    </div>
+                    <div className="image-fg" data-aos="fade-left" data-aos-delay="600">
+                      <img src={fgAvatar}/>
+                    </div>
+                  </div>
                 </Col>
-              </Row>
-              <Row>
-              <Col xs={2} className="text-right">
-              <h2 className="red" style={{fontSize:'3rem'}}><FontAwesomeIcon icon={faTerminal}/></h2>
-            </Col>
-              <Col xs={8}>
-              <ul className="list-a">
-                <li>Developer &</li>
-              <li>Graphic Designer <span className="anim-blink red">|</span></li>
-              </ul>
-              </Col>
               </Row>
             </Container>
+            <br/><br/><br/>
             <Container>
             <Row>
-            <Col sm={6}>
-            <p className="para">
-              Im a 20 yo full stack Developer, Graphic Designer and Music Producer based in Sagar.
-              I have experience in making websites, logo and poster designing .Im very passionate
-               and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
-               I make beats when Im free :)
-              <br/><NavLink to='/about' className="red">More about me.>></NavLink>
-            </p>
+            <Col md={8}>
+              <div className="home-about cardy cell-left" data-aos="fade-right">
+                <p className="para">
+                  <h3>About</h3>
+                  Im a 21 yo freelance fullstack Developer, Graphic Designer and Music Producer based in Sagar.
+                  I have experience in making websites, logo and poster designing .Im very passionate
+                   and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
+                   I make beats when Im free :)
+                  <br/><Link to='/about' className="red"><button className="btn btn-1">about</button></Link>
+                </p>
+              </div>
+            </Col>
+            <Col md={3}>
+              <div className="home-about-img cardy cell-right" data-aos="fade-left">
+                <img src={imgMe}/>
+              </div>
             </Col>
             </Row>
             <Row>
-              <Col sm={6}>
-                <div className="intro-box">
-                  <ul>
-                    <li><span class="red">Name:</span> Samartha</li>
-                    <li><span class="red">Age:</span> 20</li>
-                    <li><span class="red">Phone:</span> +91 8904460742</li>
-                    <li><span class="red">Github:</span> yunghog</li>
-                    <li><span class="red">Email:</span> Samarthahm@gmail.com</li>
-                  </ul>
+              <Col md={5} className="text-center">
+                <div className="home-services-img cardy cell-left" data-aos="fade-left">
+                  <img src={branding}/>
                 </div>
               </Col>
-              <Col sm={4}>
-                <Image className="image-port" src={me}/>
+            <Col md={7}>
+              <div className="home-about cardy cell-right" data-aos="fade-right">
+                <h3>Services</h3>
+                <ul>
+                  {/*<li>Branding your business, which includes designing logo, flyers and creating website</li>*/}
+                  <li>Creating websites using LAMP or MERN Stack technologies and hosting them</li>
+                  <li>Graphic Designing, designing logo, posters, flyers, banners and also cover arts for album</li>
+                </ul>
+                <br/><Link to='/about' className="red"><button className="btn btn-1">services</button></Link>
+              </div>
+            </Col>
+            </Row>
+            <Row>
+              <Col md={5}>
+                <div className="cardy home-about home cell-left inverse" data-aos="fade-left">
+                    <h3>Short Information</h3>
+                    <ul>
+                      <li>Name : Samartha</li>
+                      <li>Based in : Sagar, Shimoga</li>
+                      <li>Mail : Samarthaog@gmail.com</li>
+                      <li>Phone : +91 8904460742</li>
+                    </ul>
+                </div>
               </Col>
             </Row>
             </Container>
