@@ -3,8 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './assets/components/header';
 import Footer from './assets/components/footer';
-import Navbar1 from './assets/components/navBar';
-
+// import Navbar1 from './assets/components/navBar';
 
 import Home from './pages/home';
 import About from './pages/about';
@@ -18,12 +17,10 @@ class App extends Component {
     return (
        <BrowserRouter  basename={window.location.pathname || ''}>
         <div>
-          <Navbar1 />
+          <Header/>
             <Switch>
-             <Route exact path="/" component={Home}/>
-             <Route path="/about" component={About}/>
-             <Route path="/project" component={Project}/>
-             <Route path="/ms800hub" component={MS800hub}/>
+             <Route exact path="/"><Home/></Route>
+             <Route exact path="/about"><About/></Route>
            </Switch>
              <Footer/>
         </div>
