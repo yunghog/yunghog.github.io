@@ -25,10 +25,10 @@ function Footer(){
             </Col>
             <Col sm={4} className="text-center">
             <a  className="social-icons"  target="_blank" href="https://instagram.com/samartha__"><FontAwesomeIcon icon={faInstagram}/></a>
-            <a  className="social-icons"  target="_blank" href="https://instagram.com/samartha__"><FontAwesomeIcon icon={faGithub}/></a>
-            <a  className="social-icons"  target="_blank" href="https://instagram.com/samartha__"><FontAwesomeIcon icon={faLinkedin}/></a>
-            <a  className="social-icons"  target="_blank" href="https://instagram.com/samartha__"><FontAwesomeIcon icon={faGooglePlus}/></a>
-            <a  className="social-icons"  target="_blank" href="https://instagram.com/samartha__"><FontAwesomeIcon icon={faYoutube}/></a>
+            <a  className="social-icons"  target="_blank" href="https://github.com/yunghog"><FontAwesomeIcon icon={faGithub}/></a>
+            <a  className="social-icons"  target="_blank" href="https://www.linkedin.com/in/samartha-hm-7398861a1/"><FontAwesomeIcon icon={faLinkedin}/></a>
+            <a  className="social-icons"  target="_blank" href="mailto:samarthaog@gmail.com"><FontAwesomeIcon icon={faGooglePlus}/></a>
+            <a  className="social-icons"  target="_blank" href="https://youtube.com/c/YUNGHOGbeats"><FontAwesomeIcon icon={faYoutube}/></a>
             </Col>
           </Row>
         </Container>
