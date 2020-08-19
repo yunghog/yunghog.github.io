@@ -4,6 +4,7 @@ body{
   background-color: #eee;
   font-family: 'vidalok';
   color: #222;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: 'monumental';
@@ -62,8 +63,7 @@ footer{
   position: absolute;
   bottom: 0;
   padding: 30px 20px 20px 20px;
-  /* background-color: #e22; */
-  background:linear-gradient(90deg, #e22 0%,#e62 100% );
+  background:linear-gradient(90deg, #222 0%,#523232 100% );
   width: 100%;
   font-family: 'monumental';
 }
@@ -80,14 +80,14 @@ footer{
   background-color: #222;
 }
 .social-icons{
-  font-size: 24px;
+  font-size: 38px;
   padding: 10px;
-  color: #111 !important;
+  color: #e22 !important;
   text-decoration: none;
-  transition: 1s ease;
+  transition: 1s ;
 }
 .social-icons:hover{
-  font-size: 28px;
+  color: #eee !important;
 }
 
 a:hover{
@@ -103,8 +103,8 @@ a:hover{
   font-size: 18px;
 }
 
-.dark{
-  color: #222;
+.footer-text{
+  color: #e22;
 }
 h1,h2,h3,h4,h5,h6{
   font-family: 'monumental';
@@ -235,4 +235,40 @@ a{
 }
 .logo-nav img{
   width: 100%;
+}
+.proj-count{
+  background-color: #e22;
+  color: #eee;
+  padding: 40px 0px 40px 0px;
+  text-align: center;
+}
+.inverse{
+  color: #eee;
+  background-color: #e22;
+}
+.car-img{
+  width: 100%;
+  overflow: hidden;
+}
+.car-img img{
+  width: 100%;
+}
+.design-overlay{
+ padding: 30px;
+ background-color: #eeea;
+ visibility: hidden;
+ opacity: 0;
+ height: 0;
+ width: 100%;
+ position: absolute;
+ bottom: 0;
+ transition: .5s ease;
+}
+.design-overlay h5{
+  color: #e22 !important;
+}
+.car-img:hover .design-overlay{
+  height:100%;
+  visibility: visible;
+  opacity: 1;
 }
