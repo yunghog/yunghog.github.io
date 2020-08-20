@@ -66,17 +66,40 @@ class About extends React.Component{
                     <h1 className="text-xxl"> About<span className="red">.</span></h1>
                   </Col>
                 </Row>
+                <br/><br/>
                 <Row>
                   <Col sm={8}>
-                    <h2 className="text-xl">Myself</h2>
-                    <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a 3rd year Information Science
-                      and Engineering student at Jawaharlal Nehru National
-                    College of Engineering, Shimoga which is affilated to VTU.
-                     I will graduate by 2021.</p>
+                    <div className="home-about cardy cell-left">
+                      <h3>Myself</h3>
+                      <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
+                        and Engineering student at Jawaharlal Nehru National
+                      College of Engineering, Shimoga which is affilated to VTU.
+                       I will graduate by 2021.</p>
+                    </div>
                   </Col>
                 </Row>
                 <br/>
-
+                <Row><Col><h3 className="text-center">Tools and Frameworks</h3></Col></Row><br/><br/>
+                <Row>
+                  <Col md={6}>
+                    <div className="home-about cardy cell-left">
+                      <h3>Web Development</h3>
+                      <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
+                        and Engineering student at Jawaharlal Nehru National
+                      College of Engineering, Shimoga which is affilated to VTU.
+                       I will graduate by 2021.</p>
+                    </div>
+                  </Col>
+                  <Col md={6}>
+                    <div className="home-about cardy cell-right">
+                      <h3>Web Development</h3>
+                      <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
+                        and Engineering student at Jawaharlal Nehru National
+                      College of Engineering, Shimoga which is affilated to VTU.
+                       I will graduate by 2021.</p>
+                    </div>
+                  </Col>
+                </Row>
                 <Row>
                   <Col>
                     <h2 className="text-xl" id="service">Services</h2>

@@ -15,12 +15,12 @@ import MS800hub from './pages/ms800hub';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter  basename={window.location.pathname || ''}>
+       <BrowserRouter>
         <div>
           <Header/>
             <Switch>
              <Route exact path="/"><Home/></Route>
-             <Route exact path="/about"><About/></Route>
+             <Route path="/about"><About/></Route>
            </Switch>
              <Footer/>
         </div>

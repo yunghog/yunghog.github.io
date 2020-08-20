@@ -167,13 +167,13 @@ class Body extends React.Component {
         <br/><br/>
         <Container fluid>
           <Row>
-            <Col className="text-center">
+            <Col className="text-center"  data-aos="fade-up">
               <h3>Logo designed for clients</h3>
             </Col>
           </Row>
           <Row>
-            <Col>
-              <Carousel responsive={responsive} data-aos="fade-up">
+            <Col data-aos="fade-down">
+              <Carousel responsive={responsive} >
                 <div className="car-img">
                   <img src={design6}/>
                   <div className="design-overlay">

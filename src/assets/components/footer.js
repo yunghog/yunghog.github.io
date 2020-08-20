@@ -31,6 +31,11 @@ function Footer(){
             <a  className="social-icons"  target="_blank" href="https://youtube.com/c/YUNGHOGbeats"><FontAwesomeIcon icon={faYoutube}/></a>
             </Col>
           </Row>
+          <Row>
+            <Col className="text-center red">
+              <p className="red">© 2020 All righs reserved</p>
+            </Col>
+          </Row>
         </Container>
     </footer>
   </div>
