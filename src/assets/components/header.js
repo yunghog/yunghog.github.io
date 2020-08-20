@@ -24,7 +24,7 @@ class Header extends React.Component{
     }
     return (
       <div>
-      <header>
+      <header id="myHeader">
         <Container>
           <Row>
             <Col xs={2}>

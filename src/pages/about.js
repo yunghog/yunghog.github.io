@@ -3,11 +3,11 @@ import { Container,Row,Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import emailjs from 'emailjs-com';
-
-import '../assets/css/style.css'
+import AOS from 'aos';
+import '../assets/css/style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faNodeJs, faBootstrap, faJava, faJs, faPhp, faPython, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope  } from "@fortawesome/free-solid-svg-icons";
+import { faCss3, faAngular, faHtml5,  faReact, faNodeJs, faBootstrap, faJs, faPhp, faGitAlt, faBitbucket, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope ,faAtom } from "@fortawesome/free-solid-svg-icons";
 
 class About extends React.Component{
   constructor(props) {
@@ -52,24 +52,26 @@ class About extends React.Component{
   render(){
     const icon={
       margin: '5px',
-      color: '#e22',
       fontSize: '35px'
     };
-
+    AOS.init({
+      duration: 1000,
+      once: true
+  });
     return (
           <section className="content-wrap fadeUp-anim">
-
             <div>
               <Container>
                 <Row>
-                  <Col>
+                  <Col data-aos="fade-up">
                     <h1 className="text-xxl"> About<span className="red">.</span></h1>
+                    <h3>Creative | Passionate | Focused</h3>
                   </Col>
                 </Row>
-                <br/><br/>
+                <br/><br/><br/>
                 <Row>
-                  <Col sm={8}>
-                    <div className="home-about cardy cell-left">
+                  <Col sm={6}>
+                    <div className="home-about cardy cell-left" data-aos="fade-right">
                       <h3>Myself</h3>
                       <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
                         and Engineering student at Jawaharlal Nehru National
@@ -77,22 +79,45 @@ class About extends React.Component{
                        I will graduate by 2021.</p>
                     </div>
                   </Col>
-                </Row>
-                <br/>
-                <Row><Col><h3 className="text-center">Tools and Frameworks</h3></Col></Row><br/><br/>
-                <Row>
-                  <Col md={6}>
-                    <div className="home-about cardy cell-left">
-                      <h3>Web Development</h3>
-                      <p className="para">Im familiar with MERN Stack (MongoDB, Express JS, React JS and Node JS),
-                        LAMP (Linux, Apache, MySQL and PHPMyAdmin) and Wordpress. For static websites I use React JS
-                      For dynamic websites most of the time I will go with LAMP. </p>
+                  <Col sm={6}>
+                    <div className="home-about cardy cell-right" data-aos="fade-left">
+                      <p className="para">I'm a freelance web developer and designer, who can work with a variety of clients
+                        and on many diverse projects. I work to create innovative solutions that inspire, and foster memorable relationships
+                         between brands and their clients. With a focus on UI/UX, I strive to create usable, beautiful and responsive websites.</p>
                     </div>
                   </Col>
-                  <Col md={6}>
+                </Row>
+                <br/>
+                <Row>
+                  <Col md={4}>
+                    <div className="home-about cardy cell-left inverse">
+                      <h3>Frameworks</h3>
+                      <p><FontAwesomeIcon icon={faBootstrap} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faReact} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faNodeJs} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faAngular} style={icon}></FontAwesomeIcon></p>
+                      <h3>Languages</h3>
+                        <p><FontAwesomeIcon icon={faCss3} style={icon}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faHtml5} style={icon}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon></p>
+                          <h3>Tools</h3>
+                            <p><FontAwesomeIcon icon={faAtom} style={icon}></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faGitAlt} style={icon}></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faBitbucket} style={icon}></FontAwesomeIcon>
+                            <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon></p>
+                    </div>
+                  </Col>
+                  <Col md={8}>
                     <div className="home-about cardy cell-right">
-                      <h3>Graphic Designing</h3>
-                      <p className="para">For all types of graphic designing works I usee Adobe Photoshop only.</p>
+                      <h3>Contact</h3>
+                        <Row><Col><form className="form-control2" onSubmit={this.handleSubmit}>
+                          {/*<Row><Col><label>Name : </label></Col></Row>*/}
+                          <Row><Col><input type="text" placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
+                          <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
+                          <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
+                          <Row><Col>   <input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>
+                        </form></Col></Row>
                     </div>
                   </Col>
                 </Row>
@@ -113,7 +138,7 @@ class About extends React.Component{
                     </div>
                     <br/>
                     <div className="service">
-                      <h3>Graphic Designing</h3>
+                      <h3>Contact</h3>
                       <p>I offer Logo designing, Poster and Flyer designing.
                          I guaruntee high quality and very beautiful graphic content.</p>
                     </div>
@@ -124,13 +149,7 @@ class About extends React.Component{
                 <Row>
                   <Col sm={8}>
                     <Row><Col><h5>Email</h5></Col></Row>
-                    <Row><Col><form className="form-control2" onSubmit={this.handleSubmit}>
-                      {/*<Row><Col><label>Name : </label></Col></Row>*/}
-                      <Row><Col><input type="text" placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
-                      <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
-                      <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
-                      <Row><Col>   <input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>
-                    </form></Col></Row>
+
                   </Col>
                   <Col sm={4}>
                     <Row><Col><br/></Col></Row>
@@ -139,16 +158,6 @@ class About extends React.Component{
                     <Row><Col><a href="mailto:samarthahm@gmail.com" target="_blank"><FontAwesomeIcon icon={faEnvelope} style={icon}></FontAwesomeIcon> <span style={icon}>/E-mail</span></a></Col></Row>
                   </Col>
                 </Row>
-                <br/>
-                  <Row><Col sm={2}><h2 className="text-xl">Skills</h2></Col>
-                      <Col sm={6}><FontAwesomeIcon icon={faBootstrap} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faReact} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faNodeJs} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faJava} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faPython} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon></Col></Row>
-                  <br/>
               </Container>
             </div>
           </section>
