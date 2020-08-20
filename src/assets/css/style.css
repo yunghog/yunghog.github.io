@@ -272,3 +272,15 @@ a{
   visibility: visible;
   opacity: 1;
 }
+.form-control2 input, textarea{
+  outline: none;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px;
+  font-size: 20px;
+}
+.form-control2 input:focus, textarea:focus{
+  border: 2px solid #e22;
+}

@@ -54,12 +54,6 @@ class Header extends React.Component{
                 <li className="nav-item" onClick={closeNav}><Link>Contact</Link></li>
               </ul>
             </Col>
-            <Col md={4}></Col>
-            {/*<Col md={4} className="red text-center">
-            <h2>Samartha</h2>
-            <h5>Developer & <br/>Graphic Designer</h5>
-            <img className="logo-nav" src={logo} alt="logo" style={{width:'50%'}}/>
-            </Col>*/}
           </Row>
           <br/><br/>
           <Row>

@@ -21,7 +21,6 @@ class About extends React.Component{
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-
   handleChange(evt) {
      this.setState({ [evt.target.name]: evt.target.value });
 
@@ -58,6 +57,7 @@ class About extends React.Component{
       duration: 1000,
       once: true
   });
+
     return (
           <section className="content-wrap fadeUp-anim">
             <div>
@@ -90,7 +90,7 @@ class About extends React.Component{
                 <br/>
                 <Row>
                   <Col md={4}>
-                    <div className="home-about cardy cell-left inverse">
+                    <div className="home-about cardy cell-left inverse"  data-aos="fade-right">
                       <h3>Frameworks</h3>
                       <p><FontAwesomeIcon icon={faBootstrap} style={icon}></FontAwesomeIcon>
                       <FontAwesomeIcon icon={faReact} style={icon}></FontAwesomeIcon>
@@ -104,60 +104,24 @@ class About extends React.Component{
                           <h3>Tools</h3>
                             <p><FontAwesomeIcon icon={faAtom} style={icon}></FontAwesomeIcon>
                             <FontAwesomeIcon icon={faGitAlt} style={icon}></FontAwesomeIcon>
-                            <FontAwesomeIcon icon={faBitbucket} style={icon}></FontAwesomeIcon>
-                            <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon></p>
+                            <FontAwesomeIcon icon={faBitbucket} style={icon}></FontAwesomeIcon></p>
                     </div>
                   </Col>
                   <Col md={8}>
-                    <div className="home-about cardy cell-right">
+                    <div className="home-about cardy cell-right" data-aos="fade-left">
                       <h3>Contact</h3>
                         <Row><Col><form className="form-control2" onSubmit={this.handleSubmit}>
                           {/*<Row><Col><label>Name : </label></Col></Row>*/}
-                          <Row><Col><input type="text" placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
+                          <Row><Col><input type="text"  placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
                           <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
                           <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
-                          <Row><Col>   <input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>
+                          {/*<Row><Col><input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>*/}
+                          <Row><Col className="text-center"><button type="submit"className="btn btn-1" >{this.state.btn}</button></Col></Row>
                         </form></Col></Row>
                     </div>
                   </Col>
                 </Row>
-                <Row>
-                  <Col>
-                    <h2 className="text-xl" id="service">Services</h2>
-                    <div className="service">
-                      <h3>Web development</h3>
-                      <p>I can create and host Websites and Web Applications.
-                      Using either MERN Stack or Bootstrap+Php+JS. I guaruntee a clean, error free and
-                      fully responsive web pages with beautiful frontend design. You can choose between
-                       various plans. Contact for plan details and any other queries</p>
-                    </div>
-                    <br/>
-                    <div className="service">
-                      <h3>Android App development</h3>
-                      <p>Currently I develop Apps based on Android web view</p>
-                    </div>
-                    <br/>
-                    <div className="service">
-                      <h3>Contact</h3>
-                      <p>I offer Logo designing, Poster and Flyer designing.
-                         I guaruntee high quality and very beautiful graphic content.</p>
-                    </div>
-                  </Col>
-                </Row>
-                <br/>
-                <Row id="contact"><Col><h2 className="text-xl">Contact</h2></Col></Row>
-                <Row>
-                  <Col sm={8}>
-                    <Row><Col><h5>Email</h5></Col></Row>
-
-                  </Col>
-                  <Col sm={4}>
-                    <Row><Col><br/></Col></Row>
-                    <Row><Col><a href="https://api.whatsapp.com/send?phone=918904460742" target="_blank"><FontAwesomeIcon icon={faWhatsapp} style={icon}></FontAwesomeIcon> <span style={icon}>/send text</span></a></Col></Row>
-                    <Row><Col><a href="https://instagram.com/samartha__" target="_blank"><FontAwesomeIcon icon={faInstagram} style={icon}></FontAwesomeIcon> <span style={icon}>/samartha__</span></a></Col></Row>
-                    <Row><Col><a href="mailto:samarthahm@gmail.com" target="_blank"><FontAwesomeIcon icon={faEnvelope} style={icon}></FontAwesomeIcon> <span style={icon}>/E-mail</span></a></Col></Row>
-                  </Col>
-                </Row>
+                <br/><br/>
               </Container>
             </div>
           </section>
