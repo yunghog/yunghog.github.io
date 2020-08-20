@@ -84,19 +84,15 @@ class About extends React.Component{
                   <Col md={6}>
                     <div className="home-about cardy cell-left">
                       <h3>Web Development</h3>
-                      <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
-                        and Engineering student at Jawaharlal Nehru National
-                      College of Engineering, Shimoga which is affilated to VTU.
-                       I will graduate by 2021.</p>
+                      <p className="para">Im familiar with MERN Stack (MongoDB, Express JS, React JS and Node JS),
+                        LAMP (Linux, Apache, MySQL and PHPMyAdmin) and Wordpress. For static websites I use React JS
+                      For dynamic websites most of the time I will go with LAMP. </p>
                     </div>
                   </Col>
                   <Col md={6}>
                     <div className="home-about cardy cell-right">
-                      <h3>Web Development</h3>
-                      <p className="para">My name is Samartha. Im from Sagar, Shimoga. At present im a final year Information Science
-                        and Engineering student at Jawaharlal Nehru National
-                      College of Engineering, Shimoga which is affilated to VTU.
-                       I will graduate by 2021.</p>
+                      <h3>Graphic Designing</h3>
+                      <p className="para">For all types of graphic designing works I usee Adobe Photoshop only.</p>
                     </div>
                   </Col>
                 </Row>
