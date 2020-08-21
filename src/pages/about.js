@@ -114,7 +114,7 @@ class About extends React.Component{
                           {/*<Row><Col><label>Name : </label></Col></Row>*/}
                           <Row><Col><input type="text"  placeholder="Name" name="name" onChange={this.handleChange}></input></Col></Row>
                           <Row><Col><input type="text" placeholder="Email ID" name="email" onChange={this.handleChange}></input></Col></Row>
-                          <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange}></textarea></Col></Row>
+                          <Row><Col><textarea type="text" placeholder="Query" name="query"  onChange={this.handleChange} rows="6"></textarea></Col></Row>
                           {/*<Row><Col><input type="submit" value={this.state.btn} className="btn btn-1" /></Col></Row>*/}
                           <Row><Col className="text-center"><button type="submit"className="btn btn-1" >{this.state.btn}</button></Col></Row>
                         </form></Col></Row>

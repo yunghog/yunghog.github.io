@@ -8,7 +8,6 @@ import Footer from './assets/components/footer';
 import Home from './pages/home';
 import About from './pages/about';
 import Project from './pages/project';
-import MS800hub from './pages/ms800hub';
 
 
 
