@@ -14,7 +14,7 @@ import Project from './pages/project';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+       <BrowserRouter basename="http://yunghog.github.io" || " ">
         <div>
           <Header/>
             <Switch>
