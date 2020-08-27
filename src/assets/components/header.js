@@ -9,6 +9,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 class Header extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      scrolled: false
+    };
+  }
+  componentDidMount(){
+    window.addEventListener('scroll', () => {
+      const isTop = window.scrollY<100;
+      if(isTop !== true){
+        this.setState({scrolled: true});
+      }
+      else{
+        this.setState({scrolled: false});
+      }
+    });
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll');
+  }
   render(){
     function openNav(){
       var nav = document.getElementById('nav-con');
@@ -24,7 +44,7 @@ class Header extends React.Component{
     }
     return (
       <div>
-      <header id="myHeader">
+      <header id="myHeader" className={this.state.scrolled ? 'sticky-header' : ''}>
         <Container>
           <Row>
             <Col xs={2}>

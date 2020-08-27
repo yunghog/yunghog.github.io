@@ -14,7 +14,7 @@ import Project from './pages/project';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter}>
+       <BrowserRouter>
         <div>
           <Header/>
             <Switch>

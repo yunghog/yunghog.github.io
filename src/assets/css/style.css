@@ -6,6 +6,11 @@ body{
   color: #222;
   overflow-x: hidden;
 }
+header{
+  transition: 1s ease;
+  width: 100%;
+  z-index: 25;
+}
 @font-face {
   font-family: 'monumental';
   src: url('../fonts/monumental.otf');
@@ -75,7 +80,7 @@ footer{
   }
 }
 .sticky-header{
-  position: sticky;
+  position: fixed;
   top: 0px;
   background-color: #222;
 }
