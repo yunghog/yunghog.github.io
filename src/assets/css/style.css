@@ -82,7 +82,8 @@ footer{
 .sticky-header{
   position: fixed;
   top: 0px;
-  background-color: #222;
+  /* background-color: #222; */
+  animation: .5s nav-anim;
 }
 .social-icons{
   font-size: 38px;
@@ -127,7 +128,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .nav-con{
   z-index: 100;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   visibility: hidden;
@@ -136,6 +137,17 @@ h1,h2,h3,h4,h5,h6{
   background-color: #222e;
   top:0px;
   padding-top: 20px;
+  overflow: hidden;
+}
+@keyframes nav-anim {
+  from{
+    /* position: absolute; */
+    top: -100px;
+  }
+  to{
+    /* position: fixed; */
+    top: 0px;
+  }
 }
 .close-btn{
   position: absolute;
