@@ -25,6 +25,9 @@ import design5 from '../assets/images/designs/design5.jpg';
 import design6 from '../assets/images/designs/design6.jpg';
 
 class Body extends React.Component {
+  componentDidMount(){
+    this.setState({home: true});
+  }
     render(){
       AOS.init({
         duration: 1000,
@@ -173,7 +176,10 @@ class Body extends React.Component {
           </Row>
           <Row>
             <Col data-aos="fade-down">
-              <Carousel responsive={responsive} >
+              <Carousel responsive={responsive}
+                autoPlay={true}
+                autoPlaySpeed={2000}
+                infinite={true}>
                 <div className="car-img">
                   <Image src={design6} alt={"yunghog"}/>
                   <div className="design-overlay">

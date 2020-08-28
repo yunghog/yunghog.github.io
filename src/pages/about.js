@@ -47,7 +47,9 @@ class About extends React.Component{
     });
      this.setState({btn: "send mail!!",name:'',email:'',query:''});
  }
-
+componentDidMount(){
+  this.setState({page:"about"});
+}
   render(){
     const icon={
       margin: '5px',

@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import { Container,Row,Col, Button, Image } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
 import AOS from "aos";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +23,9 @@ class Project extends React.Component {
 
 render() {
   return (
-    <h1>Hi</h1>
+    <section>
+
+    </section>
   );
 }
 }

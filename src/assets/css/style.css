@@ -41,7 +41,7 @@ header{
   color: #222;
 }
 .red{
-  color: #e22;
+  color: #e22 !important;
 }
 .list-a{
   font-family: 'monumental';

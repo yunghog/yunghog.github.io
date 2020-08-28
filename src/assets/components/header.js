@@ -12,11 +12,16 @@ class Header extends React.Component{
   constructor(){
     super();
     this.state = {
-      scrolled: false
+      scrolled: false,
+      home: true,
+      about: false,
+      project: false
     };
   }
   componentDidMount(){
-    window.addEventListener('scroll', () => {
+    var path = window.location.pathname;
+    console.log(path);
+    window.addEventListener('scroll', () =>{
       const isTop = window.scrollY<200;
       if(isTop !== true){
         this.setState({scrolled: true});
@@ -67,7 +72,7 @@ class Header extends React.Component{
           <Row>
             <Col md={4}>
               <ul className="nav-bar">
-                <li className="nav-item active" onClick={closeNav}><Link to="/">Home</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link to="/">Home</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/about">About</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/">Service</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/project">Projects</Link></li>
