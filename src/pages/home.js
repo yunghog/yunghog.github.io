@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
-import me from '../assets/images/imgMe.jpg';
+// import me from '../assets/images/imgMe.jpg';
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
 import imgMe from '../assets/images/weeknd-2.png';
 import branding from '../assets/images/branding.jpg';
-import webdev from '../assets/images/webdev.png';
+// import webdev from '../assets/images/webdev.png';
 
 // design images
 import design1 from '../assets/images/designs/design1.jpg';
