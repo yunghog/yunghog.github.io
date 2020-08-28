@@ -70,7 +70,7 @@ class Header extends React.Component{
                 <li className="nav-item active" onClick={closeNav}><Link to="/">Home</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/about">About</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/">Service</Link></li>
-                <li className="nav-item" onClick={closeNav}><Link to="/">Projects</Link></li>
+                <li className="nav-item" onClick={closeNav}><Link to="/project">Projects</Link></li>
                 <li className="nav-item" onClick={closeNav}><Link to="/">Contact</Link></li>
               </ul>
             </Col>
