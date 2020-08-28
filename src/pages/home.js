@@ -73,10 +73,10 @@ class Body extends React.Component {
               <Col md={5}>
                 <div className="image-con">
                   <div className="image-bg" data-aos="fade-left" data-aos-delay="200">
-                    <img src={bgShape}/>
+                    <Image src={bgShape}  alt={"yunghog"}/>
                   </div>
                   <div className="image-fg" data-aos="fade-left" data-aos-delay="600">
-                    <img src={fgAvatar}/>
+                    <Image src={fgAvatar}  alt={"yunghog"}/>
                   </div>
                 </div>
               </Col>
@@ -99,14 +99,14 @@ class Body extends React.Component {
               </Col>
               <Col md={3}>
                 <div className="home-about-img cardy cell-right" data-aos="fade-left">
-                  <img src={imgMe}/>
+                  <Image src={imgMe} alt={"yunghog"}/>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={5} className="text-center">
                 <div className="home-services-img cardy cell-left" data-aos="fade-left">
-                  <img src={branding}/>
+                  <Image src={branding} alt={"yunghog"}/>
                 </div>
               </Col>
             <Col md={7}>
@@ -175,37 +175,37 @@ class Body extends React.Component {
             <Col data-aos="fade-down">
               <Carousel responsive={responsive} >
                 <div className="car-img">
-                  <img src={design6}/>
+                  <Image src={design6} alt={"yunghog"}/>
                   <div className="design-overlay">
                     <h5>Logo for Astro Shankara</h5>
                   </div>
                 </div>
                 <div className="car-img">
-                  <img src={design5}/>
+                  <Image src={design5} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for Samnsady Customs</h5>
                     </div>
                 </div>
                 <div className="car-img">
-                  <img src={design3}/>
+                  <Image src={design3} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for MS800 Hub</h5>
                     </div>
                 </div>
                 <div className="car-img">
-                  <img src={design4}/>
+                  <Image src={design4} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for Insight Forum</h5>
                     </div>
                 </div>
                 <div className="car-img">
-                  <img src={design2}/>
+                  <Image src={design2} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>DP for my SoundCloud</h5>
                     </div>
                 </div>
                 <div className="car-img">
-                  <img src={design1}/>
+                  <Image src={design1} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for TechZone 2020</h5>
                     </div>
