@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css';
-import logo from '../images/logo.png';
+// import logo from '../images/logo.png';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";

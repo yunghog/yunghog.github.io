@@ -301,3 +301,32 @@ a{
 .form-control2 input:focus, textarea:focus{
   border: 2px solid #e22;
 }
+
+/* project layout */
+.proj-mockup{
+  text-align: left !important;
+  padding: 100px 0 0 0;
+  margin: 10px;
+}
+.proj-mockup img{
+  width: 100%;
+}
+.proj-desc-con{
+  position: relative;
+}
+.proj-desc-con img{
+  border-radius: 20px;
+  opacity: .5;
+  width: 90%;
+}
+.proj-desc{
+  max-width: 60%;
+  border-radius: 20px;
+  color: #eee;
+  z-index: 30;
+  right: 0px;
+  top: 50px;
+  position: absolute;
+  background-color: #e22;
+  padding: 10px;
+}

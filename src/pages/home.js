@@ -89,8 +89,8 @@ class Body extends React.Component {
             <Row>
               <Col md={8}>
                 <div className="home-about cardy cell-left" data-aos="fade-right">
+                  <h3>About</h3>
                   <p className="para">
-                    <h3>About</h3>
                     Im a 21 yo freelance fullstack Developer, Graphic Designer and Music Producer based in Sagar.
                     I have experience in making websites, logo and poster designing .Im very passionate
                     and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
