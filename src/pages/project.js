@@ -6,7 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {faReact, faNodeJs, faBootstrap, faJs, faPhp} from "@fortawesome/free-brands-svg-icons";
 import ms800hub from '../assets/images/projects/ms800hub.jpg';
 import ms800hubMock from '../assets/images/projects/ms800hubMockup.png';
 
@@ -40,6 +40,10 @@ render() {
       slidesToSlide: 1 // optional, default to 1.
     }
   };
+  const icon = {
+    fontSize: '42px',
+    padding: '5px'
+  };
   return (
     <section>
       <Container>
@@ -62,12 +66,17 @@ render() {
                   <Col md={7}>
                     <div className="proj-desc-con">
                       <Image src={ms800hub}/>
-                      <div className="proj-desc">
+                      <div className="proj-desc cardy inverse">
                         <h3>MS800Hub</h3>
                         <p>Web Application | LAMP Stack</p>
                         <p>
-                          MS800 Hub is an automotive club website. It is a small social media for car enthusiast. Car enthusiasts can sign up and post pictures of cars, post articles or their build details in blog section.
+                          MS800 Hub is an automotive club website. It is a small social media for car
+                           enthusiast. Car enthusiasts can sign up and post pictures of cars, post articles
+                           or their build details in blog section.
                         </p>
+                        <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
+                        <FontAwesomeIcon style={icon} icon={faJs}></FontAwesomeIcon>
+                      <FontAwesomeIcon style={icon} icon={faPhp}></FontAwesomeIcon></p>
                       </div>
                     </div>
                   </Col>
