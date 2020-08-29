@@ -26,7 +26,6 @@ import design6 from '../assets/images/designs/design6.jpg';
 
 class Body extends React.Component {
   componentDidMount(){
-    this.setState({home: true});
   }
     render(){
       AOS.init({
