@@ -316,7 +316,6 @@ a{
 }
 .proj-desc-con img{
   border-radius: 20px;
-  opacity: .5;
   width: 90%;
   box-shadow: 10px 10px 15px #5555;
 }
@@ -328,4 +327,23 @@ a{
   top: 50px;
   position: absolute;
   padding: 30px;
+}
+@media screen and (max-width: 768px) {
+  .proj-desc-con{
+    margin: 5px 0px 30px 0px;
+    display: block;
+  }
+  .proj-desc-con img{
+    width: 100%;
+    position: absolute;
+  }
+  .proj-desc{
+    left: 10%;
+    top: 50px;
+    position: relative;
+    max-width: 80%;
+  }
+  .proj-mockup{
+    padding: 10px;
+  }
 }
