@@ -1,31 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d3b0c7c32d43b00aa998e81e3c6a3aac",
+    "revision": "29c7e570a14808c3a5ac6b1d149f6ef3",
     "url": "/index.html"
   },
   {
-    "revision": "52aceec8b8eea4194ab5",
+    "revision": "aee5bce52527ed8eda7c",
     "url": "/static/css/2.95f0d2b7.chunk.css"
   },
   {
-    "revision": "4bb14d2c9986502429cb",
-    "url": "/static/css/main.6ef562c2.chunk.css"
+    "revision": "7db2481f50c63db44ca5",
+    "url": "/static/css/main.2031dcf5.chunk.css"
   },
   {
-    "revision": "52aceec8b8eea4194ab5",
-    "url": "/static/js/2.f7c5e4a8.chunk.js"
+    "revision": "aee5bce52527ed8eda7c",
+    "url": "/static/js/2.8771e1a0.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/static/js/2.f7c5e4a8.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.8771e1a0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4bb14d2c9986502429cb",
-    "url": "/static/js/main.a1f87ac3.chunk.js"
+    "revision": "7db2481f50c63db44ca5",
+    "url": "/static/js/main.5827cf80.chunk.js"
   },
   {
     "revision": "62a1ce49e98b103ae60a",
     "url": "/static/js/runtime-main.2385f6ea.js"
+  },
+  {
+    "revision": "cc83ded9c362c4778a46236e05a4c552",
+    "url": "/static/media/adityaAuto.cc83ded9.jpg"
+  },
+  {
+    "revision": "37f8a99b173d283c5d3a1b1cf3b15037",
+    "url": "/static/media/adityaAutoMockup.37f8a99b.png"
   },
   {
     "revision": "03f1c4671b69685e87e711fa3814672c",
@@ -60,10 +68,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/design6.345f6170.jpg"
   },
   {
-    "revision": "631a92653022858574f0935efdfcd552",
-    "url": "/static/media/imgMe.631a9265.jpg"
-  },
-  {
     "revision": "7056b0fbd80b0a95257776e9dce94cb8",
     "url": "/static/media/logo.7056b0fb.png"
   },
@@ -72,24 +76,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/monumental.73b9994b.otf"
   },
   {
-    "revision": "171cde0f131cf08dda34916812269244",
-    "url": "/static/media/proj1.171cde0f.jpg"
+    "revision": "f9c867222019d2ee96f77ebef692bcff",
+    "url": "/static/media/ms800hub.f9c86722.jpg"
   },
   {
-    "revision": "2ae72d657a4eb993e163863a59c62615",
-    "url": "/static/media/proj2.2ae72d65.jpg"
-  },
-  {
-    "revision": "d3664accec04dd98f6c7c085ec59a394",
-    "url": "/static/media/proj3.d3664acc.jpg"
-  },
-  {
-    "revision": "80f73d03b205bd74be5686ef40dcc61e",
-    "url": "/static/media/proj4.80f73d03.jpg"
-  },
-  {
-    "revision": "8062b29d2416257d16c8e82713a90b4c",
-    "url": "/static/media/proj5.8062b29d.jpg"
+    "revision": "33fc8f62bc18beb20dde45ba78fed6cb",
+    "url": "/static/media/ms800hubMockup.33fc8f62.png"
   },
   {
     "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
@@ -106,10 +98,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "12108809f49c49bcdc126dcecc938761",
     "url": "/static/media/vidalok.12108809.otf"
-  },
-  {
-    "revision": "ac127ccf071b9662e01eb6976485ccb0",
-    "url": "/static/media/webdev.ac127ccf.png"
   },
   {
     "revision": "8a5c75e2017404a816e2cac016befa83",
