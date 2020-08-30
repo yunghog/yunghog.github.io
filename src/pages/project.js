@@ -15,7 +15,7 @@ class Project extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
+      imageToggle: 1
     };
 }
 
@@ -45,6 +45,21 @@ render() {
     fontSize: '42px',
     padding: '5px'
   };
+  var imageToggle=1
+  function toggleLayer(e){
+  console.log(e.target);
+  if(imageToggle===0){
+    e.target.style.zIndex="29";
+    e.target.style.transform="scale(1)";
+    imageToggle=1;
+  }
+  else{
+    e.target.style.zIndex="40";
+    e.target.style.transform="scale(1.2)";
+    imageToggle=0;
+  }
+
+  }
   return (
     <section>
       <Container>
@@ -66,7 +81,7 @@ render() {
                 <Row noGutters>
                   <Col md={7}>
                     <div className="proj-desc-con">
-                      <Image src={ms800hub}/>
+                      <Image src={ms800hub} onClick={toggleLayer} />
                       <div className="proj-desc cardy inverse">
                         <h3>MS800Hub</h3>
                         <p>Web Application | LAMP Stack</p>
@@ -78,6 +93,7 @@ render() {
                         <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
                         <FontAwesomeIcon style={icon} icon={faJs}></FontAwesomeIcon>
                       <FontAwesomeIcon style={icon} icon={faPhp}></FontAwesomeIcon></p>
+                      <a href="http://ms800hub.rf.gd" target="_blank" rel="noopener noreferrer"><button className="btn btn-3">visit</button></a>
                       </div>
                     </div>
                   </Col>
@@ -92,7 +108,7 @@ render() {
                 <Row noGutters>
                   <Col md={7}>
                     <div className="proj-desc-con">
-                      <Image src={adityaAuto}/>
+                      <Image src={adityaAuto} onClick={toggleLayer}/>
                       <div className="proj-desc cardy inverse">
                         <h3>Aditya Automobiles</h3>
                         <p>Website | LAMP Stack</p>
@@ -104,6 +120,7 @@ render() {
                         <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
                         <FontAwesomeIcon style={icon} icon={faJs}></FontAwesomeIcon>
                       <FontAwesomeIcon style={icon} icon={faPhp}></FontAwesomeIcon></p>
+                      <a href="http://adityaautomobiles.rf.gd" target="_blank" rel="noopener noreferrer"><button className="btn btn-3">visit</button></a>
                       </div>
                     </div>
                   </Col>

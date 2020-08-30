@@ -304,17 +304,20 @@ a{
 
 /* project layout */
 .proj-mockup{
+  z-index: 35;
   text-align: left !important;
-  padding: 100px 0 0 0;
-  margin: 10px;
+  padding: 100px 0 100px 0;
 }
 .proj-mockup img{
   width: 100%;
 }
 .proj-desc-con{
+  padding-bottom: 30px;
   position: relative;
 }
 .proj-desc-con img{
+  position: absolute;
+  transition: 1s;
   border-radius: 20px;
   width: 90%;
   box-shadow: 10px 10px 15px #5555;
@@ -335,7 +338,6 @@ a{
   }
   .proj-desc-con img{
     width: 100%;
-    position: absolute;
   }
   .proj-desc{
     left: 10%;
@@ -346,4 +348,15 @@ a{
   .proj-mockup{
     padding: 10px;
   }
+}
+.react-multi-carousel-list{
+  /* overflow: visible !important; */
+}
+.btn-3{
+  color: #e22;
+  background-color: #eee;
+  border: 2px solid #eee;
+}
+.btn-3:hover{
+  box-shadow: 0 0 15px #eee;
 }
