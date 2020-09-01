@@ -11,6 +11,8 @@ import ms800hub from '../assets/images/projects/ms800hub.jpg';
 import ms800hubMock from '../assets/images/projects/ms800hubMockup.png';
 import adityaAuto from '../assets/images/projects/adityaAuto.jpg';
 import adityaAutoMockup from '../assets/images/projects/adityaAutoMockup.png';
+import linkTree from '../assets/images/projects/linkTree.jpg';
+import linkTreeMockup from '../assets/images/projects/linkTreeMockup.png';
 class Project extends React.Component {
   constructor(props){
     super(props);
@@ -127,6 +129,40 @@ render() {
                   <Col md={5}>
                     <div className="proj-mockup cell-right">
                       <Image src={adityaAutoMockup}/>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+              <div>
+                <Row noGutters>
+                  <Col md={7}>
+                    <div className="proj-desc-con">
+                      <Image src={linkTree} onClick={toggleLayer}/>
+                      <div className="proj-desc cardy inverse">
+                        <h3>Custom Link-Tree</h3>
+                        <p>Website | React JS</p>
+                        <p>
+                          MS800 Hub is an automotive club website. It is a small social media for car
+                           enthusiast. Car enthusiasts can sign up and post pictures of cars, post articles
+                           or their build details in blog section.
+                        </p>
+                        <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
+                        <FontAwesomeIcon style={icon} icon={faReact}></FontAwesomeIcon>
+                        <FontAwesomeIcon style={icon} icon={faNodeJs}></FontAwesomeIcon></p>
+                      <a href="https://yunghog.github.io/link-tree" target="_blank" rel="noopener noreferrer"><button className="btn btn-3">visit</button></a>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col md={5}>
+                    <div className="proj-mockup cell-right">
+                      <div className="cardy ">
+                        <ul>
+                          <li>Client : ---</li>
+                          <li>Client : ---</li>
+                          <li>Client : ---</li>
+                        </ul>
+                      </div>
+                      <Image src={linkTreeMockup}/>
                     </div>
                   </Col>
                 </Row>
