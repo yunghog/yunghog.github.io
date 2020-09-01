@@ -331,6 +331,14 @@ a{
   position: absolute;
   padding: 30px;
 }
+.proj-mockup ul{
+  margin: 10px;
+  list-style-type: none;
+  font-family: 'monumental';
+  padding: 30px;
+  color: #e22;
+  line-height: 1.5;
+}
 @media screen and (max-width: 768px) {
   .proj-desc-con{
     margin: 5px 0px 30px 0px;

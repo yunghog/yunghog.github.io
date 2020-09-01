@@ -158,8 +158,10 @@ render() {
                       <div className="cardy ">
                         <ul>
                           <li>Client : ---</li>
-                          <li>Client : ---</li>
-                          <li>Client : ---</li>
+                          <li>Product : Webpage</li>
+                          <li>Tools : <FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
+                          <FontAwesomeIcon style={icon} icon={faReact}></FontAwesomeIcon>
+                          <FontAwesomeIcon style={icon} icon={faNodeJs}></FontAwesomeIcon></li>
                         </ul>
                       </div>
                       <Image src={linkTreeMockup}/>
