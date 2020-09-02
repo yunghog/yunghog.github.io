@@ -78,7 +78,10 @@ render() {
             <Carousel responsive={responsive}
               autoPlay={true}
               autoPlaySpeed={7000}
-              infinite={true}>
+              infinite={true}
+              swipeable={true}
+              arrows={false}
+              draggable={true}>
               <div>
                 <Row noGutters>
                   <Col md={7}>
@@ -101,6 +104,13 @@ render() {
                   </Col>
                   <Col md={5}>
                     <div className="proj-mockup cell-right">
+                      <div className="cardy ">
+                        <ul>
+                          <li>Client : MS800Hub</li>
+                          <li>Product : Website</li>
+                          <li>Role : Fullstack Development </li>
+                        </ul>
+                      </div>
                       <Image src={ms800hubMock}/>
                     </div>
                   </Col>
@@ -128,6 +138,13 @@ render() {
                   </Col>
                   <Col md={5}>
                     <div className="proj-mockup cell-right">
+                      <div className="cardy ">
+                        <ul>
+                          <li>Client : Aditya Automobiles (Suzuki Arena)</li>
+                          <li>Product : Website</li>
+                          <li>Role : Web Development </li>
+                        </ul>
+                      </div>
                       <Image src={adityaAutoMockup}/>
                     </div>
                   </Col>
@@ -159,9 +176,7 @@ render() {
                         <ul>
                           <li>Client : ---</li>
                           <li>Product : Webpage</li>
-                          <li>Tools : <FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
-                          <FontAwesomeIcon style={icon} icon={faReact}></FontAwesomeIcon>
-                          <FontAwesomeIcon style={icon} icon={faNodeJs}></FontAwesomeIcon></li>
+                          <li>Role : Frontend Development </li>
                         </ul>
                       </div>
                       <Image src={linkTreeMockup}/>
