@@ -125,9 +125,9 @@ render() {
                         <h3>Aditya Automobiles</h3>
                         <p>Website | LAMP Stack</p>
                         <p>
-                          Aditya Automobiles is a well known Suzuki Arena (Maruti Suzuki authorized workshop in Sagar town).
-                          I made them a website to support their business and provide customers with online service booking system
-                          to book an appointment for their car.
+                          MS800 Hub is an automotive club website. It is a small social media for car
+                           enthusiast. Car enthusiasts can sign up and post pictures of cars, post articles
+                           or their build details in blog section.
                         </p>
                         <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
                         <FontAwesomeIcon style={icon} icon={faJs}></FontAwesomeIcon>
@@ -159,8 +159,9 @@ render() {
                         <h3>Custom Link-Tree</h3>
                         <p>Website | React JS</p>
                         <p>
-                          Link tree is a webpage which contains all links to the profiles of various platform of the client.
-                          I could make a custome Link Tree webpage based on clients requirement.
+                          MS800 Hub is an automotive club website. It is a small social media for car
+                           enthusiast. Car enthusiasts can sign up and post pictures of cars, post articles
+                           or their build details in blog section.
                         </p>
                         <p><FontAwesomeIcon style={icon} icon={faBootstrap}></FontAwesomeIcon>
                         <FontAwesomeIcon style={icon} icon={faReact}></FontAwesomeIcon>
