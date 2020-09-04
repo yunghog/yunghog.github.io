@@ -16,9 +16,7 @@ import linkTreeMockup from '../assets/images/projects/linkTreeMockup.png';
 class Project extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      imageToggle: 1
-    };
+    this.state = {};
 }
 
 render() {
