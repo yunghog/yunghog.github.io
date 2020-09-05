@@ -18,7 +18,6 @@ class Project extends React.Component {
     super(props);
     this.state = {};
 }
-
 render() {
   AOS.init({
     duration: 1000,
