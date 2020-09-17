@@ -19,12 +19,11 @@ class App extends Component {
         <div>
           <Header/>
             <Switch>
-             <Route exact path="/"><Home/></Route>
-             <Route path="/about"><About/></Route>
-             <Route path="/project"><Project/></Route>
-             <Route path="/resume"><Resume/>/></Route>
+             <Route exact path="/"><Home/><Footer/></Route>
+             <Route path="/about"><About/><Footer/></Route>
+             <Route path="/project"><Project/><Footer/></Route>
+             <Route path="/resume"><Resume/></Route>
            </Switch>
-             <Footer/>
         </div>
       </BrowserRouter>
     );

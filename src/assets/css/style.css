@@ -193,7 +193,7 @@ a{
   }
 }
 .cardy{
-  box-shadow: 5px 5px 20px #5555;
+  box-shadow: 10px 10px 20px #8885;
   border-radius: 20px;
 }
 .cell-left, .cell-right{
@@ -322,6 +322,12 @@ a{
   width: 90%;
   box-shadow: 10px 10px 15px #5555;
 }
+.proj-img{
+  width: 90%;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 20px #8885;
+}
 .proj-desc{
   max-width: 60%;
   border-radius: 20px;
@@ -329,6 +335,11 @@ a{
   right: 0px;
   top: 50px;
   position: absolute;
+  padding: 30px;
+}
+.proj-desc2{
+  width: 100%;
+  border-radius: 20px;
   padding: 30px;
 }
 .proj-mockup ul{
@@ -353,6 +364,12 @@ a{
     position: relative;
     max-width: 80%;
   }
+  .proj-desc1{
+    left: 10%;
+    top: 50px;
+    position: relative;
+    width: 100%;
+  }
   .proj-mockup{
     padding: 10px;
   }
@@ -364,4 +381,21 @@ a{
 }
 .btn-3:hover{
   box-shadow: 0 0 15px #eee;
+}
+.component{
+  padding-top: 2rem;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.carousel-container{
+  width: 100%;
+}
+.component::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.component {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

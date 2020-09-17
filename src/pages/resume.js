@@ -1,74 +1,123 @@
 import React from 'react';
-import { Container,Row,Col, Image } from 'react-bootstrap';
+import { Container,Row,Col, Image  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
-import CountUp from 'react-countup';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import ReactPageScroller from 'react-page-scroller';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
-// import me from '../assets/images/imgMe.jpg';
-import bgShape from '../assets/images/bg-shape.png';
-import fgAvatar from '../assets/images/weeknd-bw.png';
-import imgMe from '../assets/images/weeknd-2.png';
-import branding from '../assets/images/branding.jpg';
-// import webdev from '../assets/images/webdev.png';
-
-// design images
-import design1 from '../assets/images/designs/design1.jpg';
-import design2 from '../assets/images/designs/design2.jpg';
-import design3 from '../assets/images/designs/design3.jpg';
-import design4 from '../assets/images/designs/design4.jpg';
-import design5 from '../assets/images/designs/design5.jpg';
-import design6 from '../assets/images/designs/design6.jpg';
-
+import {ProjectCarousel} from '../assets/components/projectsCarousel';
 class Resume extends React.Component {
+  constructor(props) {
+  super(props);
+  this.state = { currentPage: null };
+}
+handlePageChange = number => {
+this.setState({ currentPage: number }); // set currentPage number, to reset it from the previous selected.
+};
   componentDidMount(){
+    document.getElementById('myHeader').style.position='fixed';
   }
     render(){
       AOS.init({
         duration: 1000,
         once: true
     });
+    document.getElementById('root').style.paddingBottom='0px';
     return (
-     <div>
-       <section className="content-wrap">
-          <Container fluid>
-            <Row>
-              <Col md={1}></Col>
-                <Col md={6}>
-                  <div className="main-text" data-aos="fade-right">
-                    <h1 className="text-xxl"> Hello<span className="red">.</span></h1>
-                    <h2 className="text-xl"><span className="red">I am</span> Samartha</h2>
-                    <Row>
-                      <Col xs={2} className="text-right">
-                        <h2 className="red" style={{fontSize:'3rem'}}><FontAwesomeIcon icon={faTerminal}/></h2>
-                      </Col>
-                      <Col xs={8}>
-                        <ul className="list-a">
-                          <li>Fullstack Developer &</li>
-                          <li>Graphic Designer <span className="anim-blink red">|</span></li>
-                        </ul>
-                      </Col>
-                    </Row>
-                  </div>
+      <div>
+        <section style={{minHeight:'100vh'}}>
+          <ReactPageScroller
+            pageOnChange={this.handlePageChange}
+            customPageNumber={this.state.currentPage}
+            renderAllPagesOnFirstRender
+            >
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h1 className="text-xxl"> Resume<span className="red">.</span></h1>
                 </Col>
-                <Col md={5}>
-                  <div className="image-con">
-                    <div className="image-bg" data-aos="fade-left" data-aos-delay="200">
-                      <Image src={bgShape}  alt={"yunghog"}/>
-                    </div>
-                    <div className="image-fg" data-aos="fade-left" data-aos-delay="600">
-                      <Image src={fgAvatar}  alt={"yunghog"}/>
-                    </div>
+              </Row>
+              <br/>
+              <Row className="">
+                <Col md={8}>
+                  <div className="home-about cardy" data-aos="fade-right">
+                    <h3>Profile Sumary</h3>
+                    <p className="para">Seeking an entry-level opportunity with an esteemed organization
+                    where I can utilize my skills and enhance learning in the field of work. Capable
+                    of mastering new technologies. Fields of interests are Machine Learning,
+                    Artificial Intelligence and Full-Stack Development. Highly skilled at Web
+                    Development and Python programming.</p>
                   </div>
                 </Col>
               </Row>
             </Container>
-          </section>
-     </div>
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h2>Experience<span className="red">.</span></h2>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col md={8}>
+                  <div className="home-about cardy">
+                    <h3>Full-Stack Development</h3>
+                    <h5>Intern, Ekathva Innovations Pvt. LTD, Shimoga</h5>
+                    <p className="para red">2019 - Present </p>
+                    <p className="para">Designed, implemented and monitored web pages and sites for continuous improvement.
+                       Used programming capabilities in PHP, SQL and JavaScript and other languages as
+                       needed. Used various technologies, including Bootstrap to make code repairs and
+                       optimize corporate websites.</p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h2> Qualification<span className="red">.</span></h2>
+                </Col>
+              </Row>
+              <br/>
+              <Row>
+                <Col md={6}>
+                  <div className="home-about cardy">
+                    <h5>Bachelor of Engineering, ISE</h5>
+                    <p>Jawaharlal Nehru National College of Engineering, Shimoga</p>
+                    <p className="red">2017 - 21</p>
+                    <p>7.5 CGPA</p>
+                  </div>
+                </Col>
+                <Col md={6}>
+                  <div className="home-about cardy cell-right text-left">
+                    <h5>Senior Secondary</h5>
+                    <p>GPUC, Sagar</p>
+                    <p className="red">2016 - 17</p>
+                    <p>86%</p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h1 className="text-xxl">Skills<span className="red">.</span></h1>
+                </Col>
+              </Row>
+            </Container>
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h1 className="text-xxl"> Projects<span className="red">.</span></h1>
+                </Col>
+              </Row>
+              <ProjectCarousel/>
+            </Container>
+          </ReactPageScroller>
+        </section>
+      </div>
       );
     }
 }
