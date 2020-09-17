@@ -76,6 +76,7 @@ class Header extends React.Component{
                 <li className="nav-item" onClick={closeNav}><NavLink to="/about"  activeClassName="red">About</NavLink></li>
                 {/*<li className="nav-item" onClick={closeNav}><NavLink exact to="/"  activeClassName="red">Service</NavLink></li>*/}
                 <li className="nav-item" onClick={closeNav}><NavLink to="/project"  activeClassName="red">Projects</NavLink></li>
+                <li className="nav-item" onClick={closeNav}><NavLink to="/resume"  activeClassName="red">Resume</NavLink></li>
                 {/*<li className="nav-item" onClick={closeNav}><NavLink exact to="/"  activeClassName="red">Contact</NavLink></li>*/}
               </ul>
             </Col>

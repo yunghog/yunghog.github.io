@@ -8,6 +8,7 @@ import Footer from './assets/components/footer';
 import Home from './pages/home';
 import About from './pages/about';
 import Project from './pages/project';
+import Resume from './pages/resume';
 
 
 
@@ -21,6 +22,7 @@ class App extends Component {
              <Route exact path="/"><Home/></Route>
              <Route path="/about"><About/></Route>
              <Route path="/project"><Project/></Route>
+             <Route path="/resume"><Resume/>/></Route>
            </Switch>
              <Footer/>
         </div>
