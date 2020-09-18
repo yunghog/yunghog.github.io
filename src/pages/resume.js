@@ -11,7 +11,7 @@ import { faCss3, faAngular, faHtml5,
         faJs, faPhp, faGitAlt, faBitbucket,
          faInstagram, faWhatsapp, faPython
        } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope ,faAtom, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope ,faAtom, faDatabase, faDownload } from "@fortawesome/free-solid-svg-icons";
 import {ProjectCarousel} from '../assets/components/projectsCarousel';
 class Resume extends React.Component {
   constructor(props) {
@@ -188,6 +188,8 @@ this.setState({ currentPage: number });
                       <li>HackerRank certification for Python programming skills</li>
                     </ul>
                   </div>
+                  <br/>
+                  <a className="btn btn-1 btn-lg" href="https://drive.google.com/file/d/1KsPZvtUke-FAwhkqHFEDcLDrePgRXBPD/view?usp=sharing" download target="_blank"><FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>   Download my resume</a>
                 </Col>
               </Row>
             </Container>
