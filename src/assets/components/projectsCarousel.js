@@ -19,8 +19,29 @@ import linkTreeMockup from '../images/projects/linkTreeMockup.png';
 export class ProjectCarousel extends React.Component {
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      height: 0,
+      width: 0
+    };
+    window.addEventListener("resize", this.update);
 }
+componentDidMount(){
+  this.update();
+}
+update = () => {
+  this.setState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  });
+};
+center=()=>{
+  if(this.state.width>=720){
+    return true;
+  }
+  else{
+    return false;
+  }
+};
 render() {
   AOS.init({
     duration: 1000,
@@ -60,8 +81,8 @@ render() {
     e.target.style.transform="scale(1.2)";
     imageToggle=0;
   }
-
   }
+
   return (
     <section>
       <Container fluid>
@@ -73,7 +94,7 @@ render() {
               infinite={true}
               containerClass="carousel-container"
               swipeable={true}
-              centerMode={true}>
+              centerMode={this.center()}>
               <div>
                 {/*<Image src={ms800hub} className="proj-img d-none d-sm-none d-md-block d-lg-block"/>*/}
                 <Image src={ms800hubp} className="proj-img"/>

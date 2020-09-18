@@ -389,6 +389,7 @@ a{
 }
 .carousel-container{
   width: 100%;
+  overflow-y: visible;
 }
 .component::-webkit-scrollbar {
   display: none;

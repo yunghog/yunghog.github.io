@@ -6,25 +6,37 @@ import ReactPageScroller from 'react-page-scroller';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTerminal } from "@fortawesome/free-solid-svg-icons";
+import { faCss3, faAngular, faHtml5,
+        faReact, faNodeJs, faBootstrap,
+        faJs, faPhp, faGitAlt, faBitbucket,
+         faInstagram, faWhatsapp, faPython
+       } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope ,faAtom, faDatabase } from "@fortawesome/free-solid-svg-icons";
 import {ProjectCarousel} from '../assets/components/projectsCarousel';
 class Resume extends React.Component {
   constructor(props) {
   super(props);
-  this.state = { currentPage: null };
-}
+  this.state = {currentPage: null};
+  }
 handlePageChange = number => {
-this.setState({ currentPage: number }); // set currentPage number, to reset it from the previous selected.
+this.setState({ currentPage: number });
 };
   componentDidMount(){
     document.getElementById('myHeader').style.position='fixed';
+    document.getElementById('root').style.paddingBottom='0px';
+  }
+  componentDidUnmount(){
+    document.getElementById('root').style.paddingBottom='20rem';
   }
     render(){
+      const icon={
+        margin: '5px',
+        fontSize: '35px'
+      };
       AOS.init({
         duration: 1000,
         once: true
     });
-    document.getElementById('root').style.paddingBottom='0px';
     return (
       <div>
         <section style={{minHeight:'100vh'}}>
@@ -100,10 +112,44 @@ this.setState({ currentPage: number }); // set currentPage number, to reset it f
                 </Col>
               </Row>
             </Container>
-            <Container className="component">
+            <Container id="skills" className="component">
               <Row>
                 <Col md={12}>
                   <h1 className="text-xxl">Skills<span className="red">.</span></h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={4}>
+                  <div className="home-about cardy inverse cell-right text-left">
+                    <h3>Frameworks</h3>
+                    <p><FontAwesomeIcon icon={faBootstrap} style={icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faReact} style={icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faNodeJs} style={icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faAngular} style={icon}></FontAwesomeIcon></p>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className="cardy home-about cell-left text-left">
+                    <h3>Languages</h3>
+                      <p><FontAwesomeIcon icon={faCss3} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faHtml5} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faJs} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faPython} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faPhp} style={icon}></FontAwesomeIcon>
+                      <span style={{fontFamily:'monumental',color:'#e22'}}>C++</span></p>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={4}></Col>
+                <Col md={4}>
+                  <div className="cardy home-about cell-left text-left">
+                    <h3>Tools</h3>
+                      <p><FontAwesomeIcon icon={faAtom} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faGitAlt} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faDatabase} style={icon}></FontAwesomeIcon>
+                      <FontAwesomeIcon icon={faBitbucket} style={icon}></FontAwesomeIcon></p>
+                  </div>
                 </Col>
               </Row>
             </Container>
