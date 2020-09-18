@@ -161,6 +161,36 @@ this.setState({ currentPage: number });
               </Row>
               <ProjectCarousel/>
             </Container>
+            <Container className="component">
+              <Row>
+                <Col md={12}>
+                  <h1 className="text-xxl">Others<span className="red">.</span></h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={6}>
+                  <div className="cardy home-about cell-right text-left">
+                    <h3>Trainings and Workshops<span className="red">.</span></h3>
+                    <ul>
+                      <li>Hybrid mobile application development using Ionic framework</li>
+                      <li>Basics of ethical hacking</li>
+                      <li>Workshop on basics of Machine Learning hosted by AWS</li>
+                      <li>Freelancing (Web Development and Graphic Designing)</li>
+                    </ul>
+                  </div>
+                </Col>
+                <Col md={6}>
+                  <div className="cardy home-about cell-left">
+                    <h3>Awards and Certifications<span className="red">.</span></h3>
+                    <ul>
+                      <li>Gold level in HackerRank Python coding challenges</li>
+                      <li>Basics of ethical hacking</li>
+                      <li>HackerRank certification for Python programming skills</li>
+                    </ul>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
           </ReactPageScroller>
         </section>
       </div>
