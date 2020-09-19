@@ -37,7 +37,7 @@ render() {
     mobile: {
       breakpoint: { max: 768, min: 0 },
       items: 1,
-      slidesToSlide: 1 // optional, default to 1.
+      slidesToSlide: 1
     }
   };
   const icon = {
