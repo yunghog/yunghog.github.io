@@ -100,7 +100,7 @@ class Body extends React.Component {
                 </div>
               </Col>
               <Col md={3}>
-                <div className="home-about-img cardy cell-right" data-aos="fade-left">
+                <div className="home-about-img cardy cell-right d-none d-sm-none d-md-block" data-aos="fade-left">
                   <Image src={imgMe} alt={"yunghog"}/>
                 </div>
               </Col>
@@ -115,11 +115,13 @@ class Body extends React.Component {
               <div className="home-about cardy cell-right" data-aos="fade-right">
                 <h3>Services</h3>
                 <ul>
-                  {/*<li>Branding your business, which includes designing logo, flyers and creating website</li>*/}
-                  <li>Creating websites using LAMP or MERN Stack technologies and hosting them</li>
-                  <li>Graphic Designing, designing logo, posters, flyers, banners and also cover arts for album</li>
+                  <li>Website/Web Application Development</li>
+                  <li>Fullstack development (LAMP/MERN)</li>
+                  <li>Website domain registration and hosting</li>
+                  <li>Logo Designing</li>
+                  <li>Poster/Flyer/Banner designing</li>
+                  <li>Album cover art designing</li>
                 </ul>
-                <br/><Link to='/about' className="red"><button className="btn btn-1">services</button></Link>
               </div>
             </Col>
           </Row>

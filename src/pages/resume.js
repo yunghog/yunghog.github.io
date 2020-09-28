@@ -179,7 +179,7 @@ this.setState({ currentPage: number });
                     </ul>
                   </div>
                 </Col>
-                <Col md={6}>
+                <Col md={6} className="text-center mb-3">
                   <div className="cardy home-about cell-left">
                     <h3>Awards and Certifications<span className="red">.</span></h3>
                     <ul>
