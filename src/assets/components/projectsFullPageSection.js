@@ -19,7 +19,7 @@ class Project extends React.Component {
 render() {
   AOS.init({duration: 1000,once: true});
   return (
-    <section>
+    <section className="full-page-section" style="{{backgroundColor: '#e22'}}">
 
     </section>
     );
