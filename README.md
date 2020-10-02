@@ -1,1 +1,1 @@
-My portfolio website made with react js
+Made with react js
