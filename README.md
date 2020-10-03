@@ -1,1 +1,1 @@
-Made with react js
+Made with React JS
