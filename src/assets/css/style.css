@@ -406,7 +406,7 @@ a{
   width: 100%;
   background-blend-mode: soft-light;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: 100vh 100vh;
   background-repeat: no-repeat;
   background-color: #000c !important;
   color: #eee;

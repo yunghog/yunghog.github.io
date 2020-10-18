@@ -24,8 +24,8 @@ render() {
       <Container>
         <Row>
           <Col>
-            <h1>{{this.props.title}}</h1>
-            <h3>{{this.props.client}}</h3>
+            <h1>{this.props.title}</h1>
+            <h3>{this.props.client}</h3>
           </Col>
         </Row>
       </Container>
