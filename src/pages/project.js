@@ -73,7 +73,7 @@ render() {
   }
   return (
     <div>
-      <ProjectFullSection bgImage={ms800hubBg}/>
+      <ProjectFullSection title="MS800HUB" client="MS800HUB" bgImage={ms800hubBg}/>
       <ProjectFullSection bgImage={adityaAuto}/>
       <ProjectFullSection bgImage={linkTree}/>
     </div>
