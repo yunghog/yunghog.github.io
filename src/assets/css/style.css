@@ -405,8 +405,8 @@ a{
   height: 100vh;
   width: 100%;
   background-blend-mode: soft-light;
-  background-attachment: fixed;
-  background-size: 100vh 100vh;
+  background-attachment: local;
+  background-size: 100vh 100%;
   background-repeat: no-repeat;
   background-color: #000c !important;
   color: #eee;
