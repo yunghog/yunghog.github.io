@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.92aa12f9.chunk.css",
-    "main.js": "/static/js/main.f6f1dd1a.chunk.js",
-    "main.js.map": "/static/js/main.f6f1dd1a.chunk.js.map",
+    "main.js": "/static/js/main.1d021fcc.chunk.js",
+    "main.js.map": "/static/js/main.1d021fcc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2385f6ea.js",
     "runtime-main.js.map": "/static/js/runtime-main.2385f6ea.js.map",
     "static/css/2.95f0d2b7.chunk.css": "/static/css/2.95f0d2b7.chunk.css",
-    "static/js/2.0b872902.chunk.js": "/static/js/2.0b872902.chunk.js",
-    "static/js/2.0b872902.chunk.js.map": "/static/js/2.0b872902.chunk.js.map",
+    "static/js/2.6476f958.chunk.js": "/static/js/2.6476f958.chunk.js",
+    "static/js/2.6476f958.chunk.js.map": "/static/js/2.6476f958.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5511578e400ec1814e30048a119eff78.js": "/precache-manifest.5511578e400ec1814e30048a119eff78.js",
+    "precache-manifest.0ef6133682e953564fe111f886e73073.js": "/precache-manifest.0ef6133682e953564fe111f886e73073.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.95f0d2b7.chunk.css.map": "/static/css/2.95f0d2b7.chunk.css.map",
     "static/css/main.92aa12f9.chunk.css.map": "/static/css/main.92aa12f9.chunk.css.map",
-    "static/js/2.0b872902.chunk.js.LICENSE.txt": "/static/js/2.0b872902.chunk.js.LICENSE.txt",
+    "static/js/2.6476f958.chunk.js.LICENSE.txt": "/static/js/2.6476f958.chunk.js.LICENSE.txt",
     "static/media/adityaAuto.jpg": "/static/media/adityaAuto.cc83ded9.jpg",
     "static/media/adityaAutoMockup.png": "/static/media/adityaAutoMockup.37f8a99b.png",
     "static/media/adityaautomobilesp.jpg": "/static/media/adityaautomobilesp.0c2da3a0.jpg",
@@ -32,7 +32,6 @@
     "static/media/ms800hub.jpg": "/static/media/ms800hub.f9c86722.jpg",
     "static/media/ms800hubMockup.png": "/static/media/ms800hubMockup.33fc8f62.png",
     "static/media/ms800hubp.jpg": "/static/media/ms800hubp.316fbefe.jpg",
-    "static/media/ms800hubsiteui.jpg": "/static/media/ms800hubsiteui.52d02392.jpg",
     "static/media/styles.css": "/static/media/revicons.2feb69cc.eot",
     "static/media/weeknd-2.png": "/static/media/weeknd-2.8a5c75e2.png",
     "static/media/weeknd-bw.png": "/static/media/weeknd-bw.9c660fb5.png"
@@ -40,8 +39,8 @@
   "entrypoints": [
     "static/js/runtime-main.2385f6ea.js",
     "static/css/2.95f0d2b7.chunk.css",
-    "static/js/2.0b872902.chunk.js",
+    "static/js/2.6476f958.chunk.js",
     "static/css/main.92aa12f9.chunk.css",
-    "static/js/main.f6f1dd1a.chunk.js"
+    "static/js/main.1d021fcc.chunk.js"
   ]
 }
