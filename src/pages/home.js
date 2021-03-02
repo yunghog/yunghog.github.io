@@ -86,6 +86,32 @@ class Body extends React.Component {
           </Container>
           <br/><br/><br/>
           <Container>
+            <h1 className="text-xxl">Services<span className="red">.</span></h1>
+            <br/><br/>
+            <Row>
+              <Col md={6}>
+                <div className="home-about cardy cell-left" data-aos="fade-right">
+                  <br></br>
+                  <h3>Development</h3>
+                  <ul>
+                    <li>Website/Web Application Development</li>
+                    <li>Hybrid App Development</li>
+                    <li>Website domain registration and hosting</li>
+                  </ul>
+                </div>
+              </Col>
+              <Col md={6}>
+                <div className="home-about cardy cell-right" data-aos="fade-right">
+                  <br></br>
+                  <h3>Design Works</h3>
+                  <ul>
+                    <li>Logo Designing</li>
+                    <li>Poster/Flyer designing</li>
+                    <li>Banner Designing</li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
             <Row>
               <Col md={8}>
                 <div className="home-about cardy cell-left" data-aos="fade-right">
@@ -99,32 +125,7 @@ class Body extends React.Component {
                   </p>
                 </div>
               </Col>
-              <Col md={3}>
-                <div className="home-about-img cardy cell-right d-none d-sm-none d-md-block" data-aos="fade-left">
-                  <Image src={imgMe} alt={"yunghog"}/>
-                </div>
-              </Col>
             </Row>
-            <Row>
-              <Col md={5} className="text-center">
-                <div className="home-services-img cardy cell-left" data-aos="fade-left">
-                  <Image src={branding} alt={"yunghog"}/>
-                </div>
-              </Col>
-            <Col md={7}>
-              <div className="home-about cardy cell-right" data-aos="fade-right">
-                <h3>Services</h3>
-                <ul>
-                  <li>Website/Web Application Development</li>
-                  <li>Fullstack development (LAMP/MERN)</li>
-                  <li>Website domain registration and hosting</li>
-                  <li>Logo Designing</li>
-                  <li>Poster/Flyer/Banner designing</li>
-                  <li>Album cover art designing</li>
-                </ul>
-              </div>
-            </Col>
-          </Row>
           <Row>
             <Col md={5}>
               <div className="cardy home-about home cell-left inverse" data-aos="fade-left">

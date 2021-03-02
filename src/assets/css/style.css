@@ -202,10 +202,8 @@ a{
 @media screen and (min-width:768px) {
   .cell-left{
     margin-top: -50px;
-    text-align: left;
   }
   .cell-right{
-    text-align: right;
     margin-top: 50px;
   }
 }
