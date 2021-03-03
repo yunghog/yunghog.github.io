@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
-// import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin, faGooglePlus, faYoutube } from "@fortawesome/free-brands-svg-icons";
