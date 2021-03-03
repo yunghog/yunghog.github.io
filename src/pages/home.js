@@ -7,6 +7,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
+import Skills from '../assets/components/skills.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 // import me from '../assets/images/imgMe.jpg';
@@ -27,10 +28,10 @@ import design6 from '../assets/images/designs/design6.jpg';
 class Body extends React.Component {
   componentDidMount(){
   }
-    render(){
-      AOS.init({
-        duration: 1000,
-        once: true
+  render(){
+    AOS.init({
+      duration: 1000,
+      once: true
     });
     const responsive = {
       desktop: {
@@ -50,11 +51,11 @@ class Body extends React.Component {
       }
     };
     return (
-     <section className="content-wrap">
-      <div>
-        <Container fluid>
-          <Row>
-            <Col md={1}></Col>
+      <section className="content-wrap">
+        <div>
+          <Container fluid>
+            <Row>
+              <Col md={1}></Col>
               <Col md={6}>
                 <div className="main-text" data-aos="fade-right">
                   <h1 className="text-xxl"> Hello<span className="red">.</span></h1>
@@ -113,6 +114,39 @@ class Body extends React.Component {
               </Col>
             </Row>
             <Row>
+              <Col md={12}>
+                <h2 className="text-xxl">Projects<span className="red">.</span></h2>
+                <br/><br/>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={8}>
+                <div className="home-about cardy cell-left" data-aos="fade-right">
+                  <h3>Fullstack Projects</h3>
+                  <Row>
+                    <Col md={6}>
+                      <ul>
+                        <li>Aditya Automobiles</li>
+                        <li>Creed Thoughts : Blog</li>
+                        <li>GFGC, Kalasa</li>
+                        <li>Self-Checkout App</li>
+                      </ul>
+                    </Col>
+                    <Col md={6}>
+                      <ul>
+                        <li>Ad-Blocker</li>
+                        <li>DMS App</li>
+                        <li>MS800HUB</li>
+                      </ul>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+              <Col md={4}>
+                <div  className="home-about cardy cell-right inverse"  data-aos="fade-right"><Skills tools="none"/></div>
+              </Col>
+            </Row>
+            <Row>
               <Col md={8}>
                 <div className="home-about cardy cell-left" data-aos="fade-right">
                   <h3>About</h3>
@@ -126,107 +160,107 @@ class Body extends React.Component {
                 </div>
               </Col>
             </Row>
-          <Row>
-            <Col md={5}>
-              <div className="cardy home-about home cell-left inverse" data-aos="fade-left">
-                <h3>Short Information</h3>
+            <Row>
+              <Col md={5}>
+                <div className="cardy home-about home cell-left inverse" data-aos="fade-left">
+                  <h3>Short Information</h3>
                   <ul>
                     <li>Name : Samartha</li>
                     <li>Based in : Sagar, Shimoga</li>
                     <li>Mail : Samarthaog@gmail.com</li>
                     <li>Phone : +91 8904460742</li>
                   </ul>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <br/>
-        <Container fluid style={{padding:'0px'}}>
-          <Row xs={1} md={4} noGutters>
-            <Col>
-              <div className="proj-count" data-aos="fade-up">
-                <h2 id="count"><CountUp end={20} duration={5}/>+</h2>
-                <h5>Projects made</h5>
-              </div>
-            </Col>
-            <Col>
-              <div className="proj-count" data-aos="fade-up">
-                <h2 id="count"><CountUp end={5} duration={5}/>+</h2>
-                <h5>Happy Clients</h5>
-              </div>
-            </Col>
-            <Col>
-              <div className="proj-count" data-aos="fade-up">
-                <h2 id="count"><CountUp end={100} duration={5}/>+</h2>
-                <h5>Designs</h5>
-              </div>
-            </Col>
-            <Col>
-              <div className="proj-count" data-aos="fade-up">
-                <h2 id="count"><CountUp end={5} duration={5}/>+</h2>
-                <h5>Websites Hosted</h5>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <br/><br/>
-        <Container fluid>
-          <Row>
-            <Col className="text-center"  data-aos="fade-up">
-              <h3>Logo designed for clients</h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col data-aos="fade-down">
-              <Carousel responsive={responsive}
-                autoPlay={true}
-                autoPlaySpeed={2000}
-                infinite={true}>
-                <div className="car-img">
-                  <Image src={design6} alt={"yunghog"}/>
-                  <div className="design-overlay">
-                    <h5>Logo for Astro Shankara</h5>
-                  </div>
                 </div>
-                <div className="car-img">
-                  <Image src={design5} alt={"yunghog"}/>
+              </Col>
+            </Row>
+          </Container>
+          <br/>
+          <Container fluid style={{padding:'0px'}}>
+            <Row xs={1} md={4} noGutters>
+              <Col>
+                <div className="proj-count" data-aos="fade-up">
+                  <h2 id="count"><CountUp end={20} duration={5}/>+</h2>
+                  <h5>Projects made</h5>
+                </div>
+              </Col>
+              <Col>
+                <div className="proj-count" data-aos="fade-up">
+                  <h2 id="count"><CountUp end={5} duration={5}/>+</h2>
+                  <h5>Happy Clients</h5>
+                </div>
+              </Col>
+              <Col>
+                <div className="proj-count" data-aos="fade-up">
+                  <h2 id="count"><CountUp end={100} duration={5}/>+</h2>
+                  <h5>Designs</h5>
+                </div>
+              </Col>
+              <Col>
+                <div className="proj-count" data-aos="fade-up">
+                  <h2 id="count"><CountUp end={5} duration={5}/>+</h2>
+                  <h5>Websites Hosted</h5>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <br/><br/>
+          <Container fluid>
+            <Row>
+              <Col className="text-center"  data-aos="fade-up">
+                <h3>Logo designed for clients</h3>
+              </Col>
+            </Row>
+            <Row>
+              <Col data-aos="fade-down">
+                <Carousel responsive={responsive}
+                  autoPlay={true}
+                  autoPlaySpeed={2000}
+                  infinite={true}>
+                  <div className="car-img">
+                    <Image src={design6} alt={"yunghog"}/>
+                    <div className="design-overlay">
+                      <h5>Logo for Astro Shankara</h5>
+                    </div>
+                  </div>
+                  <div className="car-img">
+                    <Image src={design5} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for Samnsady Customs</h5>
                     </div>
-                </div>
-                <div className="car-img">
-                  <Image src={design3} alt={"yunghog"}/>
+                  </div>
+                  <div className="car-img">
+                    <Image src={design3} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for MS800 Hub</h5>
                     </div>
-                </div>
-                <div className="car-img">
-                  <Image src={design4} alt={"yunghog"}/>
+                  </div>
+                  <div className="car-img">
+                    <Image src={design4} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for Insight Forum</h5>
                     </div>
-                </div>
-                <div className="car-img">
-                  <Image src={design2} alt={"yunghog"}/>
+                  </div>
+                  <div className="car-img">
+                    <Image src={design2} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>DP for my SoundCloud</h5>
                     </div>
-                </div>
-                <div className="car-img">
-                  <Image src={design1} alt={"yunghog"}/>
+                  </div>
+                  <div className="car-img">
+                    <Image src={design1} alt={"yunghog"}/>
                     <div className="design-overlay">
                       <h5>Logo for TechZone 2020</h5>
                     </div>
-                </div>
-              </Carousel>
-            </Col>
-          </Row>
-        </Container>
-          </div>
-          <br/><br/>
-        </section>
-      );
-    }
+                  </div>
+                </Carousel>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <br/><br/>
+      </section>
+    );
+  }
 }
 
 export default Body;
