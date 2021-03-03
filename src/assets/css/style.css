@@ -64,13 +64,14 @@ header{
   }
 }
 footer{
-  height: 12rem;
+  height: 14rem;
   position: absolute;
   bottom: 0;
   padding: 30px 20px 20px 20px;
   background:linear-gradient(90deg, #222 0%,#523232 100% );
   width: 100%;
   font-family: 'monumental';
+  margin-top: 20px;
 }
 @media screen and (max-width:768px) {
   footer{
