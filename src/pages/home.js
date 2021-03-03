@@ -8,6 +8,7 @@ import 'react-multi-carousel/lib/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import Skills from '../assets/components/skills.js'
+import Contact from '../assets/components/contact.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
 // import me from '../assets/images/imgMe.jpg';
@@ -52,7 +53,6 @@ class Body extends React.Component {
     };
     return (
       <section className="content-wrap">
-        <div>
           <Container fluid>
             <Row>
               <Col md={1}></Col>
@@ -87,7 +87,7 @@ class Body extends React.Component {
           </Container>
           <br/><br/><br/>
           <Container>
-            <h1 className="text-xxl">Services<span className="red">.</span></h1>
+            <h2 className="text-xxl" data-aos="fade-up">Services<span className="red">.</span></h2>
             <br/><br/>
             <Row>
               <Col md={6}>
@@ -115,7 +115,7 @@ class Body extends React.Component {
             </Row>
             <Row>
               <Col md={12}>
-                <h2 className="text-xxl">Projects<span className="red">.</span></h2>
+                <h2 className="text-xxl"  data-aos="fade-up">Projects<span className="red">.</span></h2>
                 <br/><br/>
               </Col>
             </Row>
@@ -131,7 +131,6 @@ class Body extends React.Component {
                         <li>GFGC, Kalasa</li>
                         <li>Self-Checkout App</li>
                       </ul>
-                      <Link to='/projects' className="red"><button className="btn btn-1">projects</button></Link>
                     </Col>
                     <Col md={6}>
                       <ul>
@@ -141,39 +140,16 @@ class Body extends React.Component {
                       </ul>
                     </Col>
                   </Row>
+                  <Row><Col>
+                    <Link to='/projects' className="red"><button className="btn btn-1">projects</button></Link>
+                  </Col></Row>
                 </div>
               </Col>
               <Col md={4}>
                 <div  className="home-about cardy cell-right inverse"  data-aos="fade-right"><Skills tools="none"/></div>
               </Col>
             </Row>
-            <Row>
-              <Col md={8}>
-                <div className="home-about cardy cell-left" data-aos="fade-right">
-                  <h3>About</h3>
-                  <p className="para">
-                    Im a 21 yo freelance fullstack Developer, Graphic Designer and Music Producer based in Sagar.
-                    I have experience in making websites, logo and poster designing .Im very passionate
-                    and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
-                    I make beats when Im free :)
-                    <br/><Link to='/about' className="red"><button className="btn btn-1">about</button></Link>
-                  </p>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={5}>
-                <div className="cardy home-about home cell-left inverse" data-aos="fade-right">
-                  <h3>Short Information</h3>
-                  <ul>
-                    <li>Name : Samartha</li>
-                    <li>Based in : Sagar, Shimoga</li>
-                    <li>Mail : Samarthaog@gmail.com</li>
-                    <li>Phone : +91 8904460742</li>
-                  </ul>
-                </div>
-              </Col>
-            </Row>
+
           </Container>
           <br/>
           <Container fluid style={{padding:'0px'}}>
@@ -205,60 +181,55 @@ class Body extends React.Component {
             </Row>
           </Container>
           <br/><br/>
-          <Container fluid>
+          <Container>
             <Row>
-              <Col className="text-center"  data-aos="fade-up">
-                <h3>Logo designed for clients</h3>
+              <Col md={12}>
+                <h2 className="text-xxl" data-aos="fade-up">About<span className="red">.</span></h2>
+                <br/><br/>
               </Col>
             </Row>
             <Row>
-              <Col data-aos="fade-down">
-                <Carousel responsive={responsive}
-                  autoPlay={true}
-                  autoPlaySpeed={2000}
-                  infinite={true}>
-                  <div className="car-img">
-                    <Image src={design6} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>Logo for Astro Shankara</h5>
-                    </div>
-                  </div>
-                  <div className="car-img">
-                    <Image src={design5} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>Logo for Samnsady Customs</h5>
-                    </div>
-                  </div>
-                  <div className="car-img">
-                    <Image src={design3} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>Logo for MS800 Hub</h5>
-                    </div>
-                  </div>
-                  <div className="car-img">
-                    <Image src={design4} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>Logo for Insight Forum</h5>
-                    </div>
-                  </div>
-                  <div className="car-img">
-                    <Image src={design2} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>DP for my SoundCloud</h5>
-                    </div>
-                  </div>
-                  <div className="car-img">
-                    <Image src={design1} alt={"yunghog"}/>
-                    <div className="design-overlay">
-                      <h5>Logo for TechZone 2020</h5>
-                    </div>
-                  </div>
-                </Carousel>
+              <Col md={5}>
+                <div className="cardy home-about home cell-left inverse" data-aos="fade-right">
+                  <h3>Short Information</h3>
+                  <ul>
+                    <li>Name : Samartha</li>
+                    <li>Based in : Sagar, Shimoga</li>
+                    <li>Mail : Samarthaog@gmail.com</li>
+                    <li>Phone : +91 8904460742</li>
+                  </ul>
+                </div>
+              </Col>
+              <Col md={7}>
+                <div className="home-about cardy cell-right" data-aos="fade-right">
+                  <h3>About me</h3>
+                  <p className="para">
+                    Im a 21 yo freelance fullstack Developer, Graphic Designer and Music Producer based in Sagar.
+                    I have experience in making websites, logo and poster designing .Im very passionate
+                    and dedicated to my work. I have acquired the skills necessary to build great and premium websites.
+                    I make beats when Im free :)
+                    <br/>
+                  </p>
+                  <Link to='/about' className="red"><button className="btn btn-1">about</button></Link>
+                </div>
               </Col>
             </Row>
           </Container>
-        </div>
-        <br/><br/>
+        <Container>
+          <Row>
+            <Col md={12}>
+              <h2 className="text-xxl" data-aos="fade-up">Send a mail<span className="red">.</span></h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={7}>
+              <div className="cardy home-about home" data-aos="fade-right">
+                <Contact/>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <br/><br/><br/><br/>
       </section>
     );
   }
