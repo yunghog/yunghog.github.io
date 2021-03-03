@@ -75,10 +75,10 @@ class Body extends React.Component {
               </Col>
               <Col md={5}>
                 <div className="image-con">
-                  <div className="image-bg" data-aos="fade-left" data-aos-delay="200">
+                  <div className="image-bg" data-aos="fade-right" data-aos-delay="200">
                     <Image src={bgShape}  alt={"yunghog"}/>
                   </div>
-                  <div className="image-fg" data-aos="fade-left" data-aos-delay="600">
+                  <div className="image-fg" data-aos="fade-right" data-aos-delay="600">
                     <Image src={fgAvatar}  alt={"yunghog"}/>
                   </div>
                 </div>
@@ -131,6 +131,7 @@ class Body extends React.Component {
                         <li>GFGC, Kalasa</li>
                         <li>Self-Checkout App</li>
                       </ul>
+                      <Link to='/projects' className="red"><button className="btn btn-1">projects</button></Link>
                     </Col>
                     <Col md={6}>
                       <ul>
@@ -162,7 +163,7 @@ class Body extends React.Component {
             </Row>
             <Row>
               <Col md={5}>
-                <div className="cardy home-about home cell-left inverse" data-aos="fade-left">
+                <div className="cardy home-about home cell-left inverse" data-aos="fade-right">
                   <h3>Short Information</h3>
                   <ul>
                     <li>Name : Samartha</li>
