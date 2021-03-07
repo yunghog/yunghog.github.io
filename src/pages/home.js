@@ -115,7 +115,7 @@ class Body extends React.Component {
             </Row>
             <Row>
               <Col md={12}>
-                <h2 className="text-xxl"  data-aos="fade-up">Projects<span className="red">.</span></h2>
+                <h2 className="text-xxl"  data-aos="fade-up">WORKS<span className="red">.</span></h2>
                 <br/><br/>
               </Col>
             </Row>
