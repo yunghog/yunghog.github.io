@@ -3,8 +3,7 @@ import { Container,Row,Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import CountUp from 'react-countup';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import GitHubCalendar from 'react-github-calendar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import Skills from '../assets/components/skills.js'
@@ -215,6 +214,20 @@ class Body extends React.Component {
               </Col>
             </Row>
           </Container>
+          <br/>
+        <Container class="d-xs-none d-md-block">
+          <Row>
+            <Col md={3}>
+              <h2 className="text-right" data-aos="fade-up">Github Activity<span className="red">.</span></h2>
+            </Col>
+            <Col md={9} color="hsl(203, 82%, 33%)" >
+              <div className="cardy home-about home" data-aos="fade-right">
+                <GitHubCalendar username="yunghog"/>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <br/>g
         <Container>
           <Row>
             <Col md={12}>

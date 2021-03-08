@@ -20,6 +20,7 @@
     "react-bootstrap": "^1.0.1",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
+    "react-github-calendar": "^2.0.2",
     "react-lightbox-component": "^1.2.1",
     "react-multi-carousel": "^2.5.5",
     "react-page-scroller": "^2.0.7-beta",
