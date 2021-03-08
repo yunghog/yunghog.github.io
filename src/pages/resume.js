@@ -23,10 +23,10 @@ this.setState({ currentPage: number });
 };
   componentDidMount(){
     document.getElementById('myHeader').style.position='fixed';
-    document.getElementById('root').style.paddingBottom='0px';
+    document.getElementById('myFooter').style.display='none';
   }
-  componentDidUnmount(){
-    document.getElementById('root').style.paddingBottom='20rem';
+  componentWillUnmount(){
+    document.getElementById('myFooter').style.display='absolute';
   }
     render(){
       const icon={
@@ -39,7 +39,7 @@ this.setState({ currentPage: number });
     });
     return (
       <div>
-        <section style={{minHeight:'100vh'}}>
+        <section>
           <ReactPageScroller
             pageOnChange={this.handlePageChange}
             customPageNumber={this.state.currentPage}
