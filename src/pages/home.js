@@ -215,7 +215,7 @@ class Body extends React.Component {
             </Row>
           </Container>
           <br/>
-        <Container class="d-xs-none d-md-block">
+        <Container className="d-none d-md-block">
           <Row>
             <Col md={3}>
               <h2 className="text-right" data-aos="fade-up">Github Activity<span className="red">.</span></h2>
@@ -227,7 +227,7 @@ class Body extends React.Component {
             </Col>
           </Row>
         </Container>
-        <br/>g
+        <br/>
         <Container>
           <Row>
             <Col md={12}>
