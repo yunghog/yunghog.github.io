@@ -12,7 +12,7 @@ import logo from '../images/logo.png';
 function Footer(){
   return (
     <div >
-    <footer>
+    <footer id="myFooter">
         <Container fluid>
           <Row>
             <Col sm={4} className="footer-text">
