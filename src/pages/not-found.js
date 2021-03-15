@@ -25,14 +25,15 @@ class About extends React.Component{
       once: true
     });
     const full_screen={
+      textAlign: 'center',
       width: '100%',
       height: '100vh',
-      paddingTop: '10%',
-      textAlign: 'center'
+      display: 'flex',
+      alignItems: 'center'
     }
     return (
-      <section style={full_screen} className="content-wrap">
-        <div className="" data-aos="fade-up">
+      <section style={full_screen}>
+        <div style={{alignSelf:'center',width:'100%'}} data-aos="fade-up">
           <h1 className="text-xxl" id="count"><CountUp end={404} duration={1}/></h1>
           <h5>Oops! page not found</h5>
           <div>
