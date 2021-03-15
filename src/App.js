@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './assets/components/header';
 import Footer from './assets/components/footer';
@@ -15,7 +15,7 @@ import NotFound from './pages/not-found';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+       <HashRouter>
           <Header/>
             <Switch>
              <Route exact path="/"><Home/></Route>
@@ -26,7 +26,7 @@ class App extends Component {
              <Redirect  from="*" to="/oops" />
            </Switch>
            <Footer/>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
