@@ -382,8 +382,9 @@ a{
   box-shadow: 0 0 15px #eee;
 }
 .component{
+  padding: 20px;
   padding-top: 2rem;
-  height: 100vh;
+  /* height: 100vh; */
   overflow-y: scroll;
 }
 .carousel-container{
