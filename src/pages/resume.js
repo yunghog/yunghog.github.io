@@ -26,7 +26,7 @@ this.setState({ currentPage: number });
     document.getElementById('myFooter').style.display='none';
   }
   componentWillUnmount(){
-    document.getElementById('myFooter').style.display='absolute';
+    document.getElementById('myFooter').style.display='block';
   }
     render(){
       const icon={
