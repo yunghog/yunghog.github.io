@@ -12,6 +12,12 @@ class About extends React.Component{
     this.state={};
   }
   componentDidMount(){
+    document.getElementById('myHeader').style.display="none";
+    document.getElementById('myFooter').style.display="none";
+  }
+  componentWillUnmount(){
+    document.getElementById('myHeader').style.display="block";
+    document.getElementById('myFooter').style.display="block";
   }
   render(){
     AOS.init({
