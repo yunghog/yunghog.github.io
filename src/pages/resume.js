@@ -40,12 +40,7 @@ this.setState({ currentPage: number });
     return (
       <div>
         <section>
-          <ReactPageScroller
-            pageOnChange={this.handlePageChange}
-            customPageNumber={this.state.currentPage}
-            renderAllPagesOnFirstRender
-            >
-            <Container className="component">
+          <Container className="component">
               <Row>
                 <Col md={12}>
                   <h1 className="text-xxl"> Resume<span className="red">.</span></h1>
@@ -115,7 +110,7 @@ this.setState({ currentPage: number });
             <Container id="skills" className="component">
               <Row>
                 <Col md={12}>
-                  <h1 className="text-xxl">Skills<span className="red">.</span></h1>
+                  <h2>Skills<span className="red">.</span></h2>
                 </Col>
               </Row>
               <Row>
@@ -156,7 +151,7 @@ this.setState({ currentPage: number });
             <Container className="component">
               <Row>
                 <Col md={12}>
-                  <h1 className="text-xxl"> Projects<span className="red">.</span></h1>
+                  <h2> Projects<span className="red">.</span></h2>
                 </Col>
               </Row>
               <ProjectCarousel/>
@@ -164,7 +159,7 @@ this.setState({ currentPage: number });
             <Container className="component">
               <Row>
                 <Col md={12}>
-                  <h1 className="text-xxl">Others<span className="red">.</span></h1>
+                  <h2>Others<span className="red">.</span></h2>
                 </Col>
               </Row>
               <Row>
@@ -193,7 +188,6 @@ this.setState({ currentPage: number });
                 </Col>
               </Row>
             </Container>
-          </ReactPageScroller>
         </section>
       </div>
       );
