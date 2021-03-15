@@ -86,7 +86,7 @@ class Header extends React.Component{
             <Col className="text-center red">
               <h2>Samartha</h2>
               <h5>Developer & <br/>Graphic Designer</h5>
-              <p className="red">© 2020 All righs reserved</p>
+              <p className="red">© 2021 All righs reserved</p>
             </Col>
           </Row>
         </Container>
