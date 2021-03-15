@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dca7034454d67a963974b22a5b13fef3",
+    "revision": "48a5c9cc1eaccd67a46e4697ad4c70ec",
     "url": "/index.html"
   },
   {
-    "revision": "46c87e2f65c87b105c30",
+    "revision": "813c66c3b394f29d43d9",
     "url": "/static/css/2.95f0d2b7.chunk.css"
   },
   {
-    "revision": "b38c51c8c795aa82ff05",
+    "revision": "1587427bec6bf626f7e7",
     "url": "/static/css/main.1a9622d0.chunk.css"
   },
   {
-    "revision": "46c87e2f65c87b105c30",
-    "url": "/static/js/2.d57984df.chunk.js"
+    "revision": "813c66c3b394f29d43d9",
+    "url": "/static/js/2.613c2b58.chunk.js"
   },
   {
     "revision": "117d65892edc8adcd29d4a0d57b5a80a",
-    "url": "/static/js/2.d57984df.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.613c2b58.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b38c51c8c795aa82ff05",
-    "url": "/static/js/main.b7c06741.chunk.js"
+    "revision": "1587427bec6bf626f7e7",
+    "url": "/static/js/main.d3bb3d42.chunk.js"
   },
   {
     "revision": "62a1ce49e98b103ae60a",
@@ -42,34 +42,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "03f1c4671b69685e87e711fa3814672c",
     "url": "/static/media/bg-shape.03f1c467.png"
-  },
-  {
-    "revision": "192f63130500a539f5a6f20c2e713a45",
-    "url": "/static/media/branding.192f6313.jpg"
-  },
-  {
-    "revision": "71876e6add30f37d2756543defe67350",
-    "url": "/static/media/design1.71876e6a.jpg"
-  },
-  {
-    "revision": "f1c2de3edeb5e68fc4a19bac92367a24",
-    "url": "/static/media/design2.f1c2de3e.jpg"
-  },
-  {
-    "revision": "64bd145c03d532fd221155a0d92af662",
-    "url": "/static/media/design3.64bd145c.jpg"
-  },
-  {
-    "revision": "af2b3f0987505488411d3235ffe4225d",
-    "url": "/static/media/design4.af2b3f09.jpg"
-  },
-  {
-    "revision": "efe8e63f90efb7af32f4be748841c19f",
-    "url": "/static/media/design5.efe8e63f.jpg"
-  },
-  {
-    "revision": "345f617017b0a885d4f116cad5bda170",
-    "url": "/static/media/design6.345f6170.jpg"
   },
   {
     "revision": "e2abc1de700bfe57601f6ace1dea784f",
@@ -114,10 +86,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "12108809f49c49bcdc126dcecc938761",
     "url": "/static/media/vidalok.12108809.otf"
-  },
-  {
-    "revision": "8a5c75e2017404a816e2cac016befa83",
-    "url": "/static/media/weeknd-2.8a5c75e2.png"
   },
   {
     "revision": "9c660fb57a81c8449dc10d92e2991843",
