@@ -10,21 +10,8 @@ import Skills from '../assets/components/skills.js'
 import Contact from '../assets/components/contact.js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTerminal } from "@fortawesome/free-solid-svg-icons";
-// import me from '../assets/images/imgMe.jpg';
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
-import imgMe from '../assets/images/weeknd-2.png';
-import branding from '../assets/images/branding.jpg';
-// import webdev from '../assets/images/webdev.png';
-
-// design images
-import design1 from '../assets/images/designs/design1.jpg';
-import design2 from '../assets/images/designs/design2.jpg';
-import design3 from '../assets/images/designs/design3.jpg';
-import design4 from '../assets/images/designs/design4.jpg';
-import design5 from '../assets/images/designs/design5.jpg';
-import design6 from '../assets/images/designs/design6.jpg';
-
 class Body extends React.Component {
   componentDidMount(){
   }
@@ -33,23 +20,6 @@ class Body extends React.Component {
       duration: 1000,
       once: true
     });
-    const responsive = {
-      desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 4,
-        slidesToSlide: 1 // optional, default to 1.
-      },
-      tablet: {
-        breakpoint: { max: 1024, min: 768 },
-        items: 2,
-        slidesToSlide: 1 // optional, default to 1.
-      },
-      mobile: {
-        breakpoint: { max: 768, min: 0 },
-        items: 1,
-        slidesToSlide: 1 // optional, default to 1.
-      }
-    };
     return (
       <section className="content-wrap">
           <Container fluid>
