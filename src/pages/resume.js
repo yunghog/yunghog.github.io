@@ -26,6 +26,7 @@ this.setState({ currentPage: number });
     document.getElementById('myFooter').style.display='none';
   }
   componentWillUnmount(){
+    document.getElementById('myHeader').style.position='';
     document.getElementById('myFooter').style.display='block';
   }
     render(){
