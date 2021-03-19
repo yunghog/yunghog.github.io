@@ -29,6 +29,35 @@ class About extends React.Component{
               </Col>
             </Row>
           </Container>
+          <Container>
+            <Row>
+              <Col>
+                <h3>Web Development</h3>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={4}>
+                <div className="cardy">
+                  ha
+                </div>
+              </Col>
+              <Col md={4}>
+                <div className="cardy">
+                  ha
+                </div>
+              </Col>
+              <Col md={4}>
+                <div className="cardy">
+                  ha
+                </div>
+              </Col>
+              <Col md={4}>
+                <div className="cardy">
+                  ha
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
       </section>
     );
