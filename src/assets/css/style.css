@@ -11,6 +11,9 @@ header{
   width: 100%;
   z-index: 25;
 }
+*{
+  box-sizing: border-box;
+}
 @font-face {
   font-family: 'monumental';
   src: url('../fonts/monumental.otf');
@@ -245,6 +248,14 @@ a{
 .btn-1:hover{
   box-shadow: 0 0 10px #e22;
 }
+.btn-2{
+  color: #e22;
+  background-color: #e220;
+}
+.btn-2:hover{
+  color: #e22;
+  box-shadow: 0 0 10px #e22;
+}
 .logo-nav{
   background-color: #eeee;
   border-radius: 20px;
@@ -395,19 +406,35 @@ a{
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.component {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+.project-card{
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 10px 0px;
+  border: 1px solid #2223;
+  min-height: 150px;
 }
-.full-page-section{
-  padding-top: 10vh;
-  height: 100vh;
-  width: 100%;
-  background-blend-mode: soft-light;
-  background-attachment: local;
-  background-size: 100vh 100%;
-  background-repeat: no-repeat;
-  background-color: #000c !important;
-  color: #eee;
+.project-card p{
+  font-size: 18px;
+  text-align: justify;
+  margin-bottom: 0px;
+}
+.project-card button{
+  position: absolute;
+  opacity: 0px;
+  top: 20px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 2;
+  background-color: #eee8;
+  box-shadow: 0 0 12px #2228;
+  visibility: hidden;
+  display: none;
+}
+.project-card:hover button{
+  visibility: visible;
+  opacity: 1px;
+  display: block;
 }

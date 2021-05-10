@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container,Row,Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactDOM from 'react-dom';
+import  {Link} from 'react-router-dom'
 import AOS from 'aos';
 import '../assets/css/style.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCss3, faAngular, faHtml5,  faReact, faNodeJs, faBootstrap, faJs, faPhp, faGitAlt, faBitbucket, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope ,faAtom } from "@fortawesome/free-solid-svg-icons";
-
+import { } from "@fortawesome/free-brands-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {projects} from '../assets/documents/projects'
 class About extends React.Component{
   constructor(props) {
     super(props);
@@ -32,30 +32,20 @@ class About extends React.Component{
           <Container>
             <Row>
               <Col>
-                <h3>Web Development</h3>
+                <h3>Fullstack projects</h3>
               </Col>
             </Row>
+            <br/>
             <Row>
-              <Col md={4}>
-                <div className="cardy">
-                  ha
-                </div>
-              </Col>
-              <Col md={4}>
-                <div className="cardy">
-                  ha
-                </div>
-              </Col>
-              <Col md={4}>
-                <div className="cardy">
-                  ha
-                </div>
-              </Col>
-              <Col md={4}>
-                <div className="cardy">
-                  ha
-                </div>
-              </Col>
+              {projects.map(i=>
+                <Col md={4}>
+                  <div className="cardy project-card">
+                    <h4>{i.title}</h4>
+                    <p>{i.smalldesc}</p>
+                    <Link to={i.casestudy}><button className="btn btn-2"><FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon></button></Link>
+                  </div>
+                </Col>
+              )}
             </Row>
           </Container>
         </div>
