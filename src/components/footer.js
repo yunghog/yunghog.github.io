@@ -4,7 +4,6 @@ import { Container,Row,Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin, faGooglePlus, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.css';
 import logo from '../assets/images/logo.png';

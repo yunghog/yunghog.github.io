@@ -13,7 +13,7 @@ class Body extends React.Component {
   render(){
     return (
       <section>
-          <Container fluid className="full-page-section hero-center">
+          <Container fluid className="full-page-section">
             <Row noGutters>
               <Col md={7}>
                 <div className="hero-con">
@@ -21,7 +21,7 @@ class Body extends React.Component {
                     HELLO !
                   </h1>
                   <h2 className="text-xl">
-                    I am
+                    I'm
                     <span className=" px-2 text-primary">
                         Samartha
                     </span>
