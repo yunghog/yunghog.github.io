@@ -1,0 +1,92 @@
+@font-face {
+  src: url('../assets/fonts/poppins.ttf');
+  font-family: 'poppins';
+}
+@font-face {
+  src: url('../assets/fonts/monumental.otf');
+  font-family: 'monumental';
+}
+:root{
+  --primary: #e22;
+  --background: #eee;
+  --text: #222;
+}
+/* general styles */
+body{
+  font-family: 'poppins';
+  background-color: var(--background);
+  color: var(--text);
+}
+h1,h2,h3{
+  font-family: 'monumental';
+}
+.full-page-section{
+  min-height: 100vh;
+}
+.text-xxl{
+  font-size: 72px;
+  text-transform: uppercase;
+}
+.text-xl{
+  font-size: 56px;
+}
+
+.text-primary{
+  color: var(--primary) !important;
+}
+@media screen and (max-width: 769px) {
+  .text-xxl{
+    font-size: 36px;
+    }
+  .text-xl{
+    font-size: 28px;
+  }
+}
+/* header component */
+
+/* home component */
+.hero-con{
+  padding: 20% 0 0 10%;
+}
+.sub-text{
+  display: flex;
+}
+.sub-text ul{
+  list-style-type: none;
+  font-family: 'monumental';
+  font-size: 28px;
+  padding: 20px 0 0 30px
+}
+.sub-text li .cursor{
+  animation: blink .5s infinite;
+}
+@keyframes blink {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.hero-img{
+
+}
+.hero-img .blob{
+  width: 100%;
+  position: absolute;
+  right: -30px;
+  top: 18px;
+  z-index: -10;
+}
+.hero-img .weeknd{
+  width: 100%;
+}
+@media screen and (max-width: 769px) {
+  .hero-con{
+    padding: 20% 0px;
+  }
+  .sub-text ul{
+    font-size: 14px;
+    padding: 10px;
+  }
+}
