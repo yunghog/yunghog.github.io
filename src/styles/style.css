@@ -228,3 +228,39 @@ a:hover{
   font-size: 32px;
   margin: 10px;
 }
+input,textarea{
+  outline: 0px !important;
+}
+/* contact form */
+.form-ctrl-email .form-row{
+  width: 100%;
+  display: inline-flex;
+  position: relative;
+}
+.form-ctrl-email input,textarea{
+  color: var(--background);
+  width: 100%;
+  background-color: #0000;
+  border: 0px;
+  border-bottom: 2px solid var(--background);
+  margin: 10px 0px;
+  font-size: 22px;
+}
+.form-ctrl-email textarea{
+  border: 2px solid var(--background);
+}
+.form-ctrl-email label{
+  font-size: 22px;
+  position: absolute;
+  top: 10px;
+  color: rgba(var(--background-rgb),.8);
+  transition: .3s;
+}
+label.float{
+font-size: 14px;
+top: 0px;
+}
+.form-row:hover label{
+  font-size: 14px;
+  top: 0px;
+}

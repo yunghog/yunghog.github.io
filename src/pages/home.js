@@ -10,13 +10,42 @@ import '../styles/style.css'
 import { FaTerminal, FaChevronCircleRight } from "react-icons/fa";
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
+import emailjs from 'emailjs-com';
+
 class Body extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      works: []
+      works: [],
+      email: '',
+      name: '',
+      subject: '',
+      query: '',
+      sendStatus: ''
     }
   }
+  handleInput = (evt) =>{
+    this.setState({ [evt.target.name]: evt.target.value });
+  }
+  sendMail=()=>{
+      const email= this.state.email;
+      const name= this.state.name;
+      const subject= this.state.subject;
+      const query= this.state.query;
+
+    var data = {
+        from_name: name,
+        from_email: email,
+        message_html: query,
+        subject: subject
+    };
+    emailjs.send('service_3cllilo', 'template_1n6ulhj', data, 'user_9eCN0jEqX8MFrL7Pa1SiY')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      }
   getWorks=()=>{
     Axios.get('https://yunghogportfolio-default-rtdb.firebaseio.com/projects.json').then(res=>{
       const fetchedData = []
@@ -248,6 +277,45 @@ class Body extends React.Component {
             </Row>
           </Container>
           <br/>
+          <Container className="inverse full-page-section" fluid>
+            <Row>
+              <Col md={{span:'11',offset:'1'}}>
+                <h2 className="text-xl mt-5">Get in touch</h2>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{span:'7',offset:'1'}}>
+                <h3 className="mb-5">Contact Form</h3>
+                <form className="form-ctrl-email">
+                  <Row>
+                    <Col md={6}>
+                      <div className="form-row">
+                        <label className={this.state.name===''?"":"float"}>Name</label>
+                        <input name="name" type="text" placeholder="" onChange={this.handleInput}/>
+                      </div>
+                    </Col>
+                    <Col md={6}>
+                      <div className="form-row">
+                        <label className={this.state.email===''?"":"float"}>Email</label>
+                        <input name="email" type="email" placeholder="" onChange={this.handleInput}/>
+                      </div>
+                    </Col>
+                  </Row>
+                  <div className="form-row">
+                    <label className={this.state.subject===''?"":"float"}>Subject</label>
+                    <input name="subject" type="text" placeholder="" onChange={this.handleInput}/>
+                  </div>
+                  <div className="form-row">
+                    <textarea name="query" type="text" placeholder="query" onChange={this.handleInput} rows="3"></textarea>
+                  </div>
+                  <button className="btn btn-light btn-block mb-2" type="button" onClick={this.sendMail}>Send Mail</button>
+                </form>
+              </Col>
+              <Col md={{span:'3'}}>
+
+              </Col>
+            </Row>
+          </Container>
       </section>
     );
   }
