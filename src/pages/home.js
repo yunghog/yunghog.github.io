@@ -100,10 +100,10 @@ class Body extends React.Component {
               </Col>
             </Row>
           </Container>
-          <Container className="full-page-section">
+          <Container className="full-page-section" id="service">
             <Row>
               <Col>
-                <h2 class="text-xl">SERVICES<span className="text-primary">.</span></h2>
+                <h2 className="text-xl">SERVICES<span className="text-primary">.</span></h2>
               </Col>
             </Row>
             <Row className="justify-content-center">
@@ -177,7 +177,7 @@ class Body extends React.Component {
             </Row>
           </Container>
 
-          <Container fluid className="full-page-section">
+          <Container fluid className="full-page-section" id="work-sample">
             <Row noGutters>
               <Col>
                 <h2 className="text-xl">Work Sample<span className="text-primary">.</span></h2>
@@ -188,7 +188,7 @@ class Body extends React.Component {
                 <div className="work-sample-con">
                   <Carousel>
                     {works.map(work=>
-                      <Carousel.Item>
+                      <Carousel.Item key={work._id}>
                         <div className="work-sample">
                           <img src={work.prev} className="work-img" alt={work.title}/>
                           <div className="work-cap">
@@ -207,7 +207,7 @@ class Body extends React.Component {
             </Row>
           </Container>
 
-          <Container className="full-page-section">
+          <Container className="full-page-section" id="about">
             <Row>
               <Col>
                 <h2 className="text-xl">About</h2>
@@ -277,7 +277,7 @@ class Body extends React.Component {
             </Row>
           </Container>
           <br/>
-          <Container className="inverse full-page-section" fluid>
+          <Container className="inverse full-page-section" fluid id="contact">
             <Row>
               <Col md={{span:'11',offset:'1'}}>
                 <h2 className="text-xl mt-5">Get in touch</h2>
@@ -286,6 +286,7 @@ class Body extends React.Component {
             <Row>
               <Col md={{span:'7',offset:'1'}}>
                 <h3 className="mb-5">Contact Form</h3>
+                <p>Do you want to hire me? Do you have an idea and want to turn it into reality? Have anything to ask. Feel free to contact me.</p>
                 <form className="form-ctrl-email">
                   <Row>
                     <Col md={6}>

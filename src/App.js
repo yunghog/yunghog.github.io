@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
+import Header from './components/header'
 import Footer from './components/footer'
 
 import Home from './pages/home'
@@ -9,11 +10,15 @@ class App extends Component {
   render() {
     return (
        <div>
-         <HashRouter>
+         <Router>
+           <Header/>
               <Switch>
-               <Route exact path="/"><Home/></Route>
+               <Route exact path="/">
+                 <Redirect to="/home"/>
+               </Route>
+               <Route exact path="/home" component={Home}/>
              </Switch>
-        </HashRouter>
+        </Router>
          <Footer/>
        </div>
     );
