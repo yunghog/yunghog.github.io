@@ -13,8 +13,18 @@ const Header  = () =>{
   const closeNav = () =>{
     setNavStatus(false);
   }
+  const [isTop,setIsTop] = useState(true)
+  useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+      let pos = window.scrollY;
+      if(pos>150)
+        setIsTop(false)
+      else
+       setIsTop(true)
+    })
+  })
   return(
-    <header id="myHeader" className="myheader">
+    <header id="myHeader" name="myheader" className={isTop?"myheader":"myheader sticky"}>
       <Container fluid>
         <Row>
           <Col xs={{span:'3', offset:'9'}}>

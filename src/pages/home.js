@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container,Row,Col, Image, Carousel } from 'react-bootstrap';
+import { Container,Row,Col, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import Axios from 'axios';
@@ -11,7 +11,7 @@ import { FaTerminal, FaChevronCircleRight } from "react-icons/fa";
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
 import emailjs from 'emailjs-com';
-
+import vec1 from '../assets/images/vec1.png';
 class Body extends React.Component {
   constructor(props){
     super(props)
@@ -59,6 +59,9 @@ class Body extends React.Component {
   }
   componentDidMount(){
     this.getWorks();
+    window.addEventListener('scroll',function(){
+
+    })
   }
   render(){
     const works = this.state.works;
@@ -195,7 +198,7 @@ class Body extends React.Component {
                             <p>{work.shortDesc}</p>
                             <h3>
                               {work.title}
-                              <Link to={"/projects/"+work.code} className="px-2"><FaChevronCircleRight/></Link>
+                              <Link to={"/casestudy/"+work.code} className="px-2"><FaChevronCircleRight/></Link>
                             </h3>
                           </div>
                         </div>
