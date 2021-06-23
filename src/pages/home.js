@@ -11,7 +11,7 @@ import { FaTerminal, FaChevronCircleRight } from "react-icons/fa";
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
 import emailjs from 'emailjs-com';
-import vec1 from '../assets/images/vec1.png';
+import Vec1 from '../assets/images/dots.svg';
 class Body extends React.Component {
   constructor(props){
     super(props)
@@ -71,8 +71,9 @@ class Body extends React.Component {
             <Row noGutters>
               <Col md={7}>
                 <div className="hero-con">
+                  <Vec1/>
                   <h1 className="text-xxl">
-                    HELLO !
+                    HELLO<span className="text-primary">.</span>
                   </h1>
                   <h2 className="text-xl">
                     I'm
