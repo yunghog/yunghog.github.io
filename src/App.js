@@ -6,6 +6,7 @@ import Footer from './components/footer'
 
 import Home from './pages/home'
 import { CaseStudy } from './pages/casestudy'
+import { Project } from './pages/projects'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
              </Route>
              <Route exact path="/home" component={Home}/>
              <Route path="/casestudy/:proj" component={CaseStudy}/>
+             <Route path="/projects" component={Project}/>
         </Router>
          <Footer/>
        </div>

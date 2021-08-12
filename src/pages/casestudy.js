@@ -38,7 +38,7 @@ export const CaseStudy = () =>{
                 <img src={project.prev} alt={project.title} width="100%"/>
               </div>
               <div className="proj-title">
-                <h1 class="text-xl">{project.title}</h1>
+                <h1 className="text-xl">{project.title}</h1>
                 <h4>{project.shortDesc}</h4>
               </div>
             </div>

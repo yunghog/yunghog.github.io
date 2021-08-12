@@ -8,6 +8,7 @@ import GitHubCalendar from 'react-github-calendar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/style.css'
 import { FaTerminal, FaChevronCircleRight } from "react-icons/fa";
+import { BsArrowsFullscreen } from "react-icons/bs";
 import bgShape from '../assets/images/bg-shape.png';
 import fgAvatar from '../assets/images/weeknd-bw.png';
 import emailjs from 'emailjs-com';
@@ -71,7 +72,6 @@ class Body extends React.Component {
             <Row noGutters>
               <Col md={7}>
                 <div className="hero-con">
-                  <Vec1/>
                   <h1 className="text-xxl">
                     HELLO<span className="text-primary">.</span>
                   </h1>
@@ -83,7 +83,7 @@ class Body extends React.Component {
                   </h2>
                   <div className="sub-text">
                     <span className="dev-icon text-xxl text-primary">
-                      <FaTerminal/>
+                      <BsArrowsFullscreen/>
                     </span>
                     <span>
                       <ul>
@@ -254,23 +254,15 @@ class Body extends React.Component {
                   <h3>My skills</h3>
                   <h4>Languages and frameworks</h4>
                   <ul className="skills">
-                    <li>Node JS</li>
                     <li>react js</li>
                     <li>angular</li>
                     <li>ionic</li>
                     <li>php</li>
-                    <li>bootstrap</li>
-                    <li>material css</li>
-                    <li>java</li>
                     <li>python</li>
-                    <li>c,c++</li>
                   </ul>
                   <h4>Tools</h4>
                   <ul className="skills">
                     <li>git</li>
-                    <li>npm</li>
-                    <li>mongo db</li>
-                    <li>mysql</li>
                     <li>firebase</li>
                     <li>android studio</li>
                     <li>photoshop</li>

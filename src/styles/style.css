@@ -404,3 +404,22 @@ top: 0px;
   left: 0px;
   transform: translate3d(-20%,0,0);
 }
+
+/* project page */
+.proj-cursor{
+  animation: spinner 4s infinite linear;
+}
+.proj-cursor-con{
+  transform: rotate3d(2,1,1,60deg);
+}
+@keyframes spinner {
+  0%{
+    transform: rotate(0deg);
+  }
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
