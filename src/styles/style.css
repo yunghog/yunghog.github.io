@@ -406,20 +406,26 @@ top: 0px;
 }
 
 /* project page */
-.proj-cursor{
-  animation: spinner 4s infinite linear;
-}
-.proj-cursor-con{
-  transform: rotate3d(2,1,1,60deg);
-}
 @keyframes spinner {
-  0%{
-    transform: rotate(0deg);
-  }
   0%{
     transform: rotate(0deg);
   }
   100%{
     transform: rotate(360deg);
   }
+}
+.proj-thumb-2{
+  position: relative;
+}
+.proj-thumb-2>img{
+  width: 100%;
+}
+.proj-cursor{
+  animation: spinner 4s infinite linear;
+}
+.proj-cursor-con{
+  transform: rotate3d(2,1,1,60deg);
+  position: absolute;
+  right: -50px;
+  bottom: -30px;
 }
