@@ -60,9 +60,7 @@ class Body extends React.Component {
   }
   componentDidMount(){
     this.getWorks();
-    window.addEventListener('scroll',function(){
 
-    })
   }
   render(){
     const works = this.state.works;
