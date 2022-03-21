@@ -1,11 +1,10 @@
 import React from 'react';
-import {Heading, Paragraph, SubHeading} from './components';
+import { Avatar } from './components';
+
 const App = () => {
   return (
     <>
-      <Heading style={{color: '#e33'}}>Hello</Heading>
-      <Paragraph style={{color: '#e33'}}>Hello</Paragraph>
-      <SubHeading style={{color: '#e33'}}>Hello</SubHeading>
+      <Avatar style={{ width: '40%' }} />
     </>
   );
 };

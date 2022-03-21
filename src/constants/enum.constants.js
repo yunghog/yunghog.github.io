@@ -3,3 +3,7 @@ export const HeadingType = {
   DARK: 'Dark',
   LIGHT: 'Light',
 };
+export const BtnType = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+};
