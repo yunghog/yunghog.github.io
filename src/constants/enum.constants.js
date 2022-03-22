@@ -7,3 +7,7 @@ export const BtnType = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
+export const LinkType = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+};

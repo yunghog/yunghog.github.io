@@ -1,11 +1,8 @@
 import React from 'react';
 import { Avatar } from './components';
+import { AppRouter } from './navigation';
 
 const App = () => {
-  return (
-    <>
-      <Avatar style={{ width: '40%' }} />
-    </>
-  );
+  return <AppRouter />;
 };
 export default App;

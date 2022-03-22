@@ -1,2 +1,3 @@
 import AppButton from './AppButton';
-export { AppButton };
+import ScrollDownButton from './ScrollDownButton';
+export { AppButton, ScrollDownButton };
