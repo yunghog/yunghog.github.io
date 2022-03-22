@@ -17,7 +17,7 @@ import { BsEnvelopeFill } from 'react-icons/bs';
 import { Link } from 'src/components/Link';
 const HomeContainer = (props) => {
   return (
-    <Container id={props.id}>
+    <Container id={props.id} style={props.style}>
       <Row className="center-phone">
         <Col className="title" md={{ size: 7, order: 'first' }} xs={{ order: 'last' }}>
           <Heading>Hi, I am Samartha,</Heading>
