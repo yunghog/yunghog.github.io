@@ -17,6 +17,7 @@
 }
 body {
   font-family: 'poppins' !important;
+  background-color: var(--light) !important;
 }
 .heading {
   font-family: 'monumental';
@@ -228,4 +229,26 @@ body {
   top: 0px;
   left: 0px;
   color: var(--red);
+}
+.service-list li {
+  font-size: 14px;
+}
+.list-primary {
+  list-style: square;
+  padding: 0;
+}
+.list-item-primary {
+  position: relative;
+  padding: 10px;
+}
+.list-item-primary li {
+  font-size: 14px;
+}
+.list-item-primary p {
+  font-size: 24px;
+  position: absolute;
+  top: -5px;
+  font-family: 'monumental';
+  color: var(--red);
+  opacity: 0.1;
 }
