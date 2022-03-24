@@ -4,6 +4,7 @@ import { Avatar, AvatarBackground, AvatarImage } from './Avatar';
 import { SocialIcons, Socials, SocialTitle } from './Socials';
 import { TabNavigator, Tab } from './TabNavigator';
 import { ProjectPreview, ProjectData, ProjectImage, ProjectMoreData } from './ProjectPreview';
+import { ProcessCard, ProcessCardItem, ProcessImage } from './ProcessCard';
 export {
   Heading,
   GhostText,
@@ -27,4 +28,7 @@ export {
   ProjectImage,
   ProjectMoreData,
   SliderButton,
+  ProcessCard,
+  ProcessCardItem,
+  ProcessImage,
 };

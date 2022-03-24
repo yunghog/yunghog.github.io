@@ -19,7 +19,7 @@ const HomeView = (props) => {
   );
 };
 const SinglePage = (props) => {
-  return <div style={{ minHeight: '100vh' }}>{props.children}</div>;
+  return <div style={window.innerWidth > 768 ? { minHeight: '100vh' } : {}}>{props.children}</div>;
 };
 
 export default HomeView;
