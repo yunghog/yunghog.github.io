@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { AboutContainer, HomeContainer } from 'src/containers';
+import { AboutContainer, HomeContainer, ProcessContainer, ProjectContainer } from 'src/containers';
 const HomeView = (props) => {
   return (
     <>
@@ -9,13 +9,17 @@ const HomeView = (props) => {
       <SinglePage>
         <AboutContainer />
       </SinglePage>
+      <SinglePage>
+        <ProjectContainer />
+      </SinglePage>
+      <SinglePage>
+        <ProcessContainer />
+      </SinglePage>
     </>
   );
-};
-export default HomeView;
-const styles = {
-  centerVertically: { minHeight: '100vh', display: 'inline-flex', alignItem: 'center' },
 };
 const SinglePage = (props) => {
   return <div style={{ minHeight: '100vh' }}>{props.children}</div>;
 };
+
+export default HomeView;

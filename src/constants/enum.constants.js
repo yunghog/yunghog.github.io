@@ -11,3 +11,7 @@ export const LinkType = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
+export const SliderBtnType = {
+  LEFT: 'Left',
+  RIGHT: 'Right',
+};
