@@ -14,6 +14,7 @@ const Textbox = (props) => {
   return (
     <div ref={container} className="textbox-container" style={props.style}>
       <input
+        type={props.type}
         ref={inputbox}
         active={props.active}
         value={props.value}

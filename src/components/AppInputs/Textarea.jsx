@@ -14,6 +14,7 @@ const Textarea = (props) => {
   return (
     <div ref={container} className="textbox-container" style={props.style}>
       <textarea
+        type={props.type}
         rows={props.rows}
         cols={props.cols}
         ref={inputbox}

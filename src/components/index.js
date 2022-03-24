@@ -6,6 +6,7 @@ import { TabNavigator, Tab } from './TabNavigator';
 import { ProjectPreview, ProjectData, ProjectImage, ProjectMoreData } from './ProjectPreview';
 import { ProcessCard, ProcessCardItem, ProcessImage } from './ProcessCard';
 import { Textbox, Textarea } from './AppInputs';
+import { MessageBox } from './MessageBox';
 export {
   Heading,
   GhostText,
@@ -34,4 +35,5 @@ export {
   ProcessImage,
   Textbox,
   Textarea,
+  MessageBox,
 };

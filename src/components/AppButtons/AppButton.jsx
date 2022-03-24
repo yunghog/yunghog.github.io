@@ -25,7 +25,7 @@ const AppButton = (props) => {
     );
   else
     return (
-      <button onClick={props.onClick} style={props.style} className={'btn btn-secondary'}>
+      <button onClick={props.onClick} style={props.style} className={'btn btn-ok'}>
         {props.name || props.children}
       </button>
     );
