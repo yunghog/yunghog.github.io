@@ -9,8 +9,18 @@ const AppButton = (props) => {
         <span className="btn-circle"></span>
         <button onClick={props.onClick} className={'btn btn-red'}>
           {props.name || props.children}
+          <CgArrowLongRightC className="btn-arrow" />
         </button>
-        <CgArrowLongRightC className="btn-arrow" />
+      </div>
+    );
+  if (props.type === BtnType.SECONDARY)
+    return (
+      <div className="btn-container" style={props.style}>
+        <span className="btn-circle"></span>
+        <button onClick={props.onClick} className={'btn btn-gray'}>
+          {props.name || props.children}
+          <CgArrowLongRightC className="btn-arrow" />
+        </button>
       </div>
     );
   else

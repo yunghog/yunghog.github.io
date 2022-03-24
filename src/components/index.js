@@ -5,6 +5,7 @@ import { SocialIcons, Socials, SocialTitle } from './Socials';
 import { TabNavigator, Tab } from './TabNavigator';
 import { ProjectPreview, ProjectData, ProjectImage, ProjectMoreData } from './ProjectPreview';
 import { ProcessCard, ProcessCardItem, ProcessImage } from './ProcessCard';
+import { Textbox, Textarea } from './AppInputs';
 export {
   Heading,
   GhostText,
@@ -31,4 +32,6 @@ export {
   ProcessCard,
   ProcessCardItem,
   ProcessImage,
+  Textbox,
+  Textarea,
 };

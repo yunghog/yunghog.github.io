@@ -78,9 +78,9 @@ body {
   color: var(--dark);
   padding-left: 25px;
 }
-.btn-secondary {
+.btn-gray {
   color: var(--dark);
-  border: 1px solid var(--darktint);
+  border: 2px solid var(--darktint) !important;
 }
 .btn-secondary:hover {
   background-color: var(--darkshade);
@@ -92,16 +92,17 @@ body {
 }
 .btn-circle {
   background-color: var(--red);
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   position: absolute;
   z-index: -1;
   left: 0px;
   transition: 0.5s ease;
 }
 .btn-container:hover .btn-circle {
-  width: 80px;
+  width: 100%;
+  height: 30px;
 }
 .btn-arrow {
   transition: 100ms;
@@ -387,4 +388,36 @@ body {
   top: 15px;
   z-index: -1;
   left: 13px;
+}
+
+.textbox-container {
+  width: 100%;
+  position: relative;
+  margin: 5px 0px;
+}
+.textbox {
+  background-color: var(--transparent);
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid var(--darktint);
+  outline: none;
+}
+.textbox-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  z-index: 2;
+  transition: 0.5s ease;
+}
+.textbox-label.active-label {
+  font-size: 14px;
+  top: -10px;
+  left: 20px;
+  background-color: var(--white);
+  padding: 0px 10px;
+}
+.textbox-active {
+  border-color: var(--red);
 }
