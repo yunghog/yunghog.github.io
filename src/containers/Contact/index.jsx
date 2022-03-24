@@ -43,6 +43,7 @@ const ContactContainer = (props) => {
         message: 'Please enter valid details in the email form',
         type: MessageBoxType.ERROR,
       });
+    setEmailData({ ...emailData, name: '', query: '', email: '' });
   };
   return (
     <Container className="py-5" style={{ position: 'relative' }}>
@@ -65,6 +66,7 @@ const ContactContainer = (props) => {
             label={'Name'}
             onChange={(event) => setEmailData({ ...emailData, name: event.target.value })}
             active={emailData.name.length > 0}
+            value={emailData.name}
           />
           <Textbox
             type={'email'}
@@ -72,6 +74,7 @@ const ContactContainer = (props) => {
             label={'Email ID'}
             onChange={(event) => setEmailData({ ...emailData, email: event.target.value })}
             active={emailData.name.length > 0}
+            value={emailData.email}
           />
           <Textarea
             rows={5}
@@ -79,6 +82,7 @@ const ContactContainer = (props) => {
             label={'Query'}
             onChange={(event) => setEmailData({ ...emailData, query: event.target.value })}
             active={emailData.query.length > 0}
+            value={emailData.query}
           />
           <AppButton type={BtnType.PRIMARY} onClick={() => sendMail()} name={'sendmail'} />
         </Col>

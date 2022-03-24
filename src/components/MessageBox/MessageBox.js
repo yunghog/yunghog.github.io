@@ -22,7 +22,11 @@ const MessageBox = (props) => {
     <div ref={msgbox} className="msg-box-container">
       <div className={messageBoxStyle()}>
         <Text>{props.message}</Text>
-        <AppButton style={styles.btnOk} name={'ok'} onClick={() => closeMsgBox()} />
+        <AppButton
+          style={props.type === MessageBoxType.ERROR ? styles.btnOk : styles.btnOkDark}
+          name={'ok'}
+          onClick={() => closeMsgBox()}
+        />
       </div>
     </div>
   );
@@ -32,6 +36,12 @@ const styles = {
     backgorundColor: 'var(--red)',
     color: 'var(--light)',
     border: '2px solid var(--light)',
+    borderRadius: '25px',
+  },
+  btnOkDark: {
+    backgorundColor: 'var(--light)',
+    color: 'var(--dark)',
+    border: '2px solid var(--dark)',
     borderRadius: '25px',
   },
 };
