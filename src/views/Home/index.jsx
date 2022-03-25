@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
-import { AboutContainer, ContactContainer, HomeContainer, ProcessContainer, ProjectContainer } from 'src/containers';
+import { AppFooter } from 'src/components/Footer';
+import {
+  AboutContainer,
+  ContactContainer,
+  HomeContainer,
+  ProcessContainer,
+  ProjectContainer,
+} from 'src/containers';
 const HomeView = (props) => {
   return (
     <>
@@ -18,6 +25,7 @@ const HomeView = (props) => {
       <SinglePage>
         <ContactContainer />
       </SinglePage>
+      <AppFooter />
     </>
   );
 };
