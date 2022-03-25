@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { AppFooter } from 'src/components/Footer';
+import React from 'react';
 import {
   AboutContainer,
   ContactContainer,
@@ -25,7 +24,6 @@ const HomeView = (props) => {
       <SinglePage>
         <ContactContainer />
       </SinglePage>
-      <AppFooter />
     </>
   );
 };

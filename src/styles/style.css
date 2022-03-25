@@ -477,3 +477,36 @@ body {
   padding-bottom: 0;
   background-color: var(--red);
 }
+.side-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  background-color: var(--dark);
+  color: var(--light);
+  box-shadow: 0 0 20px #5555;
+  z-index: 30;
+  height: 100%;
+  padding: 30px;
+  padding-top: 80px;
+}
+.nav-item-container {
+  color: var(--light);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.5s;
+  font-family: 'monumental';
+  font-size: 32px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.nav-item-container:hover {
+  text-decoration: none;
+  color: var(--light);
+  opacity: 1;
+}
+.nav-item-active {
+  color: var(--red);
+  opacity: 1;
+}

@@ -7,6 +7,7 @@ import { ProjectPreview, ProjectData, ProjectImage, ProjectMoreData } from './Pr
 import { ProcessCard, ProcessCardItem, ProcessImage } from './ProcessCard';
 import { Textbox, Textarea } from './AppInputs';
 import { MessageBox } from './MessageBox';
+import { Sidebar, NavItem } from './Sidebar';
 export {
   Heading,
   GhostText,
@@ -36,4 +37,6 @@ export {
   Textbox,
   Textarea,
   MessageBox,
+  Sidebar,
+  NavItem,
 };
