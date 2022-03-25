@@ -5,7 +5,7 @@ import { BtnType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
 const AboutContainer = (props) => {
   return (
-    <Container style={props.style} className="pt-5">
+    <Container id={props.id} style={props.style} className="pt-5">
       <Row>
         <Col md={{ span: 6, offset: 2 }} xs={{ span: 10 }}>
           <SubHeading>Who am I?</SubHeading>

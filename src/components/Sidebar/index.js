@@ -1,2 +1,2 @@
-import { Sidebar, NavItem } from './Sidebar';
-export { Sidebar, NavItem };
+import { Sidebar, NavItem, MenuButton } from './Sidebar';
+export { Sidebar, NavItem, MenuButton };

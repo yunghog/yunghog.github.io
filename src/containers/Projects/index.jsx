@@ -5,7 +5,7 @@ import '../../styles/style.css';
 import ProjectSlider from './Slider';
 const ProjectContainer = (props) => {
   return (
-    <Container className="pt-5">
+    <Container id={props.id} style={props.style} className="pt-5">
       <Row>
         <Col md={{ span: 6, offset: 6 }}>
           <SubHeading>Selected works</SubHeading>

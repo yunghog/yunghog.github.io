@@ -46,7 +46,7 @@ const ContactContainer = (props) => {
     setEmailData({ ...emailData, name: '', query: '', email: '' });
   };
   return (
-    <Container className="py-5" style={{ position: 'relative' }}>
+    <Container id={props.id} className="py-5" style={{ position: 'relative' }}>
       <Row>
         <Col md={{ span: 4, offset: 8 }}>
           <SubHeading>

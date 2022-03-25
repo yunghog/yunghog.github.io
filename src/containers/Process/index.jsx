@@ -11,7 +11,7 @@ import {
 import '../../styles/style.css';
 const ProcessContainer = (props) => {
   return (
-    <Container className="pt-5">
+    <Container id={props.id} style={props.style} className="pt-5">
       <Row>
         <Col>
           <SubHeading>
