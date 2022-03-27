@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MenuButton, Sidebar } from 'src/components';
 import { AppFooter } from 'src/components/Footer';
@@ -22,10 +21,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path={'/'}>
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home">
+        <Route exact path="/">
           <Sidebar domref={sidebar} onClose={() => closeMenu()} />
           <MenuButton onClick={() => openMenu()} />
           <HomeView />
