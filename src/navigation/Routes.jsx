@@ -22,7 +22,6 @@ const AppRouter = () => {
       duration: 1500,
       mirror: true,
       once: false,
-      offset: window.innerWidth > 768 ? 120 : 400,
     });
   }, []);
   return (

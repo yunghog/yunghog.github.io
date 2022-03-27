@@ -30,8 +30,14 @@ const HomeContainer = (props) => {
   }, []);
   return (
     <Container id={props.id} style={props.style} ref={homecontainer}>
-      <Row className="center-phone" data-aos="fade-up">
-        <Col className="title" md={{ size: 7, order: 'first' }} xs={{ order: 'last' }}>
+      <Row className="center-phone">
+        <Col
+          className="title"
+          md={{ size: 7, order: 'first' }}
+          xs={{ order: 'last' }}
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           <Heading>Hi, I am Samartha,</Heading>
           <SubHeading>Designer and Developer</SubHeading>
           <Text className="text-left">
@@ -60,7 +66,7 @@ const HomeContainer = (props) => {
             </Socials>
           </div>
         </Col>
-        <Col md={{ size: 5, order: 'last' }} data-aos="fade-right" data-aos-delay="1000">
+        <Col md={{ size: 5, order: 'last' }} data-aos="fade-right">
           <Avatar style={{ width: '100%' }} />
         </Col>
       </Row>
