@@ -512,3 +512,19 @@ body {
   color: var(--red);
   opacity: 1;
 }
+@keyframes menuBtnAnim {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes menuBtnAnimActive {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0px;
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BtnType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
 import { AppButton } from '../AppButtons';
@@ -60,8 +60,24 @@ const NavItem = (props) => {
   );
 };
 const MenuButton = (props) => {
+  const [stickyMenuBtn, setStickyMenuBtn] = useState(false);
+  const isScrolled = () => {
+    const windowInitialHeight = window.innerHeight;
+    if (window.pageYOffset > windowInitialHeight + 20) setStickyMenuBtn(true);
+    else setStickyMenuBtn(false);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', () => isScrolled());
+  }, []);
   return (
-    <button onClick={props.onClick} style={{ ...styles.menuBtn, ...props.style }}>
+    <button
+      onClick={props.onClick}
+      style={
+        stickyMenuBtn
+          ? { ...styles.menuBtn, ...styles.menuBtnSticky, ...props.style }
+          : { ...styles.menuBtn, ...props.style }
+      }
+    >
       <CgMenuLeft />
     </button>
   );
@@ -84,6 +100,12 @@ const styles = {
     fontSize: '32px',
     zIndex: '15',
     border: 'none',
+    transition: '500ms',
+    animation: 'menuBtnAnim 1s ease',
+  },
+  menuBtnSticky: {
+    animation: 'menuBtnAnimActive 1s ease',
+    position: 'fixed',
   },
 };
 export { Sidebar, NavItem, MenuButton };
