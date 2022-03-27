@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MenuButton, Sidebar } from 'src/components';
 import { AppFooter } from 'src/components/Footer';
 import { HomeView } from 'src/views';
+import AOS from 'aos';
 const AppRouter = () => {
   const sidebar = useRef(null);
   const openMenu = () => {
@@ -17,6 +18,11 @@ const AppRouter = () => {
   };
   useEffect(() => {
     closeMenu();
+    AOS.init({
+      duration: 1500,
+      mirror: true,
+      once: false,
+    });
   }, []);
   return (
     <Router>

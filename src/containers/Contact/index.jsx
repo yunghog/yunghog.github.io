@@ -49,7 +49,7 @@ const ContactContainer = (props) => {
   return (
     <Container id={props.id} className="py-5" style={{ position: 'relative' }}>
       <Row>
-        <Col md={{ span: 4, offset: 8 }}>
+        <Col md={{ span: 4, offset: 8 }} data-aos="fade-up">
           <SubHeading>
             Lets talk
             <GhostText>Contact</GhostText>
@@ -58,7 +58,12 @@ const ContactContainer = (props) => {
       </Row>
       <br />
       <Row>
-        <Col md={{ span: 5, offset: 1 }} style={styles.softbox}>
+        <Col
+          md={{ span: 5, offset: 1 }}
+          style={styles.softbox}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <SubHeading>EMAIL</SubHeading>
           <br />
           <Textbox
@@ -87,7 +92,12 @@ const ContactContainer = (props) => {
           />
           <AppButton type={BtnType.PRIMARY} onClick={() => sendMail()} name={'sendmail'} />
         </Col>
-        <Col md={{ span: 3, offset: 1 }} className="py-3">
+        <Col
+          md={{ span: 3, offset: 1 }}
+          className="py-3"
+          data-aos="fade-right"
+          data-aos-delay="1000"
+        >
           <Softbox>
             <Text style={{ fontWeight: 'bold' }}>CONTACT ME</Text>
             <Text>

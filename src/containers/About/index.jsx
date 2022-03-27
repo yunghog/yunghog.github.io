@@ -8,7 +8,7 @@ const AboutContainer = (props) => {
   return (
     <Container id={props.id} style={props.style} className="pt-5">
       <Row>
-        <Col md={{ span: 6, offset: 2 }} xs={{ span: 10 }}>
+        <Col md={{ span: 6, offset: 2 }} xs={{ span: 10 }} data-aos="fade-up">
           <SubHeading>Who am I?</SubHeading>
           <GhostText>About</GhostText>
           <Text>
@@ -28,7 +28,12 @@ const AboutContainer = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col md={{ span: 6, offset: 6 }} xs={{ span: 10, offset: 2 }}>
+        <Col
+          md={{ span: 6, offset: 6 }}
+          xs={{ span: 10, offset: 2 }}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <SubHeading>What I can do</SubHeading>
           <GhostText>Service</GhostText>
           <List>
@@ -40,7 +45,7 @@ const AboutContainer = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col md={{ span: 5, offset: 2 }} xs={{ span: 10 }}>
+        <Col md={{ span: 5, offset: 2 }} xs={{ span: 10 }} data-aos="fade-up">
           <SubHeading>My Tech stack</SubHeading>
           <GhostText>SKILLS</GhostText>
           <List>

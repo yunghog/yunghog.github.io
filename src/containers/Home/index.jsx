@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../utilities/animation/animations.css';
 import {
   AppButton,
   Avatar,
@@ -29,7 +30,7 @@ const HomeContainer = (props) => {
   }, []);
   return (
     <Container id={props.id} style={props.style} ref={homecontainer}>
-      <Row className="center-phone">
+      <Row className="center-phone" data-aos="fade-up">
         <Col className="title" md={{ size: 7, order: 'first' }} xs={{ order: 'last' }}>
           <Heading>Hi, I am Samartha,</Heading>
           <SubHeading>Designer and Developer</SubHeading>
@@ -59,7 +60,7 @@ const HomeContainer = (props) => {
             </Socials>
           </div>
         </Col>
-        <Col md={{ size: 5, order: 'last' }}>
+        <Col md={{ size: 5, order: 'last' }} data-aos="fade-right" data-aos-delay="1000">
           <Avatar style={{ width: '100%' }} />
         </Col>
       </Row>

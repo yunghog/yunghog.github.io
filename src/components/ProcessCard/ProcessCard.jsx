@@ -6,7 +6,13 @@ const ProcessCard = (props) => {
 };
 const ProcessCardItem = (props) => {
   return (
-    <Col style={props.style} xs={props.xs} md={props.md}>
+    <Col
+      style={props.style}
+      xs={props.xs}
+      md={props.md}
+      data-aos={props.dataAos}
+      data-aos-delay={props.dataAosDelay}
+    >
       {props.children}
     </Col>
   );
