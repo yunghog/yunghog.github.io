@@ -9,11 +9,12 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.10",
-    "@fullpage/react-fullpage": "^0.1.17",
+    "@fullpage/react-fullpage": "^0.1.19",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "emailjs-com": "^2.4.1",
     "react": "^16.13.1",
@@ -21,6 +22,7 @@
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
     "react-github-calendar": "^2.0.2",
+    "react-icons": "^4.2.0",
     "react-lightbox-component": "^1.2.1",
     "react-multi-carousel": "^2.5.5",
     "react-page-scroller": "^2.0.7-beta",
@@ -33,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b master -d build",
+    "commit": "git add . && git commit -m"
   },
   "eslintConfig": {
     "extends": "react-app"

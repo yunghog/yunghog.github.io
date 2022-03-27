@@ -1,0 +1,14 @@
+
+{
+    "code" : "adityaAutomobiles",
+    "title" : "Aditya Automobiles",
+    "work" : "Website",
+    "description" : "Website for Aditya Automobiles, a local Maruti Suzuki authorised service station. Key features of the website are modern and elegant user interface, online service booking and to more reach",
+    "stack": [
+        "bootstrap","php","mysql"
+    ],
+    "shortDesc":"Website for Aditya Automobiles, Sagar",
+    "prev":"https://firebasestorage.googleapis.com/v0/b/yunghogportfolio.appspot.com/o/aditya.png?alt=media&token=df808030-a629-44f6-ac27-a6f19a5d8c78",
+    "showcase": "https://firebasestorage.googleapis.com/v0/b/yunghogportfolio.appspot.com/o/aditya.png?alt=media&token=df808030-a629-44f6-ac27-a6f19a5d8c78",
+    "year": "2018"
+}
