@@ -19,13 +19,17 @@ const SocialTitle = (props) => {
 const SocialIcons = (props) => {
   return (
     <span className="social-icons" style={props.style}>
-      <a href="https://github.com/yunghog" target={'_blank'}>
+      <a href="https://github.com/yunghog" target={'_blank'} rel="noopener noreferrer">
         <BsGithub />
       </a>
-      <a href="https://www.linkedin.com/in/samartha-hm-7398861a1/" target={'_blank'}>
+      <a
+        href="https://www.linkedin.com/in/samartha-hm-7398861a1/"
+        target={'_blank'}
+        rel="noopener noreferrer"
+      >
         <BsLinkedin />
       </a>
-      <a href="https://www.instagram.com/samartha__/" target={'_blank'}>
+      <a href="https://www.instagram.com/samartha__/" target={'_blank'} rel="noopener noreferrer">
         <BsInstagram />
       </a>
     </span>

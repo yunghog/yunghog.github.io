@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MenuButton, Sidebar } from 'src/components';
 import { AppFooter } from 'src/components/Footer';
 import { HomeView } from 'src/views';

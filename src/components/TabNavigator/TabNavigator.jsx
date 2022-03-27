@@ -7,8 +7,6 @@ const TabNavigator = (props) => {
     </div>
   );
 };
-export default TabNavigator;
-export { Tab };
 const Tab = (props) => {
   return (
     <button
@@ -20,3 +18,5 @@ const Tab = (props) => {
     </button>
   );
 };
+export default TabNavigator;
+export { Tab };

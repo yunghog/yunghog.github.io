@@ -4,7 +4,6 @@ import {
   AppButton,
   GhostText,
   MessageBox,
-  SliderButton,
   SocialIcons,
   SubHeading,
   Text,
@@ -33,7 +32,7 @@ const ContactContainer = (props) => {
       validation(ValidationType.MESSAGE, emailData.query)
     ) {
       EmailService.sendMail(emailData).then((res) => {
-        if (res.status == 200)
+        if (res.status === 200)
           setMessageBox({
             message: 'Email has been sent. We will respond to your email asap',
             type: MessageBoxType.SUCCESS,
@@ -67,7 +66,7 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Name'}
             onChange={(event) => setEmailData({ ...emailData, name: event.target.value })}
-            active={emailData.name.length > 0}
+            active={emailData.name.length > 0 ? 1 : 0}
             value={emailData.name}
           />
           <Textbox
@@ -75,7 +74,7 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Email ID'}
             onChange={(event) => setEmailData({ ...emailData, email: event.target.value })}
-            active={emailData.name.length > 0}
+            active={emailData.name.length > 0 ? 1 : 0}
             value={emailData.email}
           />
           <Textarea
@@ -83,7 +82,7 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Query'}
             onChange={(event) => setEmailData({ ...emailData, query: event.target.value })}
-            active={emailData.query.length > 0}
+            active={emailData.query.length > 0 ? 1 : 0}
             value={emailData.query}
           />
           <AppButton type={BtnType.PRIMARY} onClick={() => sendMail()} name={'sendmail'} />
@@ -103,7 +102,7 @@ const ContactContainer = (props) => {
           </Softbox>
         </Col>
       </Row>
-      {messageBox.message != '' && (
+      {messageBox.message !== '' && (
         <MessageBox
           type={messageBox?.type}
           message={messageBox?.message}

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { BtnType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
 import { AppButton } from '../AppButtons';
@@ -8,17 +7,16 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 const Sidebar = (props) => {
   const path = useLocation();
   const activeLink = (hash) => {
-    if ('#' + hash == path.hash) return true;
+    if ('#' + hash === path.hash) return true;
     else return false;
+  };
+  const navigateToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });
+    props.onClose();
   };
   return (
     <div ref={props.domref} style={props.style} className="side-bar-container">
-      <NavItem
-        name={'Home'}
-        navigateTo={'home'}
-        active={activeLink('home')}
-        onClick={props.onClose}
-      />
+      <NavItem name={'Home'} navigateTo={''} active={activeLink('')} onClick={navigateToTop} />
       <NavItem
         name={'About'}
         navigateTo={'about'}
@@ -50,7 +48,6 @@ const Sidebar = (props) => {
   );
 };
 const NavItem = (props) => {
-  const path = useLocation().path;
   return (
     <a
       style={props.style}
