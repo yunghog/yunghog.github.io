@@ -3,11 +3,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { AppButton, GhostText, List, ListItem, SubHeading, Text } from 'src/components';
 import { BtnType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
+import resume from '../../assets/documents/SamarthaResume.pdf';
 const AboutContainer = (props) => {
   return (
     <Container id={props.id} style={props.style} className="pt-5">
       <Row>
-        <Col md={{ span: 6, offset: 2 }} xs={{ span: 10 }}>
+        <Col md={{ span: 6, offset: 2 }} xs={{ span: 10 }} data-aos="fade-up">
           <SubHeading>Who am I?</SubHeading>
           <GhostText>About</GhostText>
           <Text>
@@ -19,11 +20,20 @@ const AboutContainer = (props) => {
             experience, making the web and mobile application easier and more pleasant to use. I
             like to take up challenging and interesting projects.
           </Text>
-          <AppButton type={BtnType.PRIMARY} name={'Download cv'} />
+          <AppButton
+            type={BtnType.PRIMARY}
+            name={'Download cv'}
+            onClick={() => window.open(resume)}
+          />
         </Col>
       </Row>
       <Row>
-        <Col md={{ span: 6, offset: 6 }} xs={{ span: 10, offset: 2 }}>
+        <Col
+          md={{ span: 6, offset: 6 }}
+          xs={{ span: 10, offset: 2 }}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <SubHeading>What I can do</SubHeading>
           <GhostText>Service</GhostText>
           <List>
@@ -35,7 +45,7 @@ const AboutContainer = (props) => {
         </Col>
       </Row>
       <Row>
-        <Col md={{ span: 5, offset: 2 }} xs={{ span: 10 }}>
+        <Col md={{ span: 5, offset: 2 }} xs={{ span: 10 }} data-aos="fade-up">
           <SubHeading>My Tech stack</SubHeading>
           <GhostText>SKILLS</GhostText>
           <List>

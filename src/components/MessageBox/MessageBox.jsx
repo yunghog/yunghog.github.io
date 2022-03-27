@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { BtnType, MessageBoxType } from 'src/constants/enum.constants';
+import { MessageBoxType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
 import { AppButton } from '../AppButtons';
 import { Text } from '../Typography';

@@ -1,12 +1,18 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import '../../styles/style.css';
 const ProcessCard = (props) => {
   return <Row className="py-3">{props.children}</Row>;
 };
 const ProcessCardItem = (props) => {
   return (
-    <Col style={props.style} xs={props.xs} md={props.md}>
+    <Col
+      style={props.style}
+      xs={props.xs}
+      md={props.md}
+      data-aos={props.dataAos}
+      data-aos-delay={props.dataAosDelay}
+    >
       {props.children}
     </Col>
   );

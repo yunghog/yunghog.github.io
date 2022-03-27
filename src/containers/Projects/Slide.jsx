@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef } from 'react';
 import '../../styles/style.css';
 import { CgArrowLongRightR, CgArrowLongLeftR } from 'react-icons/cg';
 import {

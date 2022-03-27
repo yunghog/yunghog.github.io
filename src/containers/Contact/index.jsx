@@ -14,6 +14,7 @@ import { BtnType, MessageBoxType, ValidationType } from 'src/constants/enum.cons
 import { EmailService } from 'src/services';
 import '../../styles/style.css';
 import validation from './helper';
+import { CgArrowLongUpC } from 'react-icons/cg';
 const ContactContainer = (props) => {
   const [messageBox, setMessageBox] = useState({
     message: '',
@@ -31,7 +32,7 @@ const ContactContainer = (props) => {
       validation(ValidationType.MESSAGE, emailData.query)
     ) {
       EmailService.sendMail(emailData).then((res) => {
-        if (res.status == 200)
+        if (res.status === 200)
           setMessageBox({
             message: 'Email has been sent. We will respond to your email asap',
             type: MessageBoxType.SUCCESS,
@@ -48,7 +49,7 @@ const ContactContainer = (props) => {
   return (
     <Container id={props.id} className="py-5" style={{ position: 'relative' }}>
       <Row>
-        <Col md={{ span: 4, offset: 8 }}>
+        <Col md={{ span: 4, offset: 8 }} data-aos="fade-up">
           <SubHeading>
             Lets talk
             <GhostText>Contact</GhostText>
@@ -57,7 +58,12 @@ const ContactContainer = (props) => {
       </Row>
       <br />
       <Row>
-        <Col md={{ span: 5, offset: 1 }} style={styles.softbox}>
+        <Col
+          md={{ span: 5, offset: 1 }}
+          style={styles.softbox}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <SubHeading>EMAIL</SubHeading>
           <br />
           <Textbox
@@ -65,7 +71,7 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Name'}
             onChange={(event) => setEmailData({ ...emailData, name: event.target.value })}
-            active={emailData.name.length > 0}
+            active={emailData.name.length > 0 ? 1 : 0}
             value={emailData.name}
           />
           <Textbox
@@ -73,7 +79,7 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Email ID'}
             onChange={(event) => setEmailData({ ...emailData, email: event.target.value })}
-            active={emailData.name.length > 0}
+            active={emailData.name.length > 0 ? 1 : 0}
             value={emailData.email}
           />
           <Textarea
@@ -81,12 +87,17 @@ const ContactContainer = (props) => {
             style={{ marginBottom: '20px' }}
             label={'Query'}
             onChange={(event) => setEmailData({ ...emailData, query: event.target.value })}
-            active={emailData.query.length > 0}
+            active={emailData.query.length > 0 ? 1 : 0}
             value={emailData.query}
           />
           <AppButton type={BtnType.PRIMARY} onClick={() => sendMail()} name={'sendmail'} />
         </Col>
-        <Col md={{ span: 3, offset: 1 }} className="py-3">
+        <Col
+          md={{ span: 3, offset: 1 }}
+          className="py-3"
+          data-aos="fade-right"
+          data-aos-delay="1000"
+        >
           <Softbox>
             <Text style={{ fontWeight: 'bold' }}>CONTACT ME</Text>
             <Text>
@@ -101,13 +112,21 @@ const ContactContainer = (props) => {
           </Softbox>
         </Col>
       </Row>
-      {messageBox.message != '' && (
+      {messageBox.message !== '' && (
         <MessageBox
           type={messageBox?.type}
           message={messageBox?.message}
           onClick={() => setMessageBox({ message: '', type: null })}
         />
       )}
+      <div className="text-right">
+        <button
+          style={styles.scrollBtn}
+          onClick={() => window.scroll({ top: 0, left: 0, behaviour: 'smooth' })}
+        >
+          <CgArrowLongUpC />
+        </button>
+      </div>
     </Container>
   );
 };
@@ -119,6 +138,11 @@ const styles = {
     padding: '30px',
     borderRadius: '20px',
     boxShadow: '5px 5px 20px #5553',
+  },
+  scrollBtn: {
+    backgroundColor: 'var(--red)',
+    borderRadius: '25%',
+    border: 'none',
   },
 };
 export default ContactContainer;

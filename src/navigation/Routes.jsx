@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MenuButton, Sidebar } from 'src/components';
 import { AppFooter } from 'src/components/Footer';
 import { HomeView } from 'src/views';
+import AOS from 'aos';
 const AppRouter = () => {
   const sidebar = useRef(null);
   const openMenu = () => {
@@ -18,14 +18,17 @@ const AppRouter = () => {
   };
   useEffect(() => {
     closeMenu();
+    AOS.init({
+      duration: 1500,
+      mirror: true,
+      once: false,
+      offset: window.innerWidth > 768 ? 120 : 400,
+    });
   }, []);
   return (
     <Router>
       <Switch>
-        <Route exact path={'/'}>
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home">
+        <Route exact path="/">
           <Sidebar domref={sidebar} onClose={() => closeMenu()} />
           <MenuButton onClick={() => openMenu()} />
           <HomeView />

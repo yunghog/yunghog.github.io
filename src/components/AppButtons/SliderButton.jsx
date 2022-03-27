@@ -6,7 +6,7 @@ const SliderButton = (props) => {
     <div style={props.style} className="btn-slider-container">
       <button
         onClick={props.onClick}
-        className={props.type == SliderBtnType.RIGHT ? 'btn-slider-right' : 'btn-slider'}
+        className={props.type === SliderBtnType.RIGHT ? 'btn-slider-right' : 'btn-slider'}
       >
         {props.name || props.children}
       </button>

@@ -231,7 +231,7 @@ body {
   opacity: 0.1;
   z-index: -10;
   position: absolute;
-  top: 0px;
+  top: -10px;
   left: 0px;
   color: var(--red);
 }
@@ -511,4 +511,20 @@ body {
 .nav-item-active {
   color: var(--red);
   opacity: 1;
+}
+@keyframes menuBtnAnim {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes menuBtnAnimActive {
+  from {
+    top: -80px;
+  }
+  to {
+    top: 0px;
+  }
 }
