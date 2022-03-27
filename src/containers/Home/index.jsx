@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -16,8 +16,19 @@ import { BtnType } from 'src/constants/enum.constants';
 import { BsEnvelopeFill } from 'react-icons/bs';
 import { Link } from 'src/components/Link';
 const HomeContainer = (props) => {
+  const homecontainer = useRef();
+  const [containerDimension, setContainerDimension] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    setContainerDimension({
+      width: homecontainer.current.offsetWidth,
+      height: homecontainer.current.offsetHeight,
+    });
+  }, []);
   return (
-    <Container id={props.id} style={props.style}>
+    <Container id={props.id} style={props.style} ref={homecontainer}>
       <Row className="center-phone">
         <Col className="title" md={{ size: 7, order: 'first' }} xs={{ order: 'last' }}>
           <Heading>Hi, I am Samartha,</Heading>
@@ -27,7 +38,13 @@ const HomeContainer = (props) => {
             products and services which leads to better user experience and in turn, happier
             customers.
           </Text>
-          <AppButton type={BtnType.PRIMARY} name={'Hire me'} />
+          <AppButton
+            type={BtnType.PRIMARY}
+            name={'Hire me'}
+            onClick={() => {
+              window.location.href = '#contact';
+            }}
+          />
           <br />
           <div className="switch-layout">
             <Socials>
@@ -52,8 +69,8 @@ const HomeContainer = (props) => {
             ? { position: 'absolute', top: '50%', right: '0px' }
             : {
                 position: 'absolute',
-                top: window.innerHeight - 150 + 'px',
-                left: window.innerWidth - 100 + 'px',
+                bottom: '10px',
+                left: containerDimension.width - 100 + 'px',
               }
         }
       />

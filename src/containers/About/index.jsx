@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { AppButton, GhostText, List, ListItem, SubHeading, Text } from 'src/components';
 import { BtnType } from 'src/constants/enum.constants';
 import '../../styles/style.css';
+import resume from '../../assets/documents/SamarthaResume.pdf';
 const AboutContainer = (props) => {
   return (
     <Container id={props.id} style={props.style} className="pt-5">
@@ -19,7 +20,11 @@ const AboutContainer = (props) => {
             experience, making the web and mobile application easier and more pleasant to use. I
             like to take up challenging and interesting projects.
           </Text>
-          <AppButton type={BtnType.PRIMARY} name={'Download cv'} />
+          <AppButton
+            type={BtnType.PRIMARY}
+            name={'Download cv'}
+            onClick={() => window.open(resume)}
+          />
         </Col>
       </Row>
       <Row>

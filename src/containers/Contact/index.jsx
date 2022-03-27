@@ -4,6 +4,7 @@ import {
   AppButton,
   GhostText,
   MessageBox,
+  SliderButton,
   SocialIcons,
   SubHeading,
   Text,
@@ -14,6 +15,7 @@ import { BtnType, MessageBoxType, ValidationType } from 'src/constants/enum.cons
 import { EmailService } from 'src/services';
 import '../../styles/style.css';
 import validation from './helper';
+import { CgArrowLongUpC } from 'react-icons/cg';
 const ContactContainer = (props) => {
   const [messageBox, setMessageBox] = useState({
     message: '',
@@ -108,6 +110,14 @@ const ContactContainer = (props) => {
           onClick={() => setMessageBox({ message: '', type: null })}
         />
       )}
+      <div className="text-right">
+        <button
+          style={styles.scrollBtn}
+          onClick={() => window.scroll({ top: 0, left: 0, behaviour: 'smooth' })}
+        >
+          <CgArrowLongUpC />
+        </button>
+      </div>
     </Container>
   );
 };
@@ -119,6 +129,11 @@ const styles = {
     padding: '30px',
     borderRadius: '20px',
     boxShadow: '5px 5px 20px #5553',
+  },
+  scrollBtn: {
+    backgroundColor: 'var(--red)',
+    borderRadius: '25%',
+    border: 'none',
   },
 };
 export default ContactContainer;
