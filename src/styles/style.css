@@ -1,5 +1,6 @@
 :root {
   --red: #ef2020;
+  --redAlpha: #ef202080;
   --dark: #232323;
   --light: #e3e3e3;
   --transparent: #00000000;
@@ -318,6 +319,16 @@ body {
   justify-content: space-between;
   top: 50%;
   left: 0;
+}
+::-webkit-scrollbar {
+  background-color: #ef202010;
+  width: 5px;
+  height: 5px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: var(--redAlpha);
 }
 .btn-slider-container {
   position: relative;
