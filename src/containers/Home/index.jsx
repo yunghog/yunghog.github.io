@@ -30,7 +30,7 @@ const HomeContainer = (props) => {
   }, []);
   return (
     <Container id={props.id} style={props.style} ref={homecontainer}>
-      <Row className="center-phone">
+      <Row className="center-phone align-items-center">
         <Col
           className="title"
           md={{ size: 7, order: 'first' }}
