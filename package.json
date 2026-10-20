@@ -1,15 +1,19 @@
 {
   "name": "samartha-portfolio",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
-  "description": "Responsive, JSON-driven developer portfolio with cursor-reactive motion and dynamic case studies",
+  "description": "Responsive JSON-driven portfolio with Firebase Analytics, contact inbox, and admin settings dashboard",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "dotenv": "^16.4.7"
   },
   "engines": {
     "node": ">=18"

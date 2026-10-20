@@ -4,10 +4,32 @@
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const safeUrl = value => { try { const u = new URL(value, location.origin); return ['http:','https:','mailto:'].includes(u.protocol) ? value : '#'; } catch { return '#'; } };
-  let data, lenis, activeProject = null, lastScroll = 0, toastTimer;
+  let data, lenis, activeProject = null, lastScroll = 0, toastTimer, firebaseAnalytics = null;
+  const trackedEvents = new Set();
+
+  async function initAnalytics() {
+    try {
+      const response = await fetch('/api/config', { cache: 'no-store' });
+      const config = await response.json();
+      const firebaseConfig = config.firebase || {};
+      if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId || !window.firebase || !firebase.analytics) {
+        console.info('Firebase Analytics is not configured. Set FIREBASE_* environment variables to enable event tracking.');
+        return;
+      }
+      if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+      firebaseAnalytics = firebase.analytics();
+      trackEvent('portfolio_page_view', { page_path: location.pathname });
+    } catch (error) { console.warn('Firebase Analytics initialization skipped:', error.message); }
+  }
+
+  function trackEvent(name, params = {}) {
+    if (!firebaseAnalytics || typeof firebaseAnalytics.logEvent !== 'function') return;
+    try { firebaseAnalytics.logEvent(name, params); } catch (error) { console.warn('Analytics event failed:', error.message); }
+  }
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   async function init() {
+    initAnalytics();
     try {
       const response = await fetch('/api/portfolio', { headers: { Accept: 'application/json' } });
       if (!response.ok) throw new Error('Could not load portfolio data');
@@ -18,6 +40,7 @@
       setupCursor();
       setupInteractions();
       setupProjectRouting();
+      setupContactForm();
       $('#year').textContent = new Date().getFullYear();
     } catch (error) {
       console.error(error);
@@ -74,7 +97,7 @@
 
   function setupNavigation() {
     $('#menuToggle').addEventListener('click', () => $('#navLinks').classList.toggle('is-open'));
-    $$('#navLinks a').forEach(link => link.addEventListener('click', () => $('#navLinks').classList.remove('is-open')));
+    $$('#navLinks a').forEach(link => link.addEventListener('click', () => { $('#navLinks').classList.remove('is-open'); trackEvent('section_click', { section_name: link.getAttribute('href')?.replace(/^#/, '') || 'unknown', section_label: link.textContent.trim() }); }));
     document.addEventListener('keydown', event => { if (event.key === 'Escape' && activeProject) closeProject(); });
   }
 
@@ -181,6 +204,7 @@
   function openProject(slug, fromRoute = false) {
     const project = data.projects.find(item => item.slug === slug);
     if (!project) return;
+    trackEvent('project_click', { project_slug: project.slug, project_title: project.title, project_type: project.type || 'unspecified' });
     const isSwitch = !!activeProject;
     activeProject = project;
     if (!fromRoute && location.hash !== `#project/${slug}`) history.pushState(null, '', `#project/${slug}`);
@@ -227,6 +251,40 @@
     if (section.type === 'images') return `<section class="detail-section detail-reveal dynamic-section dynamic-section--images">${heading}${intro}<div class="dynamic-image-grid">${(section.items || []).map(item=>`<figure><img loading="lazy" src="${escapeHTML(safeUrl(item.src || ''))}" alt="${escapeHTML(item.alt || item.caption || title)}">${item.caption ? `<figcaption>${escapeHTML(item.caption)}</figcaption>` : ''}</figure>`).join('')}</div></section>`;
     if (section.type === 'links') return `<section class="detail-section detail-reveal dynamic-section dynamic-section--links">${heading}${intro}<div class="detail-actions">${(section.items || []).map(item=>`<a class="detail-action" href="${escapeHTML(safeUrl(item.url || '#'))}" ${String(item.url || '').startsWith('http') ? 'target="_blank" rel="noreferrer noopener"' : ''}>${escapeHTML(item.label || 'Open link')} ↗</a>`).join('')}</div></section>`;
     return '';
+  }
+
+  function setupContactForm() {
+    const form = $('#contactForm');
+    if (!form) return;
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const status = $('#contactFormStatus');
+      const submit = form.querySelector('button[type="submit"]');
+      const values = Object.fromEntries(new FormData(form).entries());
+      if (values.website) return; // honeypot field
+      status.textContent = 'Sending…'; status.className = 'contact-form-status';
+      submit.disabled = true;
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name: values.name, email: values.email, subject: values.subject, message: values.message })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'Message could not be sent. Please try again.');
+        form.reset(); status.textContent = result.message || 'Thanks — your message has been sent.'; status.classList.add('is-success');
+        trackEvent('contact_form_submit', { form_name: 'portfolio_contact', submission_status: 'success' });
+      } catch (error) {
+        status.textContent = error.message; status.classList.add('is-error');
+        trackEvent('contact_form_submit', { form_name: 'portfolio_contact', submission_status: 'error' });
+      } finally { submit.disabled = false; }
+    });
+    document.addEventListener('click', event => {
+      const anchor = event.target.closest('a[href^="#"]');
+      if (!anchor || anchor.closest('#projectDetail') || anchor.closest('#navLinks')) return;
+      const target = anchor.getAttribute('href').slice(1);
+      if (!target || trackedEvents.has(target)) return;
+      trackEvent('section_click', { section_name: target, section_label: anchor.textContent.trim().slice(0, 80) || target });
+    });
   }
 
   function getNextProject() {
