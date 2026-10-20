@@ -1,21 +1,16 @@
 {
   "name": "samartha-portfolio",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
-  "description": "Responsive JSON-driven portfolio with Firebase Analytics, contact inbox, and admin settings dashboard",
+  "description": "Private Firebase Realtime Database-backed portfolio with visual CMS and contact inbox",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
+  "scripts": { "start": "node server.js", "dev": "node server.js" },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
-    "dotenv": "^16.4.7"
+    "firebase-admin": "^13.4.0"
   },
-  "engines": {
-    "node": ">=18"
-  }
+  "engines": { "node": ">=18" }
 }

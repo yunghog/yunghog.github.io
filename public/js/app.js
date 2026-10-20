@@ -72,6 +72,18 @@
     $('#experienceTitle').innerHTML = sections.experience.titleLines.map(escapeHTML).join('<br>');
     $('#experienceDescription').textContent = sections.experience.description;
     $('#experienceList').innerHTML = experience.map(item => `<article class="experience-row reveal"><h3>${escapeHTML(item.role)}</h3><p>${escapeHTML(item.description)}</p><div class="meta">${escapeHTML(item.company)}<br>${escapeHTML(item.period)}</div></article>`).join('');
+    const fixedSectionKeys = new Set(['work', 'about', 'experience', 'contact']);
+    const customSections = Object.entries(sections).filter(([key]) => !fixedSectionKeys.has(key));
+    $('#dynamicSections').innerHTML = customSections.map(([key, section], index) => {
+      const title = Array.isArray(section.titleLines) ? section.titleLines.map(escapeHTML).join('<br>') : escapeHTML(section.title || key);
+      const description = section.description || section.body || '';
+      const items = Array.isArray(section.items) ? section.items : [];
+      const cards = items.map(item => {
+        if (typeof item === 'string') return `<article class="custom-content-card reveal"><p>${escapeHTML(item)}</p></article>`;
+        return `<article class="custom-content-card reveal"><h3>${escapeHTML(item.title || item.label || '')}</h3><p>${escapeHTML(item.body || item.description || item.text || '')}</p>${item.image ? `<img src="${escapeHTML(safeUrl(item.image))}" alt="${escapeHTML(item.alt || item.title || '')}" loading="lazy">` : ''}${item.url ? `<a class="text-link" href="${escapeHTML(safeUrl(item.url))}" target="_blank" rel="noreferrer noopener">${escapeHTML(item.linkLabel || 'Learn more')} ↗</a>` : ''}</article>`;
+      }).join('');
+      return `<section class="custom-content-section" id="${escapeHTML(key)}"><div class="section-head reveal"><div><div class="section-kicker">${escapeHTML(section.kicker || `0${index + 5} / ${key}`)}</div><h2>${title}</h2></div>${description ? `<p>${escapeHTML(description)}</p>` : ''}</div>${section.copy ? `<p class="custom-content-copy reveal">${escapeHTML(section.copy)}</p>` : ''}${cards ? `<div class="custom-content-grid">${cards}</div>` : ''}</section>`;
+    }).join('');
     $('#contactKicker').textContent = sections.contact.kicker;
     $('#contactTitle').innerHTML = `${escapeHTML(sections.contact.titleLines[0])}<br>${escapeHTML(sections.contact.titleLines[1].replace(/\.$/,''))}<span>.</span>`;
     $('#contactDescription').textContent = sections.contact.description;
@@ -189,7 +201,7 @@
     $('#detailClose').addEventListener('click', closeProject);
     $('#detailBack').addEventListener('click', event => { event.preventDefault(); closeProject(); });
     $('#detailNextWrap').addEventListener('click', () => { const next = getNextProject(); if (next) openProject(next.slug, true); });
-    $('#detailContent').addEventListener('click', event => { const link = event.target.closest('[data-inert-link]'); if (link) { event.preventDefault(); showToast('Add your live project URL in public/data/portfolio.json'); } });
+    $('#detailContent').addEventListener('click', event => { const link = event.target.closest('[data-inert-link]'); if (link) { event.preventDefault(); showToast('Add your live project URL in the admin CMS'); } });
     document.addEventListener('click', event => { const magnetic = event.target.closest('[data-magnetic]'); if (!magnetic || reducedMotion) return; magnetic.animate([{ transform: 'scale(.97)' }, { transform: 'scale(1)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); });
   }
 

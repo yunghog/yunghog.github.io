@@ -1,0 +1,555 @@
+{
+  "site": {
+    "name": "Samartha H M",
+    "monogram": "S.HM",
+    "availability": "Open to opportunities",
+    "location": "Based in India",
+    "yearLabel": "PORTFOLIO / 2026",
+    "footerTagline": "Designed with intent · Built for the web",
+    "email": "YOUR_EMAIL@example.com",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/",
+        "external": true
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/",
+        "external": true
+      }
+    ]
+  },
+  "navigation": [
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Frontend developer · Product-minded engineer",
+    "titleLines": [
+      {
+        "text": "Ideas into",
+        "style": "solid"
+      },
+      {
+        "text": "digital",
+        "style": "outline"
+      },
+      {
+        "text": "reality.",
+        "style": "acid"
+      }
+    ],
+    "intro": "I build thoughtful digital products — from sharp, responsive interfaces to the systems that make them work. Focused on craft, clarity, and useful software.",
+    "focus": [
+      "React",
+      "Angular",
+      "TypeScript"
+    ],
+    "ticker": [
+      "Frontend engineering",
+      "Product thinking",
+      "Interface craft",
+      "React / Angular / TypeScript"
+    ]
+  },
+  "sections": {
+    "work": {
+      "kicker": "01 / Selected work",
+      "titleLines": [
+        "Built with intent.",
+        "Made to matter."
+      ],
+      "description": "A selection of product concepts and engineering work. Project cards open into detailed case studies with the problem, approach, key features, and technology decisions."
+    },
+    "about": {
+      "kicker": "02 / A little about me",
+      "titleLines": [
+        "Developer by craft.",
+        "Builder by instinct."
+      ],
+      "copyBefore": "I care about the space where ",
+      "copyEmphasis": "good engineering meets good experience.",
+      "copyAfter": " I enjoy taking complex workflows and making them feel clear, fast, and natural to use.",
+      "note": "My work spans frontend applications, mobile experiences, and product features that connect user needs with practical engineering. I like collaborating closely, learning quickly, and sweating the details that make software feel finished."
+    },
+    "experience": {
+      "kicker": "03 / Experience",
+      "titleLines": [
+        "Reliable in the details.",
+        "Curious about what’s next."
+      ],
+      "description": "Grounded in production software, cross-functional teamwork, and continuous improvement."
+    },
+    "contact": {
+      "kicker": "04 / Have a good one in mind?",
+      "titleLines": [
+        "Let’s make",
+        "something useful."
+      ],
+      "description": "Open to thoughtful teams, interesting products, and meaningful engineering challenges."
+    }
+  },
+  "skills": [
+    {
+      "name": "Frontend",
+      "value": "React · Angular · Ionic"
+    },
+    {
+      "name": "Languages",
+      "value": "JavaScript · TypeScript · Python"
+    },
+    {
+      "name": "Backend",
+      "value": "Node.js · Express · REST APIs"
+    },
+    {
+      "name": "Product UI",
+      "value": "Responsive design · Accessibility"
+    },
+    {
+      "name": "Data & tooling",
+      "value": "SQL · Firebase · Git"
+    },
+    {
+      "name": "Currently exploring",
+      "value": "AI-powered products · SaaS"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Frontend Engineer",
+      "company": "Wolken Software",
+      "period": "Experience details to verify",
+      "description": "Build and maintain product experiences using Angular, Ionic, and modern JavaScript/TypeScript. Contribute to feature delivery, mobile workflows, debugging, and interface performance in collaboration with product and backend teams.",
+      "tags": [
+        "Angular",
+        "Ionic",
+        "TypeScript"
+      ]
+    },
+    {
+      "role": "How I work",
+      "company": "Build · Learn · Improve",
+      "period": "Approach",
+      "description": "Understand the user problem, keep implementation maintainable, communicate trade-offs early, and ship interfaces that behave well across screen sizes and real-world conditions.",
+      "tags": [
+        "Product thinking",
+        "Collaboration",
+        "Craft"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "dynamic-dashboard-builder",
+      "number": "01",
+      "type": "Analytics workspace",
+      "status": "Concept",
+      "title": "Dynamic Dashboard Builder",
+      "short": "A configurable analytics workspace for turning imported data into useful KPIs, charts, and custom views.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Chart.js",
+        "Tailwind CSS",
+        "Zustand"
+      ],
+      "visual": "dashboard",
+      "accent": "#d5ff4f",
+      "summary": "Turn raw data into a workspace that answers real questions.",
+      "role": "Product design & frontend engineering",
+      "duration": "Concept / ongoing",
+      "problem": "People often have useful data trapped in CSV files and spreadsheets, but turning it into a clear dashboard takes too much manual work or specialist tooling.",
+      "approach": "Design a flexible dashboard canvas where imported data can become KPI cards, charts, tables, and filters. Keep the interaction model discoverable and make the workspace feel fast even when the user is experimenting.",
+      "features": [
+        "Import CSV and JSON datasets",
+        "Compose KPI cards, charts, and tables",
+        "Arrange widgets in a configurable grid",
+        "Save dashboard preferences locally",
+        "Responsive layout with dark-mode support"
+      ],
+      "decisions": [
+        {
+          "title": "Data-first widgets",
+          "text": "Keep source data separate from visual components so the same dataset can power multiple views."
+        },
+        {
+          "title": "Progressive configuration",
+          "text": "Expose common settings first and keep advanced options out of the way until needed."
+        },
+        {
+          "title": "Responsive canvas",
+          "text": "Allow the dashboard to collapse gracefully instead of forcing a desktop-only grid."
+        }
+      ],
+      "outcome": "The concept explores a reusable pattern for lightweight, self-serve analytics. Add measured results and a live demo here when the implementation is ready.",
+      "links": [
+        {
+          "label": "Source code",
+          "url": "#",
+          "kind": "code"
+        },
+        {
+          "label": "Live demo",
+          "url": "#",
+          "kind": "demo"
+        }
+      ],
+      "productionUrl": "",
+      "coverImage": "",
+      "sections": [
+        {
+          "type": "text",
+          "eyebrow": "Context",
+          "title": "Why this project matters",
+          "body": "People often have useful data trapped in CSV files and spreadsheets, but turning it into a clear dashboard takes too much manual work or specialist tooling."
+        },
+        {
+          "type": "points",
+          "eyebrow": "Scope",
+          "title": "What it needs to do",
+          "items": [
+            "Import CSV and JSON datasets",
+            "Compose KPI cards, charts, and tables",
+            "Arrange widgets in a configurable grid",
+            "Save dashboard preferences locally",
+            "Responsive layout with dark-mode support"
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Engineering notes",
+          "title": "Decisions behind the experience",
+          "items": [
+            {
+              "title": "Data-first widgets",
+              "body": "Keep source data separate from visual components so the same dataset can power multiple views."
+            },
+            {
+              "title": "Progressive configuration",
+              "body": "Expose common settings first and keep advanced options out of the way until needed."
+            },
+            {
+              "title": "Responsive canvas",
+              "body": "Allow the dashboard to collapse gracefully instead of forcing a desktop-only grid."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "eyebrow": "Outcome",
+          "title": "Current status",
+          "body": "The concept explores a reusable pattern for lightweight, self-serve analytics. Add measured results and a live demo here when the implementation is ready."
+        }
+      ]
+    },
+    {
+      "slug": "school-management-platform",
+      "number": "02",
+      "type": "Multi-tenant SaaS",
+      "status": "Concept",
+      "title": "School Management Platform",
+      "short": "A multi-tenant school operations concept spanning student records, attendance, staff, and administration.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "Firebase Auth",
+        "Vanilla JS",
+        "Tailwind CSS"
+      ],
+      "visual": "school",
+      "accent": "#d9d8d0",
+      "summary": "One configurable platform for the daily work of a school.",
+      "role": "Platform architecture & product engineering",
+      "duration": "MVP planning",
+      "problem": "Small and medium private schools need dependable workflows, but large all-in-one systems can be expensive, difficult to configure, or poorly matched to each school's operations.",
+      "approach": "Plan a modular school management system with tenant isolation, role-based access, reusable UI, and a focused MVP. Start with the operational workflows that schools use every day before expanding into advanced modules.",
+      "features": [
+        "Tenant-aware school setup",
+        "Role and permission-based navigation",
+        "Student and staff records",
+        "Attendance and class operations",
+        "Configurable forms and reports"
+      ],
+      "decisions": [
+        {
+          "title": "Tenant isolation",
+          "text": "Keep each school's operational data separated and define provisioning and access boundaries early."
+        },
+        {
+          "title": "Modular MVP",
+          "text": "Deliver the core school workflows first rather than launching a wide but shallow feature set."
+        },
+        {
+          "title": "Config-driven UI",
+          "text": "Reuse components while allowing each tenant's roles, navigation, and settings to vary."
+        }
+      ],
+      "outcome": "A product direction and MVP architecture intended for validation with private K–12 schools. Validate the workflow priorities and pricing with school administrators before implementation expands.",
+      "links": [
+        {
+          "label": "Architecture notes",
+          "url": "#",
+          "kind": "notes"
+        }
+      ],
+      "productionUrl": "",
+      "coverImage": "",
+      "sections": [
+        {
+          "type": "text",
+          "eyebrow": "Context",
+          "title": "Why this project matters",
+          "body": "Small and medium private schools need dependable workflows, but large all-in-one systems can be expensive, difficult to configure, or poorly matched to each school's operations."
+        },
+        {
+          "type": "points",
+          "eyebrow": "Scope",
+          "title": "What it needs to do",
+          "items": [
+            "Tenant-aware school setup",
+            "Role and permission-based navigation",
+            "Student and staff records",
+            "Attendance and class operations",
+            "Configurable forms and reports"
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Engineering notes",
+          "title": "Decisions behind the experience",
+          "items": [
+            {
+              "title": "Tenant isolation",
+              "body": "Keep each school's operational data separated and define provisioning and access boundaries early."
+            },
+            {
+              "title": "Modular MVP",
+              "body": "Deliver the core school workflows first rather than launching a wide but shallow feature set."
+            },
+            {
+              "title": "Config-driven UI",
+              "body": "Reuse components while allowing each tenant's roles, navigation, and settings to vary."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "eyebrow": "Outcome",
+          "title": "Current status",
+          "body": "A product direction and MVP architecture intended for validation with private K–12 schools. Validate the workflow priorities and pricing with school administrators before implementation expands."
+        }
+      ]
+    },
+    {
+      "slug": "job-discovery-platform",
+      "number": "03",
+      "type": "Job discovery · Web app",
+      "status": "In progress",
+      "title": "Job Discovery Platform",
+      "short": "A focused job aggregation experience with filters, saved profiles, resume uploads, and external apply flows.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Firebase Auth",
+        "Tailwind CSS"
+      ],
+      "visual": "jobs",
+      "accent": "#252b34",
+      "summary": "Make relevant opportunities easier to discover and act on.",
+      "role": "Full-stack product development",
+      "duration": "Ongoing build",
+      "problem": "Job seekers have to jump between sources, repeat searches, and manage applications across disconnected sites. A focused discovery portal can reduce that friction without trying to own the employer's application process.",
+      "approach": "Build a responsive job portal with daily ingestion from permitted sources, clear filtering, private profiles, secure resume uploads, and outbound apply links. Keep analytics lightweight and avoid storing unnecessary sensitive information.",
+      "features": [
+        "Daily job ingestion from permitted sources",
+        "Search and filter across job attributes",
+        "Firebase Authentication and private profiles",
+        "Resume upload without resume parsing",
+        "Redirect to the original application site"
+      ],
+      "decisions": [
+        {
+          "title": "External application flow",
+          "text": "Send users to the original job site rather than creating a duplicate application process."
+        },
+        {
+          "title": "Privacy by default",
+          "text": "Keep profiles private and restrict resume access to authorized workflows."
+        },
+        {
+          "title": "Simple analytics",
+          "text": "Use Firebase Analytics for product usage insights rather than building a separate analytics database."
+        }
+      ],
+      "outcome": "The build is organized around a clear, maintainable MVP. Add ingestion coverage, response-time measurements, and user feedback after testing with real users.",
+      "links": [
+        {
+          "label": "Build notes",
+          "url": "#",
+          "kind": "notes"
+        }
+      ],
+      "productionUrl": "",
+      "coverImage": "",
+      "sections": [
+        {
+          "type": "text",
+          "eyebrow": "Context",
+          "title": "Why this project matters",
+          "body": "Job seekers have to jump between sources, repeat searches, and manage applications across disconnected sites. A focused discovery portal can reduce that friction without trying to own the employer's application process."
+        },
+        {
+          "type": "points",
+          "eyebrow": "Scope",
+          "title": "What it needs to do",
+          "items": [
+            "Daily job ingestion from permitted sources",
+            "Search and filter across job attributes",
+            "Firebase Authentication and private profiles",
+            "Resume upload without resume parsing",
+            "Redirect to the original application site"
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Engineering notes",
+          "title": "Decisions behind the experience",
+          "items": [
+            {
+              "title": "External application flow",
+              "body": "Send users to the original job site rather than creating a duplicate application process."
+            },
+            {
+              "title": "Privacy by default",
+              "body": "Keep profiles private and restrict resume access to authorized workflows."
+            },
+            {
+              "title": "Simple analytics",
+              "body": "Use Firebase Analytics for product usage insights rather than building a separate analytics database."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "eyebrow": "Outcome",
+          "title": "Current status",
+          "body": "The build is organized around a clear, maintainable MVP. Add ingestion coverage, response-time measurements, and user feedback after testing with real users."
+        }
+      ]
+    },
+    {
+      "slug": "video-clipper",
+      "number": "04",
+      "type": "Creator tool · Concept",
+      "status": "Concept",
+      "title": "Video Clipper",
+      "short": "A local-first creator tool concept for trimming footage, captions, aspect ratios, and social-ready exports.",
+      "stack": [
+        "JavaScript",
+        "HTML / CSS",
+        "FFmpeg",
+        "Media UI"
+      ],
+      "visual": "clipper",
+      "accent": "#f0a77f",
+      "summary": "A more direct path from long video to a shareable short clip.",
+      "role": "Interaction design & frontend prototyping",
+      "duration": "Prototype exploration",
+      "problem": "Creating short-form clips often involves switching between several tools just to trim footage, reframe it, add captions, and prepare exports for different platforms.",
+      "approach": "Explore a timeline-led interface that makes the editing flow visible: choose a source, mark a range, adjust framing, style captions, add audio, and export a clip. Use a local processing approach where feasible.",
+      "features": [
+        "Video source and trim-range controls",
+        "Portrait, square, and landscape framing",
+        "Caption styling and placement",
+        "Music and audio-track controls",
+        "Export presets for social formats"
+      ],
+      "decisions": [
+        {
+          "title": "Timeline as the anchor",
+          "text": "Keep trim boundaries and clip duration visible so editing feels precise rather than modal-heavy."
+        },
+        {
+          "title": "Preview-first controls",
+          "text": "Let users see framing and captions update before committing to an export."
+        },
+        {
+          "title": "Local-first direction",
+          "text": "Explore local processing to reduce uploads and give users more control over their media."
+        }
+      ],
+      "outcome": "An interaction concept for a creator-focused editing workflow. Browser restrictions and source-video rights need to be handled explicitly in any production version.",
+      "links": [
+        {
+          "label": "Prototype notes",
+          "url": "#",
+          "kind": "notes"
+        }
+      ],
+      "productionUrl": "",
+      "coverImage": "",
+      "sections": [
+        {
+          "type": "text",
+          "eyebrow": "Context",
+          "title": "Why this project matters",
+          "body": "Creating short-form clips often involves switching between several tools just to trim footage, reframe it, add captions, and prepare exports for different platforms."
+        },
+        {
+          "type": "points",
+          "eyebrow": "Scope",
+          "title": "What it needs to do",
+          "items": [
+            "Video source and trim-range controls",
+            "Portrait, square, and landscape framing",
+            "Caption styling and placement",
+            "Music and audio-track controls",
+            "Export presets for social formats"
+          ]
+        },
+        {
+          "type": "cards",
+          "eyebrow": "Engineering notes",
+          "title": "Decisions behind the experience",
+          "items": [
+            {
+              "title": "Timeline as the anchor",
+              "body": "Keep trim boundaries and clip duration visible so editing feels precise rather than modal-heavy."
+            },
+            {
+              "title": "Preview-first controls",
+              "body": "Let users see framing and captions update before committing to an export."
+            },
+            {
+              "title": "Local-first direction",
+              "body": "Explore local processing to reduce uploads and give users more control over their media."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "eyebrow": "Outcome",
+          "title": "Current status",
+          "body": "An interaction concept for a creator-focused editing workflow. Browser restrictions and source-video rights need to be handled explicitly in any production version."
+        }
+      ]
+    }
+  ]
+}
