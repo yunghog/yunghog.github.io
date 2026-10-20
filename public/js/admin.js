@@ -16,7 +16,7 @@
   function setMessage(element, message, type = '') { element.textContent = message; element.className = `form-message ${type}`.trim(); }
   function showDashboard(username) {
     loginView.classList.add('hidden'); dashboardView.classList.remove('hidden'); $('#logoutButton').classList.remove('hidden'); $('#signedInAs').textContent = `SIGNED IN / ${username}`;
-    loadSubmissions(); loadSettings();
+    loadSubmissions(); loadSettings(); window.dispatchEvent(new Event('admin-dashboard-ready'));
   }
   async function checkSession() {
     try { const user = await api('/api/admin/me'); showDashboard(user.username); }
@@ -32,7 +32,7 @@
   document.querySelectorAll('[data-tab]').forEach(button => button.addEventListener('click', () => {
     currentTab = button.dataset.tab;
     document.querySelectorAll('[data-tab]').forEach(tab => tab.classList.toggle('is-active', tab === button));
-    $('#inboxPanel').classList.toggle('hidden', currentTab !== 'inbox'); $('#settingsPanel').classList.toggle('hidden', currentTab !== 'settings');
+    $('#inboxPanel').classList.toggle('hidden', currentTab !== 'inbox'); $('#settingsPanel').classList.toggle('hidden', currentTab !== 'settings'); $('#chatsPanel').classList.toggle('hidden', currentTab !== 'chats'); if (currentTab === 'chats') window.dispatchEvent(new Event('admin-chat-tab-open')); 
   }));
   $('#statusFilter').addEventListener('change', loadSubmissions);
   async function loadSubmissions() {

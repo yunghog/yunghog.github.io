@@ -1,85 +1,127 @@
-# Samartha H M — Dynamic Portfolio + Admin
+# Samartha Portfolio
 
-A responsive, JSON-driven developer portfolio served by Node.js + Express. Includes project case studies, GSAP/ScrollTrigger/Lenis motion, Firebase Analytics event tracking, a contact form stored in SQLite, and a protected admin dashboard for inbox and portfolio content management.
+Responsive developer portfolio built with Node.js, Express, vanilla JavaScript, CSS, GSAP/ScrollTrigger/Lenis, Firebase Analytics, Firebase Realtime Database, and Socket.IO for real-time chat delivery. The admin dashboard includes a contact inbox and a visual CMS.
 
-## Requirements
-- Node.js 18+
-- npm
-- Firebase project with Google Analytics enabled (for analytics only; site still runs without it)
+## Architecture
 
-## Local setup
-1. Copy `.env.example` to `.env`.
-2. Fill `ADMIN_USERNAME`, `ADMIN_PASSWORD` (12+ characters), and `SESSION_SECRET` (random secret). Fill the `FIREBASE_*` values from Firebase Console to enable analytics.
-3. Install and start:
-   ```bash
-   npm install
-   npm start
-   ```
-4. Open `http://localhost:3000` and admin at `http://localhost:3000/admin`.
+- **Firebase Realtime Database** is the only application data store. There is no SQL database dependency.
+- `portfolio/websiteConfig` stores website identity, navigation, hero content, skills, and experience.
+- `portfolio/sections` stores homepage section configuration separately.
+- `portfolio/projects` stores projects and their project-detail sections.
+- `contactSubmissions` stores contact form submissions and status metadata.
+- Express uses the Firebase Admin SDK with server-side credentials. The service-account key is never sent to the browser.
+- Public portfolio content is assembled by `GET /api/portfolio`. Public content will always be visible to visitors through the rendered page or API; private database access and write access remain denied to client SDKs.
+- `data/portfolio-seed.json` is a private first-run seed/migration source. If the `portfolio` node is empty, the server migrates it into the three separate RTDB branches. The file is not served statically.
 
-The first start creates the admin user only if the username does not exist and a password of at least 12 characters is configured. SQLite data is stored in `data/portfolio.sqlite`; it is not committed to source control. Contact submissions are persisted there.
+## Setup
 
-## Firebase Analytics
-Set these server environment variables (Firebase web app config; these values are intended to be public client configuration):
-- `FIREBASE_API_KEY`
-- `FIREBASE_AUTH_DOMAIN`
-- `FIREBASE_PROJECT_ID`
-- `FIREBASE_APP_ID`
-- `FIREBASE_MEASUREMENT_ID`
+1. Install Node.js 18 or newer.
+2. Create a Firebase project and enable Realtime Database.
+3. Create a service account with access to the project and download its JSON key. Store it outside `public/` (the `secrets/` folder is gitignored).
+4. Copy `.env.example` to `.env` and set:
+   - `ADMIN_USERNAME`
+   - `ADMIN_PASSWORD` (12+ characters) or `ADMIN_PASSWORD_HASH` (bcrypt hash)
+   - `SESSION_SECRET` (long random value)
+   - `GOOGLE_APPLICATION_CREDENTIALS` or `FIREBASE_SERVICE_ACCOUNT_JSON`
+   - `FIREBASE_DATABASE_URL`
+   - Firebase web app settings for Analytics
+5. Apply `database.rules.json` to Realtime Database. These rules deny all direct client reads/writes. The trusted Admin SDK on Express bypasses these client rules; secure the service-account key carefully.
+6. Run:
 
-Enable Google Analytics in Firebase and register the web app. The portfolio loads config from `/api/config` and logs:
-- `portfolio_page_view`
-- `section_click` (navigation and in-page section links)
-- `project_click` (case-study opens)
-- `contact_form_submit` with success/error status (never sends message text or email to analytics)
-
-Analytics is optional and silently disabled when Firebase config is missing. Test events in Firebase Analytics DebugView after configuration.
-
-## Admin dashboard
-- `GET /admin` — sign-in and admin workspace
-- Inbox: view submissions, filter by status, mark new/read/archived
-- Content settings: edit the full portfolio JSON, add/delete projects, add/delete project case-study sections, then save
-- `GET /api/admin/settings` and `PUT /api/admin/settings` require a signed-in admin session
-
-Use the settings editor to update any detail fields and the quick actions for project/section creation and deletion. Supported case-study section types are `text`, `points`, `cards`, `images`, and `links`. Saving validates the overall data shape and unique project slugs before atomically replacing the JSON file.
-
-## API
-- `GET /api/portfolio` — public portfolio JSON
-- `GET /api/config` — public Firebase web config
-- `POST /api/contact` — validates and stores a contact submission
-- `POST /api/admin/login` — admin login
-- `GET /api/admin/me` — current admin session
-- `POST /api/admin/logout` — sign out
-- `GET /api/admin/submissions?status=new|read|archived` — inbox
-- `PATCH /api/admin/submissions/:id` — update inbox status
-- `GET /health` — health check
-
-## Production security checklist
-- Set `NODE_ENV=production`, strong `SESSION_SECRET`, `ADMIN_PASSWORD`, and `IP_HASH_SALT`.
-- Use HTTPS and set `TRUST_PROXY=true` only behind a trusted reverse proxy.
-- The built-in Express session store is memory-only; configure a persistent session store before deploying to multiple instances or relying on sessions across restarts.
-- Back up both `public/data/portfolio.json` and `data/portfolio.sqlite`; store DB backups securely because messages contain personal information.
-- Add a managed rate limiter, spam protection, and a privacy notice/retention policy before public launch.
-- Do not place private Firebase service-account credentials in `.env` for this frontend analytics setup.
-
-## Structure
-```text
-samartha-portfolio/
-├── server.js
-├── package.json
-├── .env.example
-├── AGENT_GUIDE.md
-├── DEVELOPMENT_PLAN.md
-├── TASKS.md
-├── data/                      # SQLite DB created at runtime (gitignored)
-└── public/
-    ├── index.html
-    ├── admin.html
-    ├── css/style.css
-    ├── css/admin.css
-    ├── js/app.js
-    ├── js/admin.js
-    └── data/portfolio.json
+```bash
+npm install
+npm start
 ```
 
-Read `AGENT_GUIDE.md`, `DEVELOPMENT_PLAN.md`, and `TASKS.md` before continuing work. GSAP, ScrollTrigger, Lenis, Firebase compat SDK, and fonts load from CDNs; offline use requires vendoring those assets.
+Open `http://localhost:3000` for the public portfolio and `http://localhost:3000/admin` for the admin CMS.
+
+## Visual CMS
+
+The Content settings screen provides visual forms for website details, hero content, navigation links, homepage sections, skills, experience entries, projects, and project case-study sections. Add/delete controls are available for repeatable records and sections. Changes are sent to authenticated Express routes and saved to Realtime Database. Some nested repeaters such as social links and project cards use a structured JSON field; this field is inside the CMS form and is not the full-site editor.
+
+Homepage sections with keys other than `work`, `about`, `experience`, and `contact` render dynamically in the custom-section area. A custom section supports `kicker`, `titleLines` or `title`, `description`/`body`, `copy`, and `items` (strings or objects with title/body/description/text/image/url/linkLabel).
+
+## Routes
+
+- `GET /api/config` — Firebase web configuration used by Analytics (not server credentials)
+- `GET /api/portfolio` — public website content, assembled from private RTDB branches
+- `POST /api/contact` — validates and stores a submission in RTDB
+- `POST /api/admin/login` — admin login
+- `GET /api/admin/me` — current admin session
+- `POST /api/admin/logout` — end admin session
+- `GET /api/admin/submissions` — authenticated contact inbox
+- `PATCH /api/admin/submissions/:id` — update submission status
+- `GET /api/admin/settings` — authenticated assembled CMS data
+- `PUT /api/admin/settings` — validates and writes separate RTDB branches
+- `POST /api/chat/conversations` — start/reuse a visitor conversation
+- `GET /api/chat/:id/messages` — load persistent chat history; live messages are sent through Socket.IO events `chat:send` / `chat:message`
+- `POST /api/chat/:id/push-token` — save an opted-in visitor FCM token
+- `GET /api/admin/chats` and `PATCH /api/admin/chats/:id` — authenticated admin chat inbox/status
+- `POST /api/admin/chat/push-token` — save an opted-in admin FCM token
+- `GET /firebase-messaging-sw.js` — dynamically served Firebase Cloud Messaging service worker
+- `GET /health` — health check
+
+## Data model
+
+```text
+portfolio/
+  websiteConfig/
+    site/
+    navigation/
+    hero/
+    skills/
+    experience/
+  sections/
+  projects/
+contactSubmissions/
+  <push-id>/
+    name, email, subject, message, status, createdAt, ipHash
+```
+
+## Migration notes
+
+On first startup, when `portfolio/` is empty, the server reads `data/portfolio-seed.json` and writes its website configuration, homepage sections, and projects into their dedicated RTDB branches. This seed file is private and must not be exposed via static hosting. The server no longer reads/writes `public/data/portfolio.json` or uses SQLite. Existing SQLite contact submissions from an older deployment are not imported automatically; export any messages you need to preserve before retiring the old deployment.
+
+## Production checklist
+
+- Use a persistent session store (the default Express MemoryStore is for local development only).
+- Configure HTTPS, proxy trust accurately, rate limiting, contact spam protection, and a privacy/retention policy.
+- Keep service-account credentials and `.env` out of source control and outside public directories.
+- Consider a dedicated least-privilege service account and rotate keys if exposed.
+- Validate Firebase RTDB rules are `.read: false` and `.write: false` for client access.
+- Test login, contact submission, CMS save/reload, all CRUD flows, mobile layout, and analytics in a browser before launch.
+
+
+## Live chat (v6)
+
+Socket.IO is the real-time transport. The server authenticates the admin socket using the existing Express session and authorizes visitor sockets with the hashed visitor token. Messages are sanitized server-side and persisted in RTDB before they are broadcast. REST remains available for initial history and compatibility, but the current public/admin chat clients send messages over Socket.IO rather than polling.
+
+The live chat is an isolated module: public UI assets are `public/js/chat.js` and `public/css/chat.css`; the admin inbox assets are `public/js/admin-chat.js` and `public/css/admin-chat.css`. Rich-text editing uses the open-source Quill editor (CDN), and server-side HTML is sanitized with `sanitize-html`. Avatars use DiceBear's free avatar API. Message send/receive sounds use the Web Audio API and do not require audio files.
+
+### Firebase Realtime Database structure
+
+- `liveChat/conversations/{conversationId}` — contact name, optional description, human-readable `reference` (for example `CHAT-261020-A1B2`), avatar, status, last message, unread counts and visitor push token. Visitor access tokens are stored only as SHA-256 hashes.
+- `liveChat/messages/{conversationId}/{messageId}` — persistent, timestamped messages with sender, sanitized rich-text HTML, plain text and chat reference.
+- `liveChat/adminPushTokens/{tokenHash}` — push tokens registered by an authenticated admin browser.
+- Existing `portfolio/*` and `contactSubmissions/*` paths are unchanged. No SQL is used.
+
+### Configure push notifications
+
+1. In Firebase Console, enable **Cloud Messaging** for the same Firebase project.
+2. In Project settings → Cloud Messaging → Web Push certificates, generate or copy the VAPID key.
+3. Set `FIREBASE_MESSAGING_SENDER_ID` and `FIREBASE_VAPID_KEY` in `.env`. Ensure `FIREBASE_API_KEY`, `FIREBASE_AUTH_DOMAIN`, `FIREBASE_PROJECT_ID`, and `FIREBASE_APP_ID` are also set. The public web config is expected to be public; never expose the Admin SDK service account.
+4. Deploy the site on HTTPS (localhost is also accepted by browsers for development). Visitors can opt in with **Enable notifications** inside their chat; admins can opt in from Admin → Live chats. Browser permission is requested only after the user clicks.
+5. Ensure Firebase Cloud Messaging is enabled and the project's browser/service-worker configuration is valid. Push delivery may be blocked by browser settings or OS focus modes.
+
+The service worker is served dynamically from `/firebase-messaging-sw.js` so it uses the current public Firebase config without committing secrets. Firebase Admin SDK sends push messages server-side. If push configuration is missing, normal chat still works; push opt-in shows a setup message.
+
+### Admin use
+
+Sign in at `/admin`, open **Live chats**, select a visitor in the left contact list, and reply using the rich-text editor. Chat references remain visible in the contact list and conversation header. Chats can be closed and reopened. Socket.IO delivers messages and inbox updates in real time; REST endpoints are used for initial history, inbox loading, status changes, and push-token registration.
+
+### Deployment notes
+
+- Deploy the updated `database.rules.json` to preserve deny-by-default client access while adding server-side query indexes. Admin SDK access bypasses client rules.
+- Quill and DiceBear are loaded from external CDNs/APIs; provide a local/self-hosted alternative if your deployment requires no third-party runtime requests.
+- Push notifications require a VAPID key and HTTPS. Notifications are opt-in.
+- Add production-grade rate limiting, retention policy, and a persistent Express session store before high-traffic production use. The existing session middleware still uses its default in-memory store.

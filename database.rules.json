@@ -1,6 +1,19 @@
 {
   "rules": {
     ".read": false,
-    ".write": false
+    ".write": false,
+    "contactSubmissions": {
+      ".indexOn": [
+        "createdAt"
+      ]
+    },
+    "liveChat": {
+      "conversations": {
+        ".indexOn": [
+          "visitorTokenHash",
+          "updatedAt"
+        ]
+      }
+    }
   }
 }
