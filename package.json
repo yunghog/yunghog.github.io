@@ -1,0 +1,17 @@
+{
+  "name": "samartha-portfolio",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Responsive, JSON-driven developer portfolio with cursor-reactive motion and dynamic case studies",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
