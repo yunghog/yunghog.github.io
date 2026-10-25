@@ -1,31 +1,309 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10110f">
-<meta name="description" content="Samartha H M — frontend developer building thoughtful digital products and interfaces.">
-<title>Samartha H M — Developer & Digital Builder</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/chat.css">
-<link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
-</head>
-<body>
-<div class="grain" aria-hidden="true"></div><div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
-<div class="cursor-aura" aria-hidden="true"></div><div class="custom-cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span><span class="cursor-label">VIEW</span></div>
-<header class="topbar"><a class="brand" href="#top" aria-label="Samartha home" data-magnetic>S<span>.</span>HM</a><nav class="nav" aria-label="Main navigation" id="navLinks"></nav><div class="availability"><span class="dot"></span><span id="availabilityText">Open to opportunities</span></div><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><span></span><span></span></button></header>
-<main id="top">
-<section class="hero"><div class="hero-topline"><div class="eyebrow" id="heroEyebrow"></div><span class="hero-index mono">PORTFOLIO / 2026</span></div><div class="hero-title-wrap"><h1 id="heroTitle"></h1><div class="orb" aria-hidden="true"><div class="orb-core"></div></div><div class="hero-object hero-object--one" aria-hidden="true"><span class="hero-object-shape"></span><span class="hero-object-caption">CRAFT / 01</span></div><div class="hero-object hero-object--two" aria-hidden="true"><span class="hero-object-shape"></span><span class="hero-object-caption">BUILD / 02</span></div></div><div class="hero-bottom"><p class="hero-intro" id="heroIntro"></p><div class="hero-aside" id="heroAside"></div></div><a class="scroll-cue" href="#work"><span class="scroll-cue-line"></span><span>Scroll to explore</span><span>↓</span></a></section>
-<div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
-<section id="work"><div class="section-head reveal"><div><div class="section-kicker" id="workKicker"></div><h2 id="workTitle"></h2></div><p id="workDescription"></p></div><div class="work-toolbar"><span class="mono" id="projectCount"></span><span class="mono">SELECT A PROJECT <span class="toolbar-arrow">↘</span></span></div><div class="work-grid" id="projectGrid"></div></section>
-<section id="about"><div class="section-head reveal"><div><div class="section-kicker" id="aboutKicker"></div><h2 id="aboutTitle"></h2></div></div><div class="about-grid"><div class="reveal"><p class="about-copy" id="aboutCopy"></p><p class="about-note" id="aboutNote"></p><a class="text-link about-link" id="aboutLink" href="#contact">More about how I work ↗</a></div><div class="skill-list reveal" id="skillList"></div></div></section>
-<section class="experience" id="experience"><div class="section-head reveal"><div><div class="section-kicker" id="experienceKicker"></div><h2 id="experienceTitle"></h2></div><p id="experienceDescription"></p></div><div id="experienceList"></div></section>
-<div id="dynamicSections"></div>
-<section class="contact" id="contact"><div class="section-kicker reveal" id="contactKicker"></div><h2 class="contact-big reveal" id="contactTitle"></h2><div class="contact-bar reveal"><p id="contactDescription"></p><div class="contact-links" id="contactLinks"></div></div>
-<div class="contact-form-wrap reveal"><div class="contact-form-intro"><span class="mono">A NOTE TO START WITH</span><h3>Tell me what<br>you’re building.</h3><p>Share a little context and I’ll get back to you.</p></div><form id="contactForm" class="contact-form"><div class="form-row"><label>Your name<input name="name" autocomplete="name" required minlength="2" maxlength="100" placeholder="Jane Smith"></label><label>Email address<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="jane@company.com"></label></div><label>Subject <span class="optional">(optional)</span><input name="subject" maxlength="160" placeholder="A project, opportunity, or just hello"></label><label>Message<textarea name="message" required minlength="10" maxlength="5000" rows="5" placeholder="A little about what you have in mind…"></textarea></label><div class="contact-submit-row"><button type="submit" class="contact-submit">Send message <span>↗</span></button><p id="contactFormStatus" class="contact-form-status" role="status" aria-live="polite"></p></div><input class="website-trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"></form></div></section>
-</main>
-<footer><span>© <span id="year"></span> <span id="footerName"></span></span><span id="footerTagline"></span><a href="#top" data-magnetic>Back to top ↑</a></footer>
-<div class="project-detail" id="projectDetail" aria-hidden="true"><div class="detail-topbar"><a href="#work" class="detail-back" id="detailBack"><span>←</span> Back to selected work</a><span class="mono" id="detailCounter"></span><button class="detail-close" id="detailClose" aria-label="Close project detail">Close <span>✕</span></button></div><div class="detail-content" id="detailContent"></div><div class="detail-next-wrap" id="detailNextWrap"></div></div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script><script src="/js/app.js" defer></script><script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js" defer></script><script src="/socket.io/socket.io.js" defer></script><script src="/js/chat.js" defer></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#10110f" />
+    <meta name="author" content="Samartha H M" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta
+      name="description"
+      content="Samartha H M is a frontend developer and product-minded engineer building thoughtful digital products, responsive interfaces, and useful software."
+    />
+    <title>Samartha H M — Developer & Digital Builder</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Samartha H M — Portfolio" />
+    <meta
+      property="og:title"
+      content="Samartha H M — Developer & Digital Builder"
+    />
+    <meta
+      property="og:description"
+      content="Frontend developer and product-minded engineer building thoughtful digital products and useful software."
+    />
+    <meta property="og:url" content="/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Samartha H M — Developer & Digital Builder"
+    />
+    <meta
+      name="twitter:description"
+      content="Frontend developer and product-minded engineer building thoughtful digital products and useful software."
+    />
+    <link rel="canonical" href="/" />
+    <script type="application/ld+json" id="siteStructuredData">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Samartha H M",
+        "jobTitle": "Frontend developer",
+        "url": "/"
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/chat.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="site-loader"
+      id="siteLoader"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading portfolio"
+    >
+      <div class="loader-content">
+        <div class="loader-topline">
+          <span>Y<span class="loader-accent">.</span>SL</span
+          ><span>PORTFOLIO / 2026</span>
+        </div>
+        <div class="loader-title" data-text="LOADING EXPERIENCE">
+          LOADING EXPERIENCE
+        </div>
+        <div class="loader-status">
+          <span class="loader-status-dot"></span
+          ><span id="loaderMessage" data-text="ASSEMBLING THE DETAILS"
+            >ASSEMBLING THE DETAILS</span
+          ><strong id="loaderPercent">00%</strong>
+        </div>
+        <div
+          class="loader-track"
+          role="progressbar"
+          aria-label="Loading progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <span class="loader-fill" id="loaderProgress"></span>
+        </div>
+        <div class="loader-foot">
+          <span>CRAFT / CODE / CLARITY</span><span>PLEASE WAIT</span>
+        </div>
+      </div>
+      <span class="loader-orb loader-orb--one" aria-hidden="true"></span
+      ><span class="loader-orb loader-orb--two" aria-hidden="true"></span>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true">
+      <span id="scrollProgress"></span>
+    </div>
+    <div class="cursor-aura" aria-hidden="true"></div>
+    <div class="custom-cursor" aria-hidden="true">
+      <span class="cursor-dot"></span><span class="cursor-ring"></span
+      ><span class="cursor-inner-ring"></span
+      ><span class="cursor-label">VIEW</span>
+    </div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Samartha home" data-magnetic
+        >Y<span>.</span>SL</a
+      >
+      <nav class="nav" aria-label="Main navigation" id="navLinks"></nav>
+      <div class="availability">
+        <span class="dot"></span
+        ><span id="availabilityText">Open to opportunities</span>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-topline">
+          <div class="eyebrow" id="heroEyebrow"></div>
+          <span class="hero-index mono">PORTFOLIO / 2026</span>
+        </div>
+        <div class="hero-title-wrap">
+          <h1 id="heroTitle"></h1>
+          <div class="orb" aria-hidden="true"><div class="orb-core"></div></div>
+          <div class="hero-object hero-object--one" aria-hidden="true">
+            <span class="hero-object-shape"></span
+            ><span class="hero-object-caption">CRAFT / 01</span>
+          </div>
+          <div class="hero-object hero-object--two" aria-hidden="true">
+            <span class="hero-object-shape"></span
+            ><span class="hero-object-caption">BUILD / 02</span>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <p class="hero-intro" id="heroIntro"></p>
+          <div class="hero-aside" id="heroAside"></div>
+        </div>
+        <a class="scroll-cue" href="#work"
+          ><span class="scroll-cue-line"></span><span>Scroll to explore</span
+          ><span>↓</span></a
+        >
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="tickerTrack"></div>
+      </div>
+      <section id="work">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker" id="workKicker"></div>
+            <h2 id="workTitle"></h2>
+          </div>
+          <p id="workDescription"></p>
+        </div>
+        <div class="work-toolbar">
+          <span class="mono" id="projectCount"></span
+          ><span class="mono"
+            >SELECT A PROJECT <span class="toolbar-arrow">↘</span></span
+          >
+        </div>
+        <div class="work-grid" id="projectGrid"></div>
+      </section>
+      <section id="about">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker" id="aboutKicker"></div>
+            <h2 id="aboutTitle"></h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="reveal">
+            <p class="about-copy" id="aboutCopy"></p>
+            <p class="about-note" id="aboutNote"></p>
+            <a class="text-link about-link" id="aboutLink" href="#contact"
+              >More about how I work ↗</a
+            >
+          </div>
+          <div class="skill-list reveal" id="skillList"></div>
+        </div>
+      </section>
+      <section class="experience" id="experience">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker" id="experienceKicker"></div>
+            <h2 id="experienceTitle"></h2>
+          </div>
+          <p id="experienceDescription"></p>
+        </div>
+        <div id="experienceList"></div>
+      </section>
+      <div id="dynamicSections"></div>
+      <section class="contact" id="contact">
+        <div class="section-kicker reveal" id="contactKicker"></div>
+        <h2 class="contact-big contact-title-reveal" id="contactTitle"></h2>
+        <div class="contact-bar reveal">
+          <p id="contactDescription"></p>
+          <div class="contact-links" id="contactLinks"></div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <div class="contact-form-intro">
+            <span class="mono">A NOTE TO START WITH</span>
+            <h3>Tell me what<br />you’re building.</h3>
+            <p>Share a little context and I’ll get back to you.</p>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <label
+                >Your name<input
+                  name="name"
+                  autocomplete="name"
+                  required
+                  minlength="2"
+                  maxlength="100"
+                  placeholder="Jane Smith" /></label
+              ><label
+                >Email address<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  maxlength="254"
+                  placeholder="jane@company.com"
+              /></label>
+            </div>
+            <label
+              >Subject <span class="optional">(optional)</span
+              ><input
+                name="subject"
+                maxlength="160"
+                placeholder="A project, opportunity, or just hello" /></label
+            ><label
+              >Message<textarea
+                name="message"
+                required
+                minlength="10"
+                maxlength="5000"
+                rows="5"
+                placeholder="A little about what you have in mind…"
+              ></textarea>
+            </label>
+            <div class="contact-submit-row">
+              <button type="submit" class="contact-submit">
+                Send message <span>↗</span>
+              </button>
+              <p
+                id="contactFormStatus"
+                class="contact-form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
+            <input
+              class="website-trap"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>© <span id="year"></span> <span id="footerName"></span></span
+      ><span id="footerTagline"></span
+      ><button class="footer-share" id="sharePortfolio" type="button">
+        Share portfolio ↗</button
+      ><a href="#top" data-magnetic>Back to top ↑</a>
+    </footer>
+    <div class="project-detail" id="projectDetail" aria-hidden="true">
+      <div class="detail-topbar">
+        <a href="#work" class="detail-back" id="detailBack"
+          ><span>←</span> Back to selected work</a
+        ><span class="mono" id="detailCounter"></span
+        ><button class="detail-share" id="shareProject" type="button">
+          Share project ↗</button
+        ><button
+          class="detail-close"
+          id="detailClose"
+          aria-label="Close project detail"
+        >
+          Close <span>✕</span>
+        </button>
+      </div>
+      <div class="detail-content" id="detailContent"></div>
+      <div class="detail-next-wrap" id="detailNextWrap"></div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging-compat.js"></script>
+    <script src="/js/app.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"
+      defer
+    ></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/js/chat.js" defer></script>
+  </body>
+</html>

@@ -120,7 +120,10 @@
     const target = selectedTarget();
     const form = $('#cmsForm');
     if (!target) { form.innerHTML = '<div class="cms-empty"><h3>No content item selected</h3><p>Create an item or select another content area.</p></div>'; return; }
-    form.innerHTML = `<div class="cms-record-heading"><div><p class="eyebrow">EDITING / ${escapeHTML(category())}</p><h3>${escapeHTML(target.label)}</h3></div><span class="cms-record-tag">Visual editor</span></div><div class="cms-fields">${flattenFields(target.value, target.path)}</div>`;
+    const projectMediaFields = category() === 'projectSections' && ['text', 'points', 'cards'].includes(target.value.type)
+      ? `<fieldset class="cms-fieldset"><legend>Section image (optional)</legend><div class="cms-fields"><label class="cms-field cms-field-wide"><span>Image URL</span><input data-path="${escapeHTML(JSON.stringify([...target.path, 'image']))}" data-kind="string" value="${escapeHTML(target.value.image || '')}" placeholder="https://…"></label><label class="cms-field"><span>Image position</span><select data-path="${escapeHTML(JSON.stringify([...target.path, 'imageSide']))}" data-kind="string"><option value="right" ${target.value.imageSide !== 'left' ? 'selected' : ''}>Right</option><option value="left" ${target.value.imageSide === 'left' ? 'selected' : ''}>Left</option></select></label><label class="cms-field cms-field-wide"><span>Image alt text</span><input data-path="${escapeHTML(JSON.stringify([...target.path, 'imageAlt']))}" data-kind="string" value="${escapeHTML(target.value.imageAlt || '')}"></label><label class="cms-field cms-field-wide"><span>Image caption (optional)</span><input data-path="${escapeHTML(JSON.stringify([...target.path, 'imageCaption']))}" data-kind="string" value="${escapeHTML(target.value.imageCaption || '')}"></label></div></fieldset>`
+      : '';
+    form.innerHTML = `<div class="cms-record-heading"><div><p class="eyebrow">EDITING / ${escapeHTML(category())}</p><h3>${escapeHTML(target.label)}</h3></div><span class="cms-record-tag">Visual editor</span></div><div class="cms-fields">${flattenFields(target.value, target.path)}</div>${projectMediaFields}`;
     form.querySelectorAll('[data-path]').forEach(control => control.addEventListener('input', () => {
       dirty = true; setMessage($('#settingsMessage'), 'Unsaved changes', '');
       try {
@@ -169,15 +172,15 @@
       content.sections[safeKey] = { kicker: 'New section', titleLines: ['Section headline'], description: 'Add a description.', items: [] };
     } else if (kind === 'projectSections') {
       const project = content.projects.find(p => p.slug === projectSlug()); if (!project) return toast('Choose a project first.');
-      const type = prompt('Section type: text, points, cards, images, links', 'text'); if (!type) return;
-      const normalized = ['text', 'points', 'cards', 'images', 'links'].includes(type.trim()) ? type.trim() : 'text';
+      const type = prompt('Section type: text, points, cards, gallery, links', 'text'); if (!type) return;
+      const normalized = ['text', 'points', 'cards', 'gallery', 'images', 'links'].includes(type.trim()) ? type.trim() : 'text';
       const title = prompt('Section title:', 'New case-study section'); if (title === null) return;
       project.sections = project.sections || [];
       const item = { type: normalized, eyebrow: 'Details', title: title.trim() };
       if (normalized === 'text') item.body = 'Add section content.';
       if (normalized === 'points') item.items = ['Add a point'];
       if (normalized === 'cards') item.items = [{ title: 'Card title', body: 'Card description' }];
-      if (normalized === 'images') item.items = [{ src: '', alt: '', caption: '' }];
+      if (normalized === 'images' || normalized === 'gallery') item.items = [{ src: '', alt: '', caption: '' }];
       if (normalized === 'links') item.items = [{ label: 'Production website', url: '' }];
       project.sections.push(item);
     } else if (Array.isArray(content[kind])) {
