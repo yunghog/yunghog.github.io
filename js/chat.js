@@ -163,14 +163,17 @@
     const error = $("#publicChatStartError");
     error.textContent = "Starting your conversation…";
     try {
-      const result = await api("/api/chat/conversations", {
-        method: "POST",
-        body: JSON.stringify({
-          visitorToken: token,
-          name: form.get("name"),
-          description: form.get("description"),
-        }),
-      });
+      const result = await api(
+        "https://yunghog.onrender.com/api/chat/conversations",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            visitorToken: token,
+            name: form.get("name"),
+            description: form.get("description"),
+          }),
+        },
+      );
       conversation = result.conversation;
       localStorage.setItem(
         savedChatKey,
@@ -196,7 +199,7 @@
       const saved = JSON.parse(localStorage.getItem(savedChatKey) || "null");
       if (!saved?.id) return;
       const result = await api(
-        `/api/chat/${encodeURIComponent(saved.id)}/messages`,
+        `https://yunghog.onrender.com/api/chat/${encodeURIComponent(saved.id)}/messages`,
       );
       conversation = { ...saved, ...result.conversation };
       $("#publicChatWelcome").classList.add("hidden");
@@ -244,7 +247,7 @@
     if (!conversation) return;
     try {
       const result = await api(
-        `/api/chat/${encodeURIComponent(conversation.id)}/messages`,
+        `https://yunghog.onrender.com/api/chat/${encodeURIComponent(conversation.id)}/messages`,
       );
       renderMessages(result.messages || [], initial);
     } catch (err) {
@@ -317,30 +320,28 @@
           "Could not connect to this conversation. Please try again.",
         );
       await new Promise((resolve, reject) => {
-        socket
-          .timeout(10000)
-          .emit(
-            "chat:send",
-            {
-              conversationId: conversation.id,
-              visitorToken: token,
-              html,
-              text,
-            },
-            (timeoutError, result) => {
-              if (timeoutError)
-                return reject(
-                  new Error(
-                    "Message timed out. Check your connection and try again.",
-                  ),
-                );
-              if (!result?.ok)
-                return reject(
-                  new Error(result?.error || "Message could not be sent."),
-                );
-              resolve(result);
-            },
-          );
+        socket.timeout(10000).emit(
+          "chat:send",
+          {
+            conversationId: conversation.id,
+            visitorToken: token,
+            html,
+            text,
+          },
+          (timeoutError, result) => {
+            if (timeoutError)
+              return reject(
+                new Error(
+                  "Message timed out. Check your connection and try again.",
+                ),
+              );
+            if (!result?.ok)
+              return reject(
+                new Error(result?.error || "Message could not be sent."),
+              );
+            resolve(result);
+          },
+        );
       });
       editor.setText("");
       $("#publicChatSendError").textContent = "";
@@ -361,7 +362,10 @@
         !window.firebase
       )
         return alert("Push notifications are not supported in this browser.");
-      if (!config) config = await (await fetch("/api/config")).json();
+      if (!config)
+        config = await (
+          await fetch("https://yunghog.onrender.com/api/config")
+        ).json();
       if (!config.firebase?.vapidKey || !config.firebase?.messagingSenderId)
         throw new Error(
           "Push notifications are not configured yet. Add Firebase Messaging sender ID and VAPID key to the server environment.",
@@ -380,10 +384,13 @@
         vapidKey: config.firebase.vapidKey,
         serviceWorkerRegistration: registration,
       });
-      await api(`/api/chat/${encodeURIComponent(conversation.id)}/push-token`, {
-        method: "POST",
-        body: JSON.stringify({ visitorToken: token, token: tokenValue }),
-      });
+      await api(
+        `https://yunghog.onrender.com/api/chat/${encodeURIComponent(conversation.id)}/push-token`,
+        {
+          method: "POST",
+          body: JSON.stringify({ visitorToken: token, token: tokenValue }),
+        },
+      );
       button.textContent = "Notifications enabled ✓";
       button.disabled = true;
       messaging.onMessage((payload) => {

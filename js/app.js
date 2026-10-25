@@ -32,7 +32,9 @@
 
   async function initAnalytics() {
     try {
-      const response = await fetch("/api/config", { cache: "no-store" });
+      const response = await fetch("https://yunghog.onrender.com/api/config", {
+        cache: "no-store",
+      });
       const config = await response.json();
       const firebaseConfig = config.firebase || {};
       if (
@@ -72,9 +74,12 @@
     startLoadingAnimation();
     initAnalytics();
     try {
-      const response = await fetch("/api/portfolio", {
-        headers: { Accept: "application/json" },
-      });
+      const response = await fetch(
+        "https://yunghog.onrender.com/api/portfolio",
+        {
+          headers: { Accept: "application/json" },
+        },
+      );
       if (!response.ok) throw new Error("Could not load portfolio data");
       data = await response.json();
       renderPortfolio();
@@ -128,8 +133,7 @@
   }
 
   function renderPortfolio() {
-    const { site, navigation, hero, sections, skills, experience } =
-      data;
+    const { site, navigation, hero, sections, skills, experience } = data;
     const visibleProjects = getVisibleProjects();
     document.title = `${site.name} — Developer & Digital Builder`;
     updateSeoMetadata({
@@ -169,7 +173,9 @@
     $("#projectCount").textContent =
       `${String(visibleProjects.length).padStart(2, "0")} PROJECTS / SELECTED WORK`;
     $("#projectGrid").innerHTML = visibleProjects
-      .map((project, index) => projectCard(project, index, visibleProjects.length))
+      .map((project, index) =>
+        projectCard(project, index, visibleProjects.length),
+      )
       .join("");
     $("#aboutKicker").textContent = sections.about.kicker;
     $("#aboutTitle").innerHTML = sections.about.titleLines
@@ -235,13 +241,24 @@
     $("#footerName").textContent = site.name;
     $("#footerTagline").textContent = site.footerTagline;
     $("#sharePortfolio")?.addEventListener("click", () => sharePage());
-    $("#shareProject")?.addEventListener("click", () => sharePage(activeProject));
+    $("#shareProject")?.addEventListener("click", () =>
+      sharePage(activeProject),
+    );
   }
 
-  function updateSeoMetadata({ title, description, type = "website", image } = {}) {
+  function updateSeoMetadata({
+    title,
+    description,
+    type = "website",
+    image,
+  } = {}) {
     const site = data?.site || {};
-    const pageTitle = title || `${site.name || "Portfolio"} — Developer & Digital Builder`;
-    const pageDescription = description || data?.hero?.intro || "Thoughtful digital products and useful software.";
+    const pageTitle =
+      title || `${site.name || "Portfolio"} — Developer & Digital Builder`;
+    const pageDescription =
+      description ||
+      data?.hero?.intro ||
+      "Thoughtful digital products and useful software.";
     const canonicalUrl = `${location.origin}${location.pathname}`;
     const shareUrl = location.href;
     document.title = pageTitle;
@@ -258,17 +275,42 @@
     setMeta('meta[name="description"]', "name", "description", pageDescription);
     setMeta('meta[property="og:type"]', "property", "og:type", type);
     setMeta('meta[property="og:title"]', "property", "og:title", pageTitle);
-    setMeta('meta[property="og:description"]', "property", "og:description", pageDescription);
+    setMeta(
+      'meta[property="og:description"]',
+      "property",
+      "og:description",
+      pageDescription,
+    );
     setMeta('meta[property="og:url"]', "property", "og:url", shareUrl);
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", pageTitle);
-    setMeta('meta[name="twitter:description"]', "name", "twitter:description", pageDescription);
+    setMeta(
+      'meta[name="twitter:description"]',
+      "name",
+      "twitter:description",
+      pageDescription,
+    );
     if (image && safeUrl(image) !== "#") {
-      setMeta('meta[property="og:image"]', "property", "og:image", new URL(image, location.href).href);
-      setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
-      setMeta('meta[name="twitter:image"]', "name", "twitter:image", new URL(image, location.href).href);
+      setMeta(
+        'meta[property="og:image"]',
+        "property",
+        "og:image",
+        new URL(image, location.href).href,
+      );
+      setMeta(
+        'meta[name="twitter:card"]',
+        "name",
+        "twitter:card",
+        "summary_large_image",
+      );
+      setMeta(
+        'meta[name="twitter:image"]',
+        "name",
+        "twitter:image",
+        new URL(image, location.href).href,
+      );
     } else {
-      $( 'meta[property="og:image"]')?.remove();
-      $( 'meta[name="twitter:image"]')?.remove();
+      $('meta[property="og:image"]')?.remove();
+      $('meta[name="twitter:image"]')?.remove();
       setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary");
     }
     let canonical = $('link[rel="canonical"]');
@@ -342,8 +384,7 @@
   function getVisibleProjects() {
     return (Array.isArray(data?.projects) ? data.projects : []).filter(
       (project) =>
-        project != null &&
-        (project.active == null || project.active === true),
+        project != null && (project.active == null || project.active === true),
     );
   }
 
@@ -1185,19 +1226,22 @@
       status.className = "contact-form-status";
       submit.disabled = true;
       try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+        const response = await fetch(
+          "https://yunghog.onrender.com/api/contact",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              name: values.name,
+              email: values.email,
+              subject: values.subject,
+              message: values.message,
+            }),
           },
-          body: JSON.stringify({
-            name: values.name,
-            email: values.email,
-            subject: values.subject,
-            message: values.message,
-          }),
-        });
+        );
         const result = await response.json().catch(() => ({}));
         if (!response.ok)
           throw new Error(
