@@ -71,7 +71,7 @@
   ).matches;
 
   async function init() {
-    startLoadingAnimation();
+    const finishLoading = startLoadingAnimation();
     initAnalytics();
     try {
       const response = await fetch(
@@ -92,8 +92,10 @@
       setupProjectRouting();
       setupContactForm();
       $("#year").textContent = new Date().getFullYear();
+      finishLoading();
     } catch (error) {
       console.error(error);
+      finishLoading();
       document.body.innerHTML =
         '<main style="padding:10vw;font:16px sans-serif;color:#f1f0e9;background:#10110f;min-height:100vh"><h1>Portfolio could not load</h1><p>Start the Express server with <code>npm install</code> and <code>npm start</code>.</p></main>';
     }
@@ -106,30 +108,19 @@
     const progressLabel = $("#loaderPercent");
     if (!loader || !progressBar || !progressTrack || !progressLabel) return;
 
-    const duration = 2500;
-    const startedAt = performance.now();
     document.body.classList.add("is-loading");
+    loader.classList.add("is-loading");
+    progressLabel.textContent = "WAIT";
+    progressTrack.removeAttribute("aria-valuenow");
 
-    const updateProgress = (now) => {
-      const progress = Math.min(100, ((now - startedAt) / duration) * 100);
-      const percentage = Math.floor(progress);
-      progressBar.style.width = `${progress}%`;
-      progressLabel.textContent = `${String(percentage).padStart(2, "0")}%`;
-      progressTrack.setAttribute("aria-valuenow", String(percentage));
-      if (progress < 100) requestAnimationFrame(updateProgress);
-    };
-    requestAnimationFrame(updateProgress);
-
-    window.setTimeout(() => {
-      progressBar.style.width = "100%";
-      progressLabel.textContent = "100%";
-      progressTrack.setAttribute("aria-valuenow", "100");
+    return () => {
+      loader.classList.remove("is-loading");
       loader.classList.add("is-done");
       loader.setAttribute("aria-hidden", "true");
       loader.inert = true;
       document.body.classList.remove("is-loading");
       window.setTimeout(() => loader.remove(), 1050);
-    }, duration);
+    };
   }
 
   function renderPortfolio() {

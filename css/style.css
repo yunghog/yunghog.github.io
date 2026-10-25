@@ -2520,6 +2520,15 @@ body.is-loading {
   box-shadow: 0 0 20px #d5ff4f70;
   transition: width 0.08s linear;
 }
+.site-loader.is-loading .loader-fill {
+  width: 34%;
+  animation: loader-indeterminate 1.35s cubic-bezier(.65, 0, .35, 1) infinite;
+}
+@keyframes loader-indeterminate {
+  0% { transform: translateX(-110%); }
+  50% { transform: translateX(185%); }
+  100% { transform: translateX(300%); }
+}
 .loader-fill::after {
   position: absolute;
   top: -5px;
