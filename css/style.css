@@ -2973,7 +2973,7 @@ body.is-loading {
   --panel: #ffffff;
   --ink: #3d1721;
   --muted: #8b626d;
-  --line: #f0dde1;
+  --line: #e11d4777;
   --acid: #e11d48;
 
   /* Accent variations */
@@ -2988,7 +2988,7 @@ body.is-loading {
   --text-soft: #70444f;
   --text-muted: #946c76;
   --text-fade: #b18c95;
-  --text-light: #ffffff;
+  --text-light: #0d0101;
   --text-accent: #be123c;
   --text-accent-dim: #9f1239;
 
@@ -3053,7 +3053,7 @@ body.is-loading {
   --acid-alpha-08: rgba(225, 29, 72, 0.08);
   --acid-alpha-06: rgba(225, 29, 72, 0.06);
   --acid-alpha-77: #e11d4877;
-  --acid-alpha-24: #e11d4824;
+  --acid-alpha-24: #e11d47ad;
   --acid-alpha-1e: #e11d481e;
   --acid-alpha-99: #e11d4899;
   --acid-alpha-70: #e11d4870;
@@ -3079,7 +3079,7 @@ body.is-loading {
   --scrollbar-thumb-hover: #d99aa7;
 
   /* Additional colors */
-  --stroke-color: #e8c7ce;
+  --stroke-color: #d63155;
   --border-hover: #e11d48;
   --border-green: #d1e7d8;
   --light-text-dim: #8b626d;
